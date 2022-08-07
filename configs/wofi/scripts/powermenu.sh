@@ -4,17 +4,17 @@ op=$( echo -e " Poweroff\n敏 Reboot\n Lock\n Logout\n Suspend" | wo
 
 
 case $op in 
-        poweroff)
-                ;&
-        reboot)
-                ;&
-        suspend)
-                systemctl $op
-                ;;
-        lock)
-		swaylock
-                ;;
-        logout)
-                swaymsg exit
-                ;;
+  poweroff)
+    ;&
+  reboot)
+    ;&
+  suspend)
+    systemctl $op
+    ;;
+  lock)
+    swaylock
+    ;;
+  logout)
+    pkill -KILL -u "$USER"
+    ;;
 esac
