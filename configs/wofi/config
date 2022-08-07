@@ -1,0 +1,14 @@
+term=foot
+location=top
+yoffset=170
+width=500
+lines=10
+
+prompt=
+show=drun
+insensitive=true
+allow_images=true
+hide_scroll=true
+
+aways_parse_args=true
+show_all=true

@@ -1,0 +1,85 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Ubuntu Mono Nerd Font;
+  font-size: 14px;
+  min-height: 0;
+  margin-right: 4px;
+}
+
+window#waybar {
+  background: black;
+  color: white;
+}
+
+tooltip {
+  background: #232323;
+  border-radius: 15px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #262626;
+}
+
+#workspaces button {
+  padding: 5px 10px 5px 5px;
+  color: #cccccc;
+}
+
+#workspaces button.focused {
+  color: #0f0f0f;
+  background-color: #c49ec4;
+  border-radius: 15px;
+}
+
+#workspaces button.urgent {
+  color: #0f0f0f;
+  background-color: #9ec3c4;
+  border-radius: 15px;
+}
+
+#workspaces button:hover {
+  background-color: #1e1e2e;
+  color: #dfdfdf;
+  border-radius: 15px;
+}
+
+#custom-media, #clock, #battery, #pulseaudio, #network, #workspaces, #tray {
+  background-color: #181825;
+  padding: 3px 10px;
+  margin: 3px 0px;
+}
+
+#custom-media {
+  color: #f9e2af;
+  border-radius: 15px;
+}
+
+#tray {
+  border-radius: 15px;
+  margin-right: 4px;
+}
+
+#workspaces {
+  background-color: #1e1e2e;
+  border-radius: 15px;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+#clock {
+  color:  #cccccc;
+  border-radius: 0px 15px 15px 0px;
+}
+
+#network {
+  color: #fab387;
+  border-radius: 15px 0px 0px 15px;
+}
+
+#pulseaudio {
+  color: #588cd3;
+}
+
+#battery{
+  color:  #58d3a4;
+}

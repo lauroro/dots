@@ -1,0 +1,15 @@
+term=foot
+location=top
+yoffset=170
+height=190
+width=220
+columns=1
+
+prompt=
+show=dmenu
+insensitive=true
+allow_images=true
+hide_scroll=true
+
+aways_parse_args=true
+show_all=true
