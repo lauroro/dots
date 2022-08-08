@@ -10,7 +10,7 @@ My dotfiles for hyprland, a great wayland compositor
 ## Dependencies
 **For Arch Linux with yay AUR helper**
 ```
-yay -S hyprland-git swaybg grim slurp foot wofi waybar-hyprland-git dunst nerd-fonts-ubuntu-mono
+yay -S hyprland-git swaybg playerctl grim slurp foot wofi waybar-hyprland-git dunst nerd-fonts-ubuntu-mono
 ```
 
 ## How to change background
