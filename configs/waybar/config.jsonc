@@ -3,14 +3,14 @@
   "height": 25,
   
   "modules-left":   ["wlr/workspaces"],
-  "modules-center": ["custom/notification", "custom/media"],
-  "modules-right":  ["tray", "network", "pulseaudio", "battery", "clock"],
+  "modules-center": ["clock"],
+  "modules-right":  ["tray", "network", "backlight", "pulseaudio","battery"],
 
   "wlr/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "on-click": "activate",
-    "format": "{icon}",
+    //"format": "{icon}",
     "persistent_workspaces": {
       "1": [],
       "2": [],
@@ -23,7 +23,7 @@
       "9": [],
       "10": []
     },
-    "format-icons": {
+    /*"format-icons": {
       "1": "",
       "2": "",
       "3": "",
@@ -36,21 +36,19 @@
       "10": "",
       "default": "",
       "active": ""
-    }
+    }*/
   },
   "tray": {
     "icon-size": 13,
     "spacing": 10
   },
-  "custom/media": {
-    "format": "{icon} {}",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": " ",
-      "default": " "
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/scroll_spotify_status.sh"
+  "backlight":{
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["",""],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6 
   },
   "battery": {
     "states": {
@@ -58,7 +56,7 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}  {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
@@ -76,7 +74,7 @@
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-muted": "ﱝ Muted",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 1,
