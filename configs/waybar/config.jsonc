@@ -1,91 +1,144 @@
 {
-  "position": "top", 
-  "height": 25,
+  "position": "top",
+  "layer": "top",
   
-  "modules-left":   ["wlr/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right":  ["tray", "network", "backlight", "pulseaudio","battery"],
+  "modules-left":   [
+    "custom/launcher",
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/spotify-monitor", 
+    "custom/spotify-metadata",
+    "custom/spotify-prev",
+    "custom/spotify-play-pause",
+    "custom/spotify-next",
+    "custom/spotify-quit",
+  ],
+  "modules-right":  [
+    "tray",
+    "network",
+    "pulseaudio",
+    "battery",
+    "custom/powermenu"
+  ],
+
 
   "wlr/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "on-click": "activate",
-    //"format": "{icon}",
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": []
-    },
-    /*"format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "10": "",
-      "default": "",
-      "active": ""
-    }*/
   },
+  
   "tray": {
     "icon-size": 13,
     "spacing": 10
   },
-  "backlight":{
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["",""],
-    "on-scroll-up": "brightnessctl set 1%+",
-    "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6 
-  },
+  
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
+    "format": " {icon}",
     "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+    "tooltip-format": "{capacity}%"
   },
+  
   "clock": {
-   "format": "{: %R   %d/%m}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+   "format": "{:%b %d %R}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
   },
+  
   "network": {
-    "format-wifi": "  {essid}",
+    "format-wifi": " ",
     "format-ethernet": " {essid}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "睊 Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}"
+    "tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}",
+    "on-click": "bash ~/.config/rofi/network/network.sh"
   },
+  
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "ﱝ Muted",
+    "tooltip-format": "{volume}%",
+    "format": "{icon}",
+    "format-muted": "ﱝ",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-bluetooth": "{volume}% {format_source}",
+    "format-bluetooth-muted": "{format_source}",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 1,
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
       "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
       "default": ["", "", "墳", ""]
     }
+  },
+
+    "custom/spotify-monitor": {
+    "interval": 5,
+    "exec": "~/.config/waybar/spotify/monitor.sh",
+    "signal": 4
+  },
+  
+  "custom/spotify-metadata": {
+    "format": "   {}",
+    "max-length": 30,
+    "interval": "once",
+    "return-type": "json",
+    "exec": "~/.config/waybar/spotify/metadata.sh",
+    "signal": 5
+  },
+  
+  "custom/spotify-play-pause": {
+    "format": "{}",
+    "interval": "once",
+    "return-type": "json",
+    "exec": "~/.config/waybar/spotify/play-pause.sh",
+    "on-click": "~/.config/waybar/spotify/controls.sh",
+    "signal": 5
+  },
+  
+  "custom/spotify-next": {
+    "format": "怜",
+    "return-type": "json",
+    "interval": "once",
+    "exec": "~/.config/waybar/spotify/metadata.sh",
+    "on-click": "~/.config/waybar/spotify/controls.sh next",
+    "signal": 5
+  },
+  
+  "custom/spotify-prev": {
+    "format": "玲",
+    "interval": "once",
+    "return-type": "json",
+    "exec": "~/.config/waybar/spotify/metadata.sh",
+    "on-click": "~/.config/waybar/spotify/controls.sh prev",
+    "signal": 5
+  },
+  
+  "custom/spotify-quit": {
+    "format": "",
+    "interval": "once",
+    "return-type": "json",
+    "exec": "~/.config/waybar/spotify/metadata.sh",
+    "on-click": "~/.config/waybar/spotify/quit.sh ",
+    "signal": 6
+  },
+
+  "custom/powermenu": {
+    "format": "{icon}  ",
+    "interval": "once",
+    "on-click": "bash ~/.config/rofi/powermenu/powermenu.sh",
+  },
+
+  "custom/launcher": {
+    "format": "{icon} ",
+    "interval": "once",
+    "on-click": "bash ~/.config/rofi/launcher/launcher.sh",
   }
 }

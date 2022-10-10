@@ -1,0 +1,139 @@
+@import                           "~/.config/rofi/shared.rasi"
+
+configuration {
+  show-icons:                     false;
+  drun-display-format:            "{name}";
+  disable-history:                false;
+  click-to-exit: 					        true;
+  position:                       0;
+}
+
+window {
+  transparency:                   "real";
+  background-color:               @background;
+  text-color:                     @unselected;
+  border:                         2px solid;
+  border-radius:                  10px;
+  border-color:                   @line;
+  width:                          400px;
+  height:                         370px;
+  location:                       center;
+  anchor:                         center;
+  x-offset:                       0;
+  y-offset:                       0;
+}
+
+prompt {
+  enabled: 						            false;
+  margin: 						            0px 8px 0px 8px;
+  padding: 						            8px;
+  text-color: 					          @background;
+  border:                  		    0px solid;
+  border-color:                  	@line;
+  border-radius:                  10px;
+}
+
+textbox-prompt-colon {
+  expand: 						            false;
+  str: 							              "直";
+  border-radius:                  100%;
+  background-color:               @background;
+  text-color:                     @selected;
+  padding:                        8px 12px 8px 12px;
+}
+
+entry {
+  background-color:               @background-alt;
+  text-color:                     @selected;
+  placeholder-color:              @unselected;
+  expand:                         true;
+  horizontal-align:               0;
+  placeholder:                    "Search";
+  blink:                          true;
+  border:                      		0px;
+  border-color:                  	@line;
+  border-radius:                  10px;
+  padding:                        8px;
+}
+
+inputbar {
+  children: 						          [ textbox-prompt-colon, prompt, entry ];
+  background-color:               @background;
+  text-color:                     @selected;
+  expand:                         false;
+  border:                     		0px;
+  border-radius:                  4px;
+  border-color:                  	@line;
+  margin:                         0px 0px 0px 0px;
+  padding:                        0px;
+  position:                       center;
+}
+
+listview {
+  background-color:               @background;
+  columns:                        1;
+  lines:            							7;
+  spacing:                        4px;
+  cycle:                          true;
+  dynamic:                        true;
+  layout:                         vertical;
+  border:                         0px;
+  border-color:                   @line;
+}
+
+mainbox {
+  background-color:               @background;
+  children:                       [ inputbar, listview ];
+  spacing:                       	15px;
+  padding:                        15px;
+}
+
+scrollbar {
+  handle-width:                   0px ;
+  handle-color:                   @selected;
+  border-radius:                  0px;
+  background-color:               @background-alt;
+}
+
+element {
+  background-color:               @background;
+  text-color:                     @unselected;
+  orientation:                    horizontal;
+  border-radius:                  4px;
+  padding:                        6px 6px 6px 6px;
+}
+
+element-icon {
+  background-color: 				      inherit;
+  text-color:       				      inherit;
+  size:                           0px;
+  border:                         0px;
+}
+
+element-text {
+  background-color: 				      inherit;
+  text-color:       				      inherit;
+  expand:                         true;
+  horizontal-align:               0;
+  vertical-align:                 0.5;
+  margin:                         2px 0px 2px 6px;
+}
+
+element normal.active,
+element alternate.active {
+  background-color:               @line;
+  text-color:                     @selected;
+}
+
+element selected {
+  background-color:               @line;
+  text-color:                     @selected;
+  border:                  		    0px 0px 0px 0px;
+  border-radius:                  10px;
+  border-color:                  	@line;
+}
+
+element selected.active {
+  background-color:               @line;
+  text-color:                     @selected;
+}

@@ -2,25 +2,26 @@
   border: none;
   border-radius: 0;
   font-family: Ubuntu Mono Nerd Font;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
   min-height: 0;
 }
 
 window#waybar {
-  background: black;
-  color: white;
+  background: #000000;
+  color: #dedede;
 }
 
 tooltip {
-  background: #232323;
-  border-radius: 10px;
+  background: #121212;
+  border-radius: 6px;
   border-width: 2px;
   border-style: solid;
-  border-color: #202020;
+  border-color: #4f6580;
 }
 
 #workspaces button {
-  padding: 5px;
+  padding: 3px;
   color: #434343;
   margin-right: 5px;
 }
@@ -31,58 +32,84 @@ tooltip {
 
 #workspaces button.focused {
   color: #dedede;
-  background-color: #c49ec4;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 #workspaces button.urgent {
   color: #0f0f0f;
-  background-color: #9ec3c4;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 #workspaces button:hover {
-  background-color: #1e1e2e;
-  color: #dfdfdf;
-  border-radius: 10px;
+  color: #000000;
+  border-radius: 6px;
 }
 
 #clock, #battery, #pulseaudio, #network, #workspaces, #tray, #backlight {
-  background-color: #181825;
-  padding: 3px 10px;
-  margin: 3px 0px;
+  padding: 4px 8px;
+  /*background-color: #202020;*/
 }
 
 #tray {
-  border-radius: 10px;
+  border-radius: 6px;
   margin-right: 4px;
 }
 
 #workspaces {
-  background-color: #1e1e2e;
-  border-radius: 10px;
-  padding-right: 5px;
+  margin-left: 4px;
 }
 
 #clock {
-  color: #f9e2af;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 #network {
-  color: #fab387;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 6px 0px 0px 6px;
 }
 
 #pulseaudio {
-  color: #588cd3;
 }
 
 #battery{
-  color:  #58d3a4;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 6px 6px 0;
+  margin-right: 4px;
 }
 
-#backlight{
-  color: #a51a9a;
+#backlight{}
+
+#custom-spotify-metadata, #custom-spotify-play-pause, #custom-spotify-prev, #custom-spotify-next, #custom-spotify-quit {
+  color: #dedede;
+  padding: 0px 10px;
+
+}
+#custom-spotify-metadata {
+  margin-left: 8px;
+  border-radius: 6px 0px 0px 6px;
+}
+#custom-spotify-metadata.playing {
+  color: #dedede;
+}
+#custom-spotify-metadata.paused {
+  color: #dedede;
+}
+#custom-spotify-prev {
+  margin: 3px 0;
+}
+#custom-spotify-play-pause {
+  margin: 3px 0;
+}
+#custom-spotify-next {
+  margin: 3px 0;
+}
+#custom-spotify-quit {
+  margin: 3px 3px 3px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+#custom-powermenu {
+  padding-right: 8px
+}
+
+#custom-launcher {
+  padding: 0px 8px
 }

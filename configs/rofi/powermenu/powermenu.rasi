@@ -1,0 +1,65 @@
+@import                             "~/.config/rofi/shared.rasi"
+
+configuration {
+    location:                       0;
+}
+ 
+ 
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+ 
+ 
+window {
+    background-color:               @background;
+    border:                         2px;
+    border-color:                   @line;
+    border-radius:                  10px;
+    width:                          490px;   
+    height:                         130px;          
+    x-offset:                       -4;
+    y-offset:                       0;
+}
+ 
+listview {
+    background-color:               @background;
+    columns:                        1;
+    lines:                          5;
+    spacing:                        70px;
+    layout:                         horizontal;
+}
+ 
+mainbox {
+    background-color:               @background;
+    children:                       [ listview ];
+    padding:                        40px;
+}
+ 
+element {
+    background-color:               @background;
+    text-color:                     @unselected;
+    orientation:                    horizontal;
+    /*border-radius:                  100%;*/
+    /*padding:                        8px 32px 8px 32px;*/
+}
+ 
+element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+    font:                           "Ubuntu Mono Nerd Font 30";
+    expand:                         false;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0px;
+}
+ 
+element selected {
+    background-color:               @background;
+    text-color:                     @selected;
+    border:                         0px;
+    /*border-radius:                  100%;*/
+    border-color:                   @selected;
+}

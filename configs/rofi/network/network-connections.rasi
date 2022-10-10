@@ -1,0 +1,9 @@
+@import                           "~/.config/rofi/network/network-shared.rasi"
+
+window {
+  width:                          892px;
+}
+
+entry {
+  placeholder:                    "Select Wifi or Search. Scanning may take a few seconds.";
+}
