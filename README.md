@@ -26,6 +26,9 @@ Press ```SUPER+SHIFT+b``` to change it now. It will be set automatically upon lo
 
 ## Some shortcuts
 ```SUPER+ENTER``` : foot
+
 ```SUPER+SPACE``` : rofi launcher
+
 ```SUPER+n```     : rofi networkmenu
+
 ```SUPER+p```     : rofi powermenu
