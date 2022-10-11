@@ -16,10 +16,16 @@ My dotfiles for hyprland, a great wayland compositor
 ## Dependencies
 **For Arch Linux with yay AUR helper**
 ```
-yay -S hyprland-git swaybg grim slurp foot wofi waybar-hyprland-git dunst nerd-fonts-ubuntu-mono brightnessctl
+yay -S hyprland-git swaybg grim slurp foot rofi-lbonn-wayland-git waybar-hyprland-git mako nerd-fonts-ubuntu-mono brightnessctl pactl perl zsh gtklock swayidle
 ```
 
 ## How to change background
 Copy the picture you want to set as background in your ```~/.config/hypr/``` folder.
 Change its name in ```background```.
-Press ```SUPER+SHIFT+b``` to change it now. It will be set automatically upon login.
+Press ```SUPER+SHIFT+b``` to change it now. It will be set automatically upon login. As a default the same background image will be used as the background in lockscreen.
+
+## Some shortcuts
+```SUPER+ENTER``` : foot
+```SUPER+SPACE``` : rofi launcher
+```SUPER+n```     : rofi networkmenu
+```SUPER+p```     : rofi powermenu
