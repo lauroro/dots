@@ -19,6 +19,12 @@ My dotfiles for hyprland, a great wayland compositor
 yay -S hyprland-git swaybg grim slurp foot rofi-lbonn-wayland-git waybar-hyprland-git mako nerd-fonts-ubuntu-mono brightnessctl pactl perl zsh gtklock swayidle
 ```
 
+I use systemd here and there. Not planning to do a version without it at the moment.
+
+I also use ```oh-my-zsh```. 
+
+Assuming you start from HOME. Run ```git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh```, backup your ```.zshrc```, copy my ```.zshrc``` in your home and you are done.
+
 ## How to change background
 Copy the picture you want to set as background in your ```~/.config/hypr/``` folder.
 Change its name in ```background```.
