@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
  
 lock=""
 logout=""
@@ -23,13 +23,13 @@ then
     loginctl terminate-user `whoami`
 elif [ "$selected_option" == "$shutdown" ]
 then
-    doas systemctl poweroff
+    systemctl poweroff
 elif [ "$selected_option" == "$reboot" ]
 then
-    doas systemctl reboot
+    systemctl reboot
 elif [ "$selected_option" == "$sleep" ]
 then
-    doas systemctl suspend
+    systemctl suspend
 else
     echo "No match"
 fi
