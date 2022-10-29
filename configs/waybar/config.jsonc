@@ -41,9 +41,9 @@
       "warning": 30,
       "critical": 20
     },
-    "format": " {icon}",
+    "format": "{icon}",
     "format-charging": " {capacity}%",
-    "format-alt": "{icon} {time}",
+    "format-alt": "{icon}",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
     "tooltip-format": "{capacity}%"
   },
@@ -64,13 +64,13 @@
   
   "pulseaudio": {
     "tooltip-format": "{volume}%",
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-muted": "ﱝ",
     "format-source": " {volume}%",
     "format-source-muted": "",
     "format-bluetooth": "{volume}% {format_source}",
     "format-bluetooth-muted": "{format_source}",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 1,
     "format-icons": {
       "headphone": "",
@@ -79,7 +79,7 @@
     }
   },
 
-    "custom/spotify-monitor": {
+  "custom/spotify-monitor": {
     "interval": 5,
     "exec": "~/.config/waybar/spotify/monitor.sh",
     "signal": 4
