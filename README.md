@@ -10,11 +10,7 @@ My dotfiles for hyprland, a great wayland compositor
 ![mar 11 ott 2022, 00:13:12, CEST](https://user-images.githubusercontent.com/88981092/195025630-e681ba3e-1fc1-4078-8a7f-dd800fe71888.png)
 ![mar 11 ott 2022, 00:11:57, CEST](https://user-images.githubusercontent.com/88981092/195025674-6e11148b-a224-482d-a326-71e5ccacd62e.png)
 ![mar 11 ott 2022, 00:10:02, CEST](https://user-images.githubusercontent.com/88981092/195025811-5001fd2a-5819-427e-8616-9b8d67198306.png)
-![2022-08-09-20:02:18](https://user-images.githubusercontent.com/88981092/183731639-92ce1648-e713-433d-b275-5ed3aab685e7.png)
-![2022-08-09-20:03:07](https://user-images.githubusercontent.com/88981092/183731735-277c4b4e-5b96-459f-aec9-27d05c5bf589.png)
-![2022-08-09-20:03:21](https://user-images.githubusercontent.com/88981092/183731804-07b051f2-21bf-44a9-8061-3ff960ecfcab.png)
-![2022-08-09-20:05:42](https://user-images.githubusercontent.com/88981092/183731906-21878851-7d28-49a8-9f66-c1891119a9e8.png)
-![2022-08-09-20:01:51](https://user-images.githubusercontent.com/88981092/183731975-4445e682-2ebc-4fca-8a9e-900e0fb919ac.png)
+
 
 
 
@@ -23,7 +19,6 @@ My dotfiles for hyprland, a great wayland compositor
 **For Arch Linux with yay AUR helper**
 ```
 yay -S hyprland-git swaybg grim slurp foot rofi-lbonn-wayland-git waybar-hyprland-git mako nerd-fonts-ubuntu-mono brightnessctl pactl perl zsh gtklock swayidle
-yay -S hyprland-git swaybg grim slurp foot wofi waybar-hyprland-git dunst nerd-fonts-ubuntu-mono brightnessctl
 ```
 
 I use systemd here and there. Not planning to do a version without it at the moment.
