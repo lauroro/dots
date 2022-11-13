@@ -18,7 +18,7 @@ My dotfiles for hyprland, a great wayland compositor
 ## Dependencies
 **For Arch Linux with yay AUR helper**
 ```
-yay -S hyprland-git swaybg grim slurp foot wofi waybar-hyprland-git mako ttf-ubuntumono-nerd brightnessctl libpulse zsh swayidle gvfs thunar xfce4-settings kimi-dark-gtk-theme-git file-roller starship networkmanager feh playerctl swaylock wl-clipboard xdg-user-dirs
+yay -S hyprland-git swaybg grim slurp foot wofi waybar-hyprland-git mako ttf-ubuntumono-nerd brightnessctl libpulse zsh swayidle gvfs thunar xfce4-settings kimi-dark-gtk-theme-git file-roller starship networkmanager feh playerctl swaylock wl-clipboard xdg-user-dirs pfetch htop
 ```
 
 
