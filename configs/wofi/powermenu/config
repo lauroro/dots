@@ -1,0 +1,13 @@
+width=100
+height=250
+location=center
+prompt=Powermenu
+filter_rate=100
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=start
+insensitive=true
+allow_images=true
+sort_order=alphabetical

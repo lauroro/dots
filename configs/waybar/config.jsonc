@@ -3,24 +3,16 @@
   "layer": "top",
   
   "modules-left":   [
-    "custom/launcher",
     "wlr/workspaces"
   ],
   "modules-center": [
     "clock",
-    "custom/spotify-monitor", 
-    "custom/spotify-metadata",
-    "custom/spotify-prev",
-    "custom/spotify-play-pause",
-    "custom/spotify-next",
-    "custom/spotify-quit",
   ],
   "modules-right":  [
     "tray",
     "network",
-    "pulseaudio",
     "battery",
-    "custom/powermenu"
+    "pulseaudio",
   ],
 
 
@@ -31,45 +23,51 @@
   },
   
   "tray": {
-    "icon-size": 13,
-    "spacing": 10
+    "icon-size": 18,
+    "spacing": 10,
   },
   
   "battery": {
     "states": {
-      "good": 95,
+      //"good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 15
     },
     "format": "{icon}",
-    "format-charging": " {capacity}%",
+    "format-charging": "",
     "format-alt": "{icon}",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
-    "tooltip-format": "{capacity}%"
+    "tooltip-format": "",
+    "on-click": "bash ~/.config/eww/dashboard/launch_dashboard"
   },
   
   "clock": {
    "format": "{:%b %d %R}",
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    /*"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",*/
+    "tooltip": false,
+    "on-click": "bash ~/.config/eww/calendar/launch_calendar"
+
   },
   
   "network": {
     "format-wifi": " ",
     "format-ethernet": " {essid}",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "睊 Disconnected",
-    "tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}",
-    "on-click": "bash ~/.config/rofi/network/network.sh"
+    "format-disconnected": "睊 ",
+    /*"tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}",*/
+    "tooltip": false,
+    "on-click": "bash ~/.config/eww/dashboard/launch_dashboard"
   },
   
   "pulseaudio": {
     "tooltip-format": "{volume}%",
     "format": "{icon} ",
-    "format-muted": "ﱝ",
+    "format-muted": " ﱝ",
     "format-source": " {volume}%",
     "format-source-muted": "",
     "format-bluetooth": "{volume}% {format_source}",
     "format-bluetooth-muted": "{format_source}",
+    "on-click": "bash ~/.config/eww/dashboard/launch_dashboard",
     "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 1,
     "format-icons": {
@@ -79,66 +77,4 @@
     }
   },
 
-  "custom/spotify-monitor": {
-    "interval": 5,
-    "exec": "~/.config/waybar/spotify/monitor.sh",
-    "signal": 4
-  },
-  
-  "custom/spotify-metadata": {
-    "format": "   {}",
-    "max-length": 30,
-    "interval": "once",
-    "return-type": "json",
-    "exec": "~/.config/waybar/spotify/metadata.sh",
-    "signal": 5
-  },
-  
-  "custom/spotify-play-pause": {
-    "format": "{}",
-    "interval": "once",
-    "return-type": "json",
-    "exec": "~/.config/waybar/spotify/play-pause.sh",
-    "on-click": "~/.config/waybar/spotify/controls.sh",
-    "signal": 5
-  },
-  
-  "custom/spotify-next": {
-    "format": "怜",
-    "return-type": "json",
-    "interval": "once",
-    "exec": "~/.config/waybar/spotify/metadata.sh",
-    "on-click": "~/.config/waybar/spotify/controls.sh next",
-    "signal": 5
-  },
-  
-  "custom/spotify-prev": {
-    "format": "玲",
-    "interval": "once",
-    "return-type": "json",
-    "exec": "~/.config/waybar/spotify/metadata.sh",
-    "on-click": "~/.config/waybar/spotify/controls.sh prev",
-    "signal": 5
-  },
-  
-  "custom/spotify-quit": {
-    "format": "",
-    "interval": "once",
-    "return-type": "json",
-    "exec": "~/.config/waybar/spotify/metadata.sh",
-    "on-click": "~/.config/waybar/spotify/quit.sh ",
-    "signal": 6
-  },
-
-  "custom/powermenu": {
-    "format": "{icon}  ",
-    "interval": "once",
-    "on-click": "bash ~/.config/rofi/powermenu/powermenu.sh",
-  },
-
-  "custom/launcher": {
-    "format": "{icon} ",
-    "interval": "once",
-    "on-click": "bash ~/.config/rofi/launcher/launcher.sh",
-  }
 }

@@ -1,0 +1,191 @@
+/** Global *******************************************/
+*{
+	all: unset;
+	font-family: Ubuntu Mono Nerd Font;
+  color: #8db5ca;
+}
+
+
+/** Background ***************************************/
+.background {
+	background-color: #303446;
+  border-radius: 12px;
+  //border: 1px solid #323232;
+  padding: 10px
+}
+
+
+/** Generic window ***********************************/
+.genwin {
+  background-color: #131313;
+	border-radius: 16px;
+  padding:5px;
+}
+
+
+/* Network ********************************************/
+.btn_net{
+}
+
+.network {
+  font-size: 22px;
+  /*color: #f7e1d3;*/
+}
+
+
+/* Bluetooth ******************************************/
+.btn_bluet {
+  font-size: 22px
+}
+
+/* Battery **********************************************/
+.battery {
+  font-size:24px;
+}
+
+/* Microphone *****************************************/
+.btn_mic {
+  font-size: 32px;
+}
+
+
+/** System Sliders ********************************************/
+.slidersbox {
+  padding: 4px;
+}
+
+.iconbright {
+	font-size : 32px;
+	font-weight : normal;
+  /*color: #eed49f;*/
+}
+
+.bright_bar scale trough {
+	all: unset;
+	background-color: #303446;
+	border-radius: 16px;
+	min-height: 20px;
+	min-width: 240px;
+  margin-right: 10px;
+}
+
+.bright_bar scale trough highlight {
+	all: unset;
+	border-radius: 16px;
+	/*background-color: #eed49f;*/
+  background-color: #8db5ca;
+}
+
+.iconvolume {
+	font-size : 32px;
+	font-weight : normal;
+  margin-left: 4px;
+}
+
+.volume_bar scale trough {
+	all: unset;
+	background-color: #303446;
+	border-radius: 16px;
+	min-height: 20px;
+	min-width: 240px;
+  margin-right: 10px;
+}
+
+.volume_bar scale trough highlight {
+	all: unset;
+	border-radius: 16px;
+	background-color: #8db5ca;
+}
+
+.iconmic {
+	font-size : 32px;
+	font-weight : normal;
+  margin-left: 4px;
+}
+
+.mic_bar scale trough {
+	all: unset;
+	background-color: #303446;
+	border-radius: 16px;
+	min-height: 20px;
+	min-width: 240px;
+  margin-right: 10px;
+}
+
+.mic_bar scale trough highlight {
+	all: unset;
+	border-radius: 16px;
+	background-color: #8db5ca;
+}
+
+
+/** Music ***************************************/
+.album_art {
+	background-size: 180px;
+	min-height: 180px;
+	min-width: 180px;
+	margin: 4px;
+	border-radius: 14px;
+}
+
+.song {
+	color: #8FBCBB;
+	font-size : 23px;
+	font-weight : bold;
+	margin : 30px 0px 0px 0px;
+}
+
+.artist {
+	color: #Eed49f;
+	font-size : 16px;
+	font-weight : normal;
+	margin : 0px 0px 15px 0px;
+}
+
+.btn_prev, .btn_play, .btn_next {
+}
+.btn_prev {
+	color: #Eed49f;
+	font-size : 32px;
+	font-weight : normal;
+}
+.btn_play {
+	color: #a6da95;
+	font-size : 35px;
+	font-weight : bold;
+	margin-left: -12px;
+}
+.btn_next {
+	color: #Eed49f;
+	font-size : 32px;
+	font-weight : normal;
+}
+
+
+/** Power buttons ***************************************/
+.btn_logout, .btn_lock, .btn_reboot, .btn_poweroff, .btn_suspend {
+	font-size : 30px;
+	font-weight : bold;
+  padding: 8px 0;
+}
+
+.btn_lock {
+	margin: 0px 0px 0px -5px;
+}
+.btn_logout {
+	margin: 0px 0px 0px -5px;
+}
+.btn_suspend {
+	margin: 0px 4px 0px -5px;
+}
+.btn_reboot {
+	margin: 0px 4px 0px -5px;
+}
+.btn_poweroff {
+	margin: 0px 4px 0px -8px;
+}
+
+
+
+
+/** EOF *************************************************/

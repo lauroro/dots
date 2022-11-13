@@ -1,0 +1,75 @@
+#!/bin/bash
+
+## Get data
+STATUS="$(playerctl status)"
+
+## Get status
+get_status() {
+	if [ "$STATUS" = "Playing" ]; then
+		echo ""
+	else
+		echo "喇"
+	fi
+}
+
+## Get song
+get_song() {
+  song="$(playerctl metadata xesam:title)"
+	if [[ -z "$song" ]]; then
+		echo "Offline"
+	else
+		echo "$song"
+	fi	
+}
+
+## Get artist
+get_artist() {
+	artist="$(playerctl metadata xesam:artist)"
+	if [[ -z "$artist" ]]; then
+		echo ""
+	else
+		echo "$artist"
+	fi	
+}
+
+
+## Get cover
+get_cover() {
+  if [ "$STATUS" = "Playing" ] || [ "$STATUS" == "Paused" ];then
+    echo "$(playerctl metadata mpris:artUrl)"
+  else
+    echo "img/music"
+  fi
+}
+
+## Toggle status
+toggle() {
+  playerctl play-pause
+}
+
+## Next
+next() {
+  playerctl next
+}
+
+## Previous
+previous() {
+  playerctl previous
+}
+
+## Execute accordingly
+if [[ "$1" == "--song" ]]; then
+	get_song
+elif [[ "$1" == "--artist" ]]; then
+	get_artist
+elif [[ "$1" == "--status" ]]; then
+	get_status
+elif [[ "$1" == "--cover" ]]; then
+	get_cover
+elif [[ "$1" == "--toggle" ]]; then
+	toggle
+elif [[ "$1" == "--next" ]]; then
+	next
+elif [[ "$1" == "--prev" ]]; then
+	previous
+fi

@@ -2,13 +2,17 @@
   border: none;
   border-radius: 0;
   font-family: Ubuntu Mono Nerd Font;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   min-height: 0;
 }
 
+*:hover {
+  background-color: transparent;
+}
+
 window#waybar {
-  background: #000000;
+  background: #030303;
   color: #dedede;
 }
 
@@ -18,6 +22,10 @@ tooltip {
   border-width: 2px;
   border-style: solid;
   border-color: #4f6580;
+}
+
+#workspaces {
+  margin-left: 8px;
 }
 
 #workspaces button {
@@ -43,6 +51,7 @@ tooltip {
 #workspaces button:hover {
   color: #000000;
   border-radius: 6px;
+  background-color: #8db5ca;
 }
 
 #clock, #battery, #pulseaudio, #network, #workspaces, #tray, #backlight {
@@ -55,10 +64,6 @@ tooltip {
   margin-right: 4px;
 }
 
-#workspaces {
-  margin-left: 4px;
-}
-
 #clock {
   border-radius: 6px;
 }
@@ -68,50 +73,25 @@ tooltip {
 }
 
 #pulseaudio {
+  margin-right:8px;
 }
 
 #battery{
   border-radius: 0 6px 6px 0;
-  margin-right: 4px;
+  margin-right: 0px;
 }
 
-#backlight{}
-
-#custom-spotify-metadata, #custom-spotify-play-pause, #custom-spotify-prev, #custom-spotify-next, #custom-spotify-quit {
-  color: #dedede;
-  padding: 0px 10px;
-
-}
-#custom-spotify-metadata {
-  margin-left: 8px;
-  border-radius: 6px 0px 0px 6px;
-}
-#custom-spotify-metadata.playing {
-  color: #dedede;
-}
-#custom-spotify-metadata.paused {
-  color: #dedede;
-}
-#custom-spotify-prev {
-  margin: 3px 0;
-}
-#custom-spotify-play-pause {
-  margin: 3px 0;
-}
-#custom-spotify-next {
-  margin: 3px 0;
-}
-#custom-spotify-quit {
-  margin: 3px 3px 3px 0;
-  border-radius: 0 6px 6px 0;
+#battery.warning{
+  border-radius: 0px;
+  border-bottom: 2px solid;
+  border-color: yellow;
+  margin-bottom: 3px;
 }
 
-#custom-powermenu {
-  padding-right: 8px;
-  padding-left: 12px
+#battery.critical{
+  border-radius: 0px;
+  border-bottom: 2px solid;
+  border-color: red;
+  margin-bottom: 3px;
 }
 
-#custom-launcher {
-  padding-right: 12px;
-  padding-left: 8px;
-}

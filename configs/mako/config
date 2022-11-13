@@ -1,12 +1,15 @@
 text-color=#dedede
-background-color=#121212
-border-color=#4f6580
-default-timeout=8000
-font=Ubuntu Mono Nerd Font 14
-border-radius=5
+background-color=#030303
+border-color=#8db5ca
+default-timeout=10000
+font=Ubuntu Mono Nerd Font 18
+border-radius=8
 border-size=2
-width=300
+width=350
+height=300
+anchor=top-left
 padding=18
+
 
 [urgency=high]
 border-color=#4f6580
