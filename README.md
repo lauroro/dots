@@ -1,15 +1,13 @@
 # hyprland-dotfiles
 My dotfiles for hyprland, a great wayland compositor
 
-## Screenshots [outdated]
-![mar 11 ott 2022, 00:01:27, CEST](https://user-images.githubusercontent.com/88981092/195025474-1b3eacb8-5a37-4c39-be81-093de3c27131.png)
-![mar 11 ott 2022, 00:40:36, CEST](https://user-images.githubusercontent.com/88981092/195025981-9399e0d8-5565-49fe-8ce7-5bdab804d4e0.png)
-![mar 11 ott 2022, 00:03:54, CEST](https://user-images.githubusercontent.com/88981092/195025530-3f51e0b7-d326-4e4f-bfba-f867ce025fda.png)
-![mar 11 ott 2022, 00:12:42, CEST](https://user-images.githubusercontent.com/88981092/195025558-f12a3aee-f635-4070-8789-e360ef8264c8.png)
-![mar 11 ott 2022, 00:12:23, CEST](https://user-images.githubusercontent.com/88981092/195025601-f62a0f45-5108-440b-b1e5-52e384cd3110.png)
-![mar 11 ott 2022, 00:13:12, CEST](https://user-images.githubusercontent.com/88981092/195025630-e681ba3e-1fc1-4078-8a7f-dd800fe71888.png)
-![mar 11 ott 2022, 00:11:57, CEST](https://user-images.githubusercontent.com/88981092/195025674-6e11148b-a224-482d-a326-71e5ccacd62e.png)
-![mar 11 ott 2022, 00:10:02, CEST](https://user-images.githubusercontent.com/88981092/195025811-5001fd2a-5819-427e-8616-9b8d67198306.png)
+## Screenshots
+![ven 18 nov 2022, 15:32:32, CET](https://user-images.githubusercontent.com/88981092/202730816-24804d84-7425-4a9e-b859-8576d9a85ce0.png)
+![ven 18 nov 2022, 15:33:02, CET](https://user-images.githubusercontent.com/88981092/202730908-c90b88f9-3d1a-4862-9ab0-57a4132d5918.png)
+![ven 18 nov 2022, 15:33:29, CET](https://user-images.githubusercontent.com/88981092/202730961-0a4a3f71-55f0-4f89-8a86-352f518072f1.png)
+![ven 18 nov 2022, 15:58:46, CET](https://user-images.githubusercontent.com/88981092/202734369-174cc853-56ff-4fa5-86e4-813b0f4e65d8.png)
+![ven 18 nov 2022, 15:34:20, CET](https://user-images.githubusercontent.com/88981092/202731134-858d0a4b-b6fa-442f-abe2-e960adc363f9.png)
+![ven 18 nov 2022, 15:31:48, CET](https://user-images.githubusercontent.com/88981092/202731176-cb771b59-148c-4e6d-a637-a3517bca2638.png)
 
 
 
