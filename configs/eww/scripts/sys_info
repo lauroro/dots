@@ -68,20 +68,20 @@ toggle_vol() {
 ## Get Volume Icon
 get_volicon() {
   MUTE="$(pactl get-sink-mute @DEFAULT_SINK@)"
-  if [[ "$MUTE" == "Mute: yes" ]]; then
-	  echo "婢"
+  if [[ "$MUTE" == "Mute: no" ]]; then
+	  echo "墳"
   else
-    echo "墳"
+    echo "婢"
   fi
 }
 
 ## Get Mic Icon
 get_micicon() {
   MUTE="$(pactl get-source-mute @DEFAULT_SOURCE@)"
-  if [[ "$MUTE" == "Mute: yes" ]]; then
-	  echo ""
+  if [[ "$MUTE" == "Mute: no" ]]; then
+	  echo ""
   else
-    echo ""
+    echo ""
   fi
 }
 

@@ -10,8 +10,7 @@
 .background {
 	background-color: #303446;
   border-radius: 12px;
-  //border: 1px solid #323232;
-  padding: 10px
+  padding: 10px;
 }
 
 
@@ -40,7 +39,12 @@
 
 /* Battery **********************************************/
 .battery {
+	padding-top: 30px;
   font-size:24px;
+}
+
+.baticon {
+	font-size: 26px;
 }
 
 /* Microphone *****************************************/

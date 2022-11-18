@@ -14,12 +14,19 @@ My dotfiles for hyprland, a great wayland compositor
 
 
 
+## Attention
+This setup is made for my own laptop, so, if you want to use it, be sure to look into some settings to adapt it to your machine. This means tweaking monitor resolution, waybar size, eww/dashboard positioning
 
 ## Dependencies
-**For Arch Linux with yay AUR helper**
-```
-yay -S hyprland-git swaybg grim slurp foot wofi waybar-hyprland-git mako ttf-ubuntumono-nerd brightnessctl libpulse zsh swayidle gvfs thunar xfce4-settings kimi-dark-gtk-theme-git file-roller starship networkmanager feh playerctl swaylock wl-clipboard xdg-user-dirs pfetch htop
-```
+**For Arch Linux**
+``` git, yay ```
+
+## Setup
+Run the script 
+``` setup.sh ```
+
+For gtk settings (theme, icons, cursor)
+https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
 
 
 Enable networkmanager:
@@ -30,7 +37,7 @@ sudo systemctl enable NetworkManager
 ## How to change background
 Copy the picture you want to set as background in your ```~/.config/hypr/``` folder.
 Change its name in ```background```.
-Press ```SUPER+SHIFT+b``` to change it now. It will be set automatically upon login. As a default the same background image will be used as the background in lockscreen.
+Press ```SUPER+b``` to change it now. It will be set automatically upon login. As a default the same background image will be used as the background in lockscreen.
 
 ## Some shortcuts
 ```SUPER+ENTER``` : foot

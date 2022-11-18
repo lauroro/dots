@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Files and cmd
+FILE="$HOME/.cache/eww_launch.dashboard"
+CFG="$HOME/.config/eww/dashboard"
+
+ 
+run_eww() {
+	if [[ ! `pidof eww` ]]; then
+		eww daemon
+		sleep 2
+	fi
+	eww --config "$CFG" open-many system music powerbuttons
+}
+
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	run_eww
+else
+	eww --config "$CFG" close system music powerbuttons
+	rm "$FILE"
+fi

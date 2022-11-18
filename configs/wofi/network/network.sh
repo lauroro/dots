@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-CFG="$HOME/.config/wofi/network/config"
+CFG="$HOME/.config/hypr/network/config"
 STYLE="$HOME/.config/wofi/style.css"
 
 

@@ -14,6 +14,7 @@
 window#waybar {
   background: #030303;
   color: #dedede;
+  border-radius: 12px;
 }
 
 tooltip {
@@ -29,7 +30,7 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 3px;
+  padding: 3px 10px 3px 3px;
   color: #434343;
   margin-right: 5px;
 }
@@ -38,10 +39,6 @@ tooltip {
   color: #dedede;
 }
 
-#workspaces button.focused {
-  color: #dedede;
-  border-radius: 6px;
-}
 
 #workspaces button.urgent {
   color: #0f0f0f;
@@ -51,7 +48,7 @@ tooltip {
 #workspaces button:hover {
   color: #000000;
   border-radius: 6px;
-  background-color: #8db5ca;
+  background-color: #dedede;
 }
 
 #clock, #battery, #pulseaudio, #network, #workspaces, #tray, #backlight {
