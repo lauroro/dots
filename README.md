@@ -7,7 +7,8 @@ My dotfiles for hyprland, a great wayland compositor
 ![gio 24 nov 2022, 10:04:07, CET](https://user-images.githubusercontent.com/88981092/203768523-deb4debf-ac76-44e3-897c-b148be1aad3f.png)
 ![gio 24 nov 2022, 10:04:36, CET](https://user-images.githubusercontent.com/88981092/203768539-f010b548-221d-431c-b582-e8a743cbba3c.png)
 ![gio 24 nov 2022, 10:04:55, CET](https://user-images.githubusercontent.com/88981092/203768565-008ce6e3-f87a-44bb-b817-a91a7ac082e8.png)
-![gio 24 nov 2022, 10:06:45, CET](https://user-images.githubusercontent.com/88981092/203768593-cab27eea-93f7-4d3d-9914-61c7fdd06051.png)
+![gio 24 nov 2022, 12:12:03, CET](https://user-images.githubusercontent.com/88981092/203770412-1dd04912-7e5f-4611-86a3-e1542c2dc880.png)
+
 
 
 
