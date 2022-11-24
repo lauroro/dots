@@ -4,7 +4,7 @@ font=Ubuntu Mono Nerd Font
 clock
 timestr=%R
 
-image=~/.config/hypr/background
+image=~/.config/background
 
 fade-in=0.2
 

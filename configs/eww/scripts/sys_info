@@ -17,7 +17,7 @@ get_battery() {
 }
 
 ## Get Battery Icon
-get_battery_icon() {
+get_baticon() {
   BAT=$(ls /sys/class/power_supply | grep BAT | head -n 1)
   BATSTATUS="$(cat /sys/class/power_supply/${BAT}/status)"
   BATVAL="$(cat /sys/class/power_supply/${BAT}/capacity)"
@@ -118,6 +118,14 @@ toggle_net() {
   fi
 }
 
+
+## System Tray
+sys_tray() {
+  network=$(get_net)
+  echo ${network::1} "" $(get_baticon) $(get_volicon)
+}
+
+
 ## MAIN
 if [[ "$1" == "--get-blight" ]]; then
 	get_blight
@@ -126,7 +134,7 @@ elif [[ "$1" == "--set-blight" ]]; then
 elif [[ "$1" == "--bat" ]]; then
 	get_battery
 elif [[ "$1" == "--baticon" ]]; then
-	get_battery_icon
+	get_baticon
 elif [[ "$1" == "--set-vol" ]]; then
 	set_vol "$2"
 elif [[ "$1" == "--get-vol" ]]; then
@@ -147,5 +155,7 @@ elif [[ "$1" == "--get-net" ]]; then
 	get_net
 elif [[ "$1" == "--toggle-net" ]]; then
 	toggle_net
+elif [[ "$1" == "--sys-tray" ]]; then
+	sys_tray
 fi
 

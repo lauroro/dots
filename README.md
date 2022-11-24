@@ -11,35 +11,51 @@ My dotfiles for hyprland, a great wayland compositor
 
 
 
-
-## Attention
-This setup is made for my own laptop, so, if you want to use it, be sure to look into some settings to adapt it to your machine. This means tweaking monitor resolution, waybar size, eww/dashboard positioning
-
 ## Dependencies
-**For Arch Linux**
-``` git, yay ```
+This config is made to be compatible with systemd-free OSs.
 
-## Setup
-Run the script 
-``` setup.sh ```
+### Packages
+```hyprland```                  : wayland compositor
+```swaybg```                    : background
+```swaylock-effetch```          : lock screen
+```swayidle```                  : for autolock and lock before suspend
+```grim, slurp```               : screenshots (both)
+```wl-clipboard```              : clipboard tool
+```mako```                      : notifications
+```xdg-user-dirs```             : for the usual home folders
+```wofi```                      : app-launcher and network menu
+```eww```                       : bar, dashboard, calendar
+```foot```                      : terminal emulator
+```Ubuntu Mono Nerd```          : nerd font, used everywhere
+```zsh```                       : shell
+```starship```                  : prompt tool
+```thunar```                    : gui file manager
+```gvfs```                      : required by thunar
+```file-roller```               : gui archive tool (also install thunar-archive-plugin for thunar integration)
+```gsettings-desktop-schemas``` : to change gtk theme
+```kimi-dark-gtk```             : gtk theme
+```pulseaudio```                : audio
+```playerctl```                 : mpris controller
+```networkmanager```            : networking
+```brightnessctl```             : backlight
+
 
 For gtk settings (theme, icons, cursor)
 https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
 
 
-Enable networkmanager:
-```
-sudo systemctl enable NetworkManager
-```
-
 ## How to change background
-Copy the picture you want to set as background in your ```~/.config/hypr/``` folder.
+Copy the picture you want to set as background in your ```~/.config/``` folder.
 Change its name in ```background```.
 Press ```SUPER+b``` to change it now. It will be set automatically upon login. As a default the same background image will be used as the background in lockscreen.
 
 ## Some shortcuts
 ```SUPER+ENTER``` : foot
+
 ```SUPER+SPACE``` : wofi launcher
+
 ```SUPER+n```     : wofi networkmenu
+
 ```SUPER+d```     : eww dashboard
+
 ```SUPER+t```     : thunar

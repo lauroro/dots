@@ -1,0 +1,34 @@
+(defpoll time :interval "20s"
+	`date +" %a %d %b %R"`)
+
+(deflisten workspaces :initial "(box (label :text \"        \" ))"
+	`python ../scripts/workspaces.py`)
+	
+	
+(defpoll systray :interval "1s" `bash ../scripts/sys_info --sys-tray`)
+
+
+
+(defwindow bar
+	:monitor 0
+	:windowtype "dock"
+	:geometry (geometry :width "100%" :anchor "top center")
+	:exclusive true	
+	(box :class "main-container" :space-evenly "true"
+		(box :halign "start"
+			(button :class "time" :onclick "bash ../scripts/launch_calendar"
+				(label :text "${time}"))
+		)
+		
+		
+		(box :class "workspaces" :haling "center"
+			(literal :content "${workspaces}"))
+			
+		(box :halign "end"
+			(button :class "systray" :onclick "bash ../scripts/launch_dashboard" 
+					:onmiddleclick "bash ../scripts/sys_info --toggle-vol"
+				(label :text "${systray}"))
+		)
+		
+	)
+)

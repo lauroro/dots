@@ -13,7 +13,6 @@ compinit
 
 #Aliases
 alias ls="ls --color"
-alias hx="helix"
 
 #Starship
 eval "$(starship init zsh)"

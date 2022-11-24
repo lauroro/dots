@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CFG="$HOME/.config/eww/bar"
+
+run_eww() {
+	eww daemon
+	until pid=$(pidof eww)
+	do
+		sleep 1
+	done
+	eww --config "$CFG" open bar --screen 0
+}
+
+run_eww

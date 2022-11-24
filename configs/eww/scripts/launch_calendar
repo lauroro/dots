@@ -1,14 +1,15 @@
 #!/bin/bash
 
 FILE="$HOME/.cache/eww_launch.calendar"
-EWW="eww -c $HOME/.config/eww/calendar"
+CFG="$HOME/.config/eww/calendar"
 
 run_eww() {
-	if [[ ! `pidof eww` ]]; then
-		${EWW} daemon
+	eww daemon
+	until pid=$(pidof eww)
+	do
 		sleep 1
-	fi
-	${EWW} open calendar --screen 0
+	done
+	eww --config "$CFG" open calendar --screen 0
 	}
 
 
@@ -16,6 +17,6 @@ if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
 	run_eww
 else
-	${EWW} close calendar
+	eww --config "$CFG" close calendar
 	rm "$FILE"
 fi

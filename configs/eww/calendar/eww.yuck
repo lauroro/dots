@@ -9,5 +9,5 @@
 
 ;; Windows
 (defwindow calendar
-	:geometry (geometry :y 8 :anchor "top center" :width "270px" :height "270px")
+	:geometry (geometry :y 8 :anchor "top left" :width "270px" :height "270px")
   (cal))
