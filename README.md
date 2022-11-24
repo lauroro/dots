@@ -2,12 +2,13 @@
 My dotfiles for hyprland, a great wayland compositor
 
 ## Screenshots
-![ven 18 nov 2022, 15:32:32, CET](https://user-images.githubusercontent.com/88981092/202730816-24804d84-7425-4a9e-b859-8576d9a85ce0.png)
-![ven 18 nov 2022, 15:33:02, CET](https://user-images.githubusercontent.com/88981092/202730908-c90b88f9-3d1a-4862-9ab0-57a4132d5918.png)
-![ven 18 nov 2022, 15:33:29, CET](https://user-images.githubusercontent.com/88981092/202730961-0a4a3f71-55f0-4f89-8a86-352f518072f1.png)
-![ven 18 nov 2022, 15:58:46, CET](https://user-images.githubusercontent.com/88981092/202734369-174cc853-56ff-4fa5-86e4-813b0f4e65d8.png)
-![ven 18 nov 2022, 15:34:20, CET](https://user-images.githubusercontent.com/88981092/202731134-858d0a4b-b6fa-442f-abe2-e960adc363f9.png)
-![ven 18 nov 2022, 15:31:48, CET](https://user-images.githubusercontent.com/88981092/202731176-cb771b59-148c-4e6d-a637-a3517bca2638.png)
+![gio 24 nov 2022, 09:59:46, CET](https://user-images.githubusercontent.com/88981092/203768404-a96f3470-a646-4c70-903d-530ccfc87d3f.png)
+![gio 24 nov 2022, 10:00:11, CET](https://user-images.githubusercontent.com/88981092/203768489-7f2846bc-fb1f-409d-a231-d7b0abbd0039.png)
+![gio 24 nov 2022, 10:04:07, CET](https://user-images.githubusercontent.com/88981092/203768523-deb4debf-ac76-44e3-897c-b148be1aad3f.png)
+![gio 24 nov 2022, 10:04:36, CET](https://user-images.githubusercontent.com/88981092/203768539-f010b548-221d-431c-b582-e8a743cbba3c.png)
+![gio 24 nov 2022, 10:04:55, CET](https://user-images.githubusercontent.com/88981092/203768565-008ce6e3-f87a-44bb-b817-a91a7ac082e8.png)
+![gio 24 nov 2022, 10:06:45, CET](https://user-images.githubusercontent.com/88981092/203768593-cab27eea-93f7-4d3d-9914-61c7fdd06051.png)
+
 
 
 
@@ -16,27 +17,49 @@ This config is made to be compatible with systemd-free OSs.
 
 ### Packages
 ```hyprland```                  : wayland compositor
+
 ```swaybg```                    : background
+
 ```swaylock-effetch```          : lock screen
+
 ```swayidle```                  : for autolock and lock before suspend
+
 ```grim, slurp```               : screenshots (both)
+
 ```wl-clipboard```              : clipboard tool
+
 ```mako```                      : notifications
+
 ```xdg-user-dirs```             : for the usual home folders
+
 ```wofi```                      : app-launcher and network menu
+
 ```eww```                       : bar, dashboard, calendar
+
 ```foot```                      : terminal emulator
+
 ```Ubuntu Mono Nerd```          : nerd font, used everywhere
+
 ```zsh```                       : shell
+
 ```starship```                  : prompt tool
+
 ```thunar```                    : gui file manager
+
 ```gvfs```                      : required by thunar
+
 ```file-roller```               : gui archive tool (also install thunar-archive-plugin for thunar integration)
+
 ```gsettings-desktop-schemas``` : to change gtk theme
+
 ```kimi-dark-gtk```             : gtk theme
+
 ```pulseaudio```                : audio
+
 ```playerctl```                 : mpris controller
+
 ```networkmanager```            : networking
+
 ```brightnessctl```             : backlight
 
 
