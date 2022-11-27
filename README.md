@@ -43,7 +43,7 @@ This config is made to be compatible with systemd-free OSs.
 
 ```zsh```                       : shell
 
-```starship```                  : prompt tool
+```oh-my-zsh```                 : prompt tool
 
 ```thunar```                    : gui file manager
 
@@ -61,7 +61,7 @@ This config is made to be compatible with systemd-free OSs.
 
 ```networkmanager```            : networking
 
-```brightnessctl```             : backlight
+```brightnessctl```             : backlight (add yourself to video group)
 
 
 For gtk settings (theme, icons, cursor)
