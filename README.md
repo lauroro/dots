@@ -21,7 +21,7 @@ This config is made to be compatible with systemd-free OSs.
 
 ```swaybg```                    : background
 
-```swaylock-effetch```          : lock screen
+```swaylock-effects```          : lock screen
 
 ```swayidle```                  : for autolock and lock before suspend
 
@@ -55,13 +55,13 @@ This config is made to be compatible with systemd-free OSs.
 
 ```kimi-dark-gtk```             : gtk theme
 
-```pulseaudio```                : audio
-
 ```playerctl```                 : mpris controller
 
 ```networkmanager```            : networking
 
 ```brightnessctl```             : backlight (add yourself to video group)
+
+```python3```                   : workspaces script
 
 
 For gtk settings (theme, icons, cursor)
