@@ -14,9 +14,7 @@ My dotfiles for hyprland, a great wayland compositor
 
 
 ## Dependencies
-This config is made to be compatible with systemd-free OSs.
 
-### Packages
 ```hyprland```                  : wayland compositor
 
 ```swaybg```                    : background
@@ -43,7 +41,7 @@ This config is made to be compatible with systemd-free OSs.
 
 ```zsh```                       : shell
 
-```starship```                  : prompt tool
+```starship```                  : prompt tool (append this on .zshrc : eval "$(starship init zsh)")
 
 ```thunar```                    : gui file manager
 

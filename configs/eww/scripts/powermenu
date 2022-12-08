@@ -5,9 +5,9 @@ if [[ "$1" == "--lock" ]]; then
 elif [[ "$1" == "--logout" ]]; then
 	loginctl kill-session self
 elif [[ "$1" == "--suspend" ]]; then
-	loginctl suspend
+	suspend
 elif [[ "$1" == "--reboot" ]]; then
-	loginctl reboot
+	reboot
 elif [[ "$1" == "--poweroff" ]]; then
-	loginctl poweroff
+	poweroff
 fi
