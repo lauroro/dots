@@ -2,15 +2,7 @@
 My dotfiles for hyprland, a great wayland compositor
 
 ## Screenshots
-![gio 24 nov 2022, 09:59:46, CET](https://user-images.githubusercontent.com/88981092/203768404-a96f3470-a646-4c70-903d-530ccfc87d3f.png)
-![gio 24 nov 2022, 10:00:11, CET](https://user-images.githubusercontent.com/88981092/203768489-7f2846bc-fb1f-409d-a231-d7b0abbd0039.png)
-![gio 24 nov 2022, 10:04:07, CET](https://user-images.githubusercontent.com/88981092/203768523-deb4debf-ac76-44e3-897c-b148be1aad3f.png)
-![gio 24 nov 2022, 10:04:36, CET](https://user-images.githubusercontent.com/88981092/203768539-f010b548-221d-431c-b582-e8a743cbba3c.png)
-![gio 24 nov 2022, 10:04:55, CET](https://user-images.githubusercontent.com/88981092/203768565-008ce6e3-f87a-44bb-b817-a91a7ac082e8.png)
-![gio 24 nov 2022, 12:12:03, CET](https://user-images.githubusercontent.com/88981092/203770412-1dd04912-7e5f-4611-86a3-e1542c2dc880.png)
-
-
-
+![combine_images(2)](https://user-images.githubusercontent.com/88981092/206405811-482a4ef6-af0d-4e4d-a1b8-4ba082dec349.jpg)
 
 
 ## Dependencies
