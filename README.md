@@ -43,7 +43,7 @@ This config is made to be compatible with systemd-free OSs.
 
 ```zsh```                       : shell
 
-```oh-my-zsh```                 : prompt tool
+```starship```                  : prompt tool
 
 ```thunar```                    : gui file manager
 
@@ -53,15 +53,15 @@ This config is made to be compatible with systemd-free OSs.
 
 ```gsettings-desktop-schemas``` : to change gtk theme
 
-```kimi-dark-gtk```             : gtk theme
+```Kripton-v40```               : gtk theme
+
+```Qogir```                     : cursor
 
 ```playerctl```                 : mpris controller
 
 ```networkmanager```            : networking
 
 ```brightnessctl```             : backlight (add yourself to video group)
-
-```python3```                   : workspaces script
 
 
 For gtk settings (theme, icons, cursor)
