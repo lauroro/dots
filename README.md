@@ -1,7 +1,7 @@
 # hyprland-dotfiles
-My dotfiles for hyprland, a great wayland compositor
+My dotfiles for hyprland, a great wayland compositor.
 
-## Screenshots
+## Screenshots [outdated]
 ![combine_images(2)](https://user-images.githubusercontent.com/88981092/206405811-482a4ef6-af0d-4e4d-a1b8-4ba082dec349.jpg)
 
 
@@ -25,17 +25,17 @@ My dotfiles for hyprland, a great wayland compositor
 
 ```wofi```                      : app-launcher and network menu
 
-```eww```                       : bar, dashboard, calendar
+```eww-wayland```               : bar, dashboard, calendar
 
 ```foot```                      : terminal emulator
 
-```Ubuntu Mono Nerd```          : nerd font, used everywhere
+```Ubuntu Mono Nerd Font```     : nerd font, used everywhere
 
 ```zsh```                       : shell
 
 ```starship```                  : prompt tool (append this on .zshrc : eval "$(starship init zsh)")
 
-```thunar```                    : gui file manager
+```thunar```                    : gui file manager, consider eventaul plugins...
 
 ```gvfs```                      : required by thunar
 
@@ -43,13 +43,13 @@ My dotfiles for hyprland, a great wayland compositor
 
 ```gsettings-desktop-schemas``` : to change gtk theme
 
-```Kripton-v40```               : gtk theme
+```Kripton```                   : gtk theme
 
-```Qogir```                     : cursor
+```Qogir-cursors```             : cursor-theme
 
 ```playerctl```                 : mpris controller
 
-```networkmanager```            : networking
+```networkmanager```            : networking, requires also polkit
 
 ```brightnessctl```             : backlight (add yourself to video group)
 
