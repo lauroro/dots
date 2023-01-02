@@ -8,7 +8,7 @@
 
 /** Background ***************************************/
 .background {
-	background-color: #303446;
+	background-color: #040404;
   border-radius: 12px;
   padding: 10px;
 }
@@ -40,7 +40,7 @@
 /* Battery **********************************************/
 .battery {
 	padding-top: 30px;
-  font-size:24px;
+  font-size:25px;
 }
 
 .baticon {
@@ -163,29 +163,49 @@
 }
 
 
+/** Calendar *******************************************/
+
+.cal {
+  padding: 5px 5px 0px 5px;
+  border: transparent;
+	font-size: 19px
+}
+
+calendar {
+  color: #777777;
+}
+
+calendar:selected {
+  color: #eeeeee;
+}
+
+calendar.header {
+  color: #a1bdce;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: #afbea2;
+}
+
+calendar.highlight {
+  color: #a1bdce;
+  font-weight: bold;
+}
+
+calendar:indeterminate {
+  color: #242424;
+}
+
+
+
+
 /** Power buttons ***************************************/
-.btn_logout, .btn_lock, .btn_reboot, .btn_poweroff, .btn_suspend {
-	font-size : 30px;
-	font-weight : bold;
-  padding: 8px 0;
-}
-
-.btn_lock {
-	margin: 0px 0px 0px -5px;
-}
-.btn_logout {
-	margin: 0px 0px 0px -5px;
-}
-.btn_suspend {
-	margin: 0px 4px 0px -5px;
-}
-.btn_reboot {
-	margin: 0px 4px 0px -5px;
-}
 .btn_poweroff {
-	margin: 0px 4px 0px -8px;
+	font-size : 25px;
+  padding: 8px 0;
+	margin: 0px 4px 0px -5px;
 }
-
 
 
 

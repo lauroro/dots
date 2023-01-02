@@ -7,51 +7,56 @@ My dotfiles for hyprland, a great wayland compositor.
 
 ## Dependencies
 
-```hyprland```                  : wayland compositor
+```hyprland```                                : wayland compositor
 
-```swaybg```                    : background
+```swaybg```                                  : background
 
-```swaylock-effects```          : lock screen
+```swaylock-effects```                        : lock screen
 
-```swayidle```                  : for autolock and lock before suspend
+```swayidle```                                : for autolock and lock before suspend
 
-```grim, slurp```               : screenshots (both)
+```grim, slurp```                             : screenshots (both)
 
-```wl-clipboard```              : clipboard tool
+```wl-clipboard```                            : clipboard tool
 
-```mako```                      : notifications
+```dunst```                                   : notifications
 
-```xdg-user-dirs```             : for the usual home folders
+```xdg-user-dirs```                           : for the usual home folders
 
-```wofi```                      : app-launcher and network menu
+```rofi```                                    : app-launcher and powermenu
 
-```eww-wayland```               : bar, dashboard, calendar
+```eww-wayland```                             : bar, dashboard
 
-```foot```                      : terminal emulator
+```foot```                                    : terminal emulator
 
-```Ubuntu Mono Nerd Font```     : nerd font, used everywhere
+```Ubuntu Mono Nerd Font```                   : nerd font, used everywhere
 
-```zsh```                       : shell
+```zsh```                                     : shell
 
-```starship```                  : prompt tool (append this on .zshrc : eval "$(starship init zsh)")
+```starship```                                : prompt tool (append this on .zshrc : eval "$(starship init zsh)")
 
-```thunar```                    : gui file manager, consider eventaul plugins...
+```thunar```                                  : gui file manager
 
-```gvfs```                      : required by thunar
+```thunar-volman, thunar-archive-plugin```    : thunar plugins
 
-```file-roller```               : gui archive tool (also install thunar-archive-plugin for thunar integration)
+```gvfs```                                    : required by thunar
 
-```gsettings-desktop-schemas``` : to change gtk theme
+```file-roller```                             : gui archive tool (also install thunar-archive-plugin for thunar integration)
 
-```Kripton```                   : gtk theme
+```gsettings-desktop-schemas, lxappearance``` : to change gtk and cursor themes
 
-```Qogir-cursors```             : cursor-theme
+```Kripton```                                 : gtk theme
 
-```playerctl```                 : mpris controller
+```Qogir-cursors```                           : cursor-theme
 
-```networkmanager```            : networking, requires also polkit
+```playerctl```                               : mpris controller
 
-```brightnessctl```             : backlight (add yourself to video group)
+```networkmanager, polkit, dbus```            : networking
+
+```brightnessctl```                           : backlight (add yourself to video group)
+
+```pulseaudio```                              : audio
+
 
 
 For gtk settings (theme, icons, cursor)

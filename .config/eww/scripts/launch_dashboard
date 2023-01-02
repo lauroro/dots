@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## Files and cmd
+FILE="$HOME/.cache/eww_launch.dashboard"
+CFG="$HOME/.config/eww/dashboard"
+
+ 
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	eww --config "$CFG" open dashboard
+ else
+ 	eww --config "$CFG" close dashboard
+ 	rm "$FILE"
+ fi

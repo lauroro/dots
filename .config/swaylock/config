@@ -8,12 +8,12 @@ image=~/.config/background
 
 fade-in=0.2
 
-effect-blur=15x2
+#effect-blur=15x2
 #effect-greyscale
-effect-scale=0.1
+#effect-scale=0.1
 
 indicator
-indicator-radius=150
+indicator-radius=110
 indicator-thickness=10
 indicator-caps-lock
 
