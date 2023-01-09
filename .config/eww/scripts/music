@@ -5,41 +5,53 @@ STATUS="$(playerctl status)"
 
 ## Get status
 get_status() {
-	if [ "$STATUS" = "Playing" ]; then
-		echo ""
-	else
-		echo "喇"
-	fi
+	while true; do
+		if [ "$(playerctl status)" = "Playing" ]; then
+			echo ""
+		else
+			echo "喇"
+		fi
+		sleep 1
+	done
 }
 
 ## Get song
 get_song() {
-  song="$(playerctl metadata xesam:title)"
-	if [[ -z "$song" ]]; then
-		echo "Offline"
-	else
-		echo "$song"
-	fi	
+	while true; do
+	  song="$(playerctl metadata xesam:title)"
+		if [[ -z "$song" ]]; then
+			echo "Offline"
+		else
+			echo "$song"
+		fi
+		sleep 1
+	done		
 }
 
 ## Get artist
 get_artist() {
-	artist="$(playerctl metadata xesam:artist)"
-	if [[ -z "$artist" ]]; then
-		echo ""
-	else
-		echo "$artist"
-	fi	
+	while true; do
+		artist="$(playerctl metadata xesam:artist)"
+		if [[ -z "$artist" ]]; then
+			echo ""
+		else
+			echo "$artist"
+		fi
+		sleep 1
+	done	
 }
 
 
 ## Get cover
 get_cover() {
-  if [ "$STATUS" = "Playing" ] || [ "$STATUS" == "Paused" ];then
-    echo "$(playerctl metadata mpris:artUrl)"
-  else
-    echo "img/music"
-  fi
+	while true; do
+	  if [ "$STATUS" = "Playing" ] || [ "$STATUS" == "Paused" ];then
+	    echo "$(playerctl metadata mpris:artUrl)"
+	  else
+	    echo "img/music"
+	  fi
+		sleep 1
+	done
 }
 
 ## Toggle status

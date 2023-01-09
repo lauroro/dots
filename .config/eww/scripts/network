@@ -1,0 +1,45 @@
+#!/bin/bash
+
+## Toggle state
+toggle() {
+  if [ -z "$(nmcli connection show --active)" ];then
+    nmcli radio wifi on
+  else
+    nmcli radio wifi off
+  fi
+}
+
+## Get Icon
+get_icon() {
+  while true; do
+    if [ -z "$(nmcli connection show --active)" ];then
+      echo "睊"
+    else
+      echo "直"
+    fi
+    sleep 5
+  done
+}
+
+## Get Status
+get_status() {  
+  while true; do
+    if [ -z "$(nmcli connection show --active)" ];then
+      echo "睊  Offline"
+    else 
+      echo "直  $(nmcli -t -f NAME connection show --active)"
+    fi
+    sleep 5
+  done
+}
+
+
+
+if [ "$1" = "--toggle" ]; then
+  toggle
+elif [ "$1" = "--icon" ]; then
+  get_icon
+else #default
+  get_status
+fi
+   

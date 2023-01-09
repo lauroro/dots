@@ -15,19 +15,19 @@ $shutdown" | rofi -dmenu -i -p "Powermenu" \
 
 if [ "$selected_option" == "$lock" ]
 then
-    swaylock
+  swaylock
 elif [ "$selected_option" == "$logout" ]
 then
-    loginctl terminate-user `whoami`
+  loginctl terminate-user `whoami`
 elif [ "$selected_option" == "$shutdown" ]
 then
-    loginctl poweroff
+  loginctl poweroff
 elif [ "$selected_option" == "$reboot" ]
 then
-    loginctl reboot
+  loginctl reboot
 elif [ "$selected_option" == "$sleep" ]
 then
-    loginctl suspend
+  loginctl suspend
 else
-    echo "No match"
+  echo "No match"
 fi

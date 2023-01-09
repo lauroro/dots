@@ -1,21 +1,21 @@
 ;; ** Variables ***********************************************************************
 
 ;; System vars
-(defpoll BLIGHT :interval "1s" `bash ../scripts/sys_info --get-blight`)
-(defpoll BATTERY :interval "5s" `bash ../scripts/sys_info --bat`)
-(defpoll BATTERYICON :interval "5s" `bash ../scripts/sys_info --baticon`)
-(defpoll VOLUME :interval "1s" `bash ../scripts/sys_info --get-vol`)
-(defpoll VOLUMEICON :interval "1s" `bash ../scripts/sys_info --get-volicon`)
-(defpoll MIC :interval "1s" `bash ../scripts/sys_info --get-mic`)
-(defpoll MICICON :interval "1s" `bash ../scripts/sys_info --get-micicon`)
-(defpoll NET :interval "1s" `bash ../scripts/sys_info --get-net`)
+(deflisten BLIGHT `bash ../scripts/backlight --get`)
+(deflisten BATTERY `bash ../scripts/battery --perc`)
+(deflisten BATTERYICON `bash ../scripts/battery --icon`)
+(deflisten VOLUME `bash ../scripts/audio --get-vol`)
+(deflisten VOLUMEICON `bash ../scripts/audio --get-volicon`)
+(deflisten MIC `bash ../scripts/audio --get-mic`)
+(deflisten MICICON `bash ../scripts/audio --get-micicon`)
+(deflisten NET `bash ../scripts/network`)
 
 
 ;; Music vars
-(defpoll SONG :interval "1s" `bash ../scripts/music --song`)
-(defpoll ARTIST :interval "1s" `bash ../scripts/music --artist`)
-(defpoll STATUS :interval "1s" `bash ../scripts/music --status`)
-(defpoll COVER :interval "1s" `bash ../scripts/music --cover`)
+(deflisten SONG `bash ../scripts/music --song`)
+(deflisten ARTIST `bash ../scripts/music --artist`)
+(deflisten STATUS `bash ../scripts/music --status`)
+(deflisten COVER `bash ../scripts/music --cover`)
 
 
 ;; Calendar vars
@@ -31,17 +31,17 @@
   (box :class "genwin" :vexpand "false" :hexpand "false" :width 325
 	(box :class "slidersbox" :orientation "v" :spacing 10 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
 	  (box :class "volume_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
-		(button :width 30 :onclick "bash ../scripts/sys_info --toggle-vol" 
+		(button :width 30 :onclick "bash ../scripts/audio --toggle-vol" 
           (label :class "iconvolume" :text VOLUMEICON))
-		(scale :min 0 :max 100 :value VOLUME :active "true" :onchange "bash ../scripts/sys_info --set-vol {}"))
+		(scale :min 0 :max 100 :value VOLUME :active "true" :onchange "bash ../scripts/audio --set-vol {}"))
       (box :class "mic_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
-		(button :width 30 :onclick "bash ../scripts/sys_info --toggle-mic" 
+		(button :width 30 :onclick "bash ../scripts/audio --toggle-mic" 
           (label :class "iconmic" :text MICICON))
-		(scale :min 0 :max 100 :value MIC :active "true" :onchange "bash ../scripts/sys_info --set-mic {}"))
+		(scale :min 0 :max 100 :value MIC :active "true" :onchange "bash ../scripts/audio --set-mic {}"))
       (box :class "bright_bar" :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
 		(button :width 30 :onclick "" 
 		  (label :width 30 :class "iconbright" :text ""))
-        (scale :min 0 :max 255 :value BLIGHT :active "true" :onchange "bash ../scripts/sys_info --set-blight {}")))))
+        (scale :min 0 :max 255 :value BLIGHT :active "true" :onchange "bash ../scripts/backlight --set {}")))))
 
 
 
@@ -56,7 +56,7 @@
 ;; network
 (defwidget network []
   (box :class "genwin" :vexpand "false" :hexpand "true" :orientation "h" :width 200
-	(button :class "btn_net" :onclick "bash ../scripts/sys_info --toggle-net" :onmiddleclick ""
+	(button :class "btn_net" :onclick "bash ../scripts/network --toggle" :onmiddleclick ""
       (label :class "network" :text NET))))
 
 
@@ -70,7 +70,7 @@
 ;; Power Button
 (defwidget powerbutton []
   (box :class "genwin" :vexpand "false" :hexpand "false" :width 60
-	(button :class "btn_poweroff" :onclick "bash $HOME/.config/rofi/powermenu.sh" "")))
+	(button :class "btn_poweroff" :onclick "bash ../scripts/powermenu" "")))
 
 
 

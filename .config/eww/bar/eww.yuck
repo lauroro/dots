@@ -1,11 +1,11 @@
-(defpoll time :interval "20s"
-	`date +" %a %d %b %R"`)
+(defpoll time :interval "20s" `date +" %a %d %b %R"`)
 
 (deflisten workspaces :initial "(box (label :text \"        \" ))"
 	`python ../scripts/workspaces.py`)
-	
-	
-(defpoll systray :interval "1s" `bash ../scripts/sys_info --sys-tray`)
+
+(deflisten volume `bash ../scripts/audio --get-volicon`)
+(deflisten network `bash ../scripts/network --icon`)
+(deflisten battery `bash ../scripts/battery --icon`)
 
 
 
@@ -16,19 +16,16 @@
 	:exclusive true	
 	(box :class "main-container" :space-evenly "true"
 		(box :halign "start"
-			(button :class "time" :onclick "bash ../scripts/launch_calendar"
-				(label :text "${time}"))
+			(label :text "${time}")
 		)
-		
 		
 		(box :class "workspaces" :haling "center"
 			(literal :content "${workspaces}"))
 			
 		(box :halign "end"
-			(button :class "systray" :onclick "bash ../scripts/launch_dashboard" 
-					:onmiddleclick "bash ../scripts/sys_info --toggle-vol"
-				(label :text "${systray}"))
-		)
-		
+			(button :class "systray"
+					:onclick "bash ../scripts/launch_dashboard" 
+					:onmiddleclick "bash ../scripts/audio --toggle-vol"
+				(label :text "${network}  ${battery} ${volume}")))
 	)
 )

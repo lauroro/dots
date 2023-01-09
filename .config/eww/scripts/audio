@@ -1,0 +1,86 @@
+#!/bin/bash
+
+## Get Volume
+get_vol() {
+	while true; do
+  	pactl list sinks | grep '^[[:space:]]Volume:' | \
+    	head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+	sleep 1
+	done
+}
+
+## Set Volume
+set_vol() {
+  pactl set-sink-volume @DEFAULT_SINK@ $1%
+}
+
+## Toggle Volume
+toggle_vol() {
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+}
+
+## Get Volume Icon
+#TODO: different icons according to volume level, maybe
+get_volicon() {
+	while true; do
+  	MUTE="$(pactl get-sink-mute @DEFAULT_SINK@)"
+  	if [[ "$MUTE" == "Mute: no" ]]; then
+	  	echo "墳"
+  	else
+    	echo "婢"
+  	fi
+		sleep 1
+	done
+}
+
+## Get Mic Icon
+get_micicon() {
+	while true; do
+  	MUTE="$(pactl get-source-mute @DEFAULT_SOURCE@)"
+  	if [[ "$MUTE" == "Mute: no" ]]; then
+	 		echo ""
+  	else
+    	echo ""
+  	fi
+		sleep 2
+	done
+}
+
+## Toggle Mic
+toggle_mic() {
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+}
+
+## Get Mic
+get_mic() {
+	while true; do
+  	pactl get-source-volume @DEFAULT_SOURCE@ | grep -e '%' | sed 's/ //g' | cut -d "/" -f 2 | sed 's/%//'
+		sleep 1
+	done
+}
+
+## Set Mic
+set_mic() {
+  pactl set-source-volume @DEFAULT_SOURCE@ $1%
+}
+
+
+
+
+if [[ "$1" == "--set-vol" ]]; then
+	set_vol "$2"
+elif [[ "$1" == "--get-vol" ]]; then
+	get_vol
+elif [[ "$1" == "--toggle-vol" ]]; then
+	toggle_vol
+elif [[ "$1" == "--get-volicon" ]]; then
+	get_volicon
+elif [[ "$1" == "--get-micicon" ]]; then
+	get_micicon
+elif [[ "$1" == "--toggle-mic" ]]; then
+	toggle_mic
+elif [[ "$1" == "--get-mic" ]]; then
+	get_mic
+elif [[ "$1" == "--set-mic" ]]; then
+	set_mic "$2"
+fi

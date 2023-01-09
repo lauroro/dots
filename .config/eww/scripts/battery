@@ -1,0 +1,55 @@
+#!/bin/bash
+
+
+## Get Battery 
+get_percentage() {
+  while true; do
+    BAT=$(ls /sys/class/power_supply | grep BAT | head -n 1)
+    echo "$(cat /sys/class/power_supply/${BAT}/capacity)%"
+    sleep 3
+  done
+}
+
+## Get Battery Icon
+get_icon() {
+  while true; do
+    BAT=$(ls /sys/class/power_supply | grep BAT | head -n 1)
+    BATSTATUS="$(cat /sys/class/power_supply/${BAT}/status)"
+    BATVAL="$(cat /sys/class/power_supply/${BAT}/capacity)"
+
+    if [[ "$BATSTATUS" == "Discharging" ]];then
+      if [ "$BATVAL" -gt 90 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 80 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 70 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 60 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 50 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 40 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 30 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 20 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 10 ];then
+        echo ""
+      elif [ "$BATVAL" -gt 0 ];then
+        echo ""
+      fi
+     else
+      echo ""
+    fi
+    sleep 3
+  done
+}
+
+
+if [[ "$1" == "--perc" ]]; then
+	get_percentage
+elif [[ "$1" == "--icon" ]]; then
+	get_icon
+fi
+

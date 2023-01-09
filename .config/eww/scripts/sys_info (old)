@@ -1,0 +1,161 @@
+#!/bin/bash
+
+
+## Get Brightness
+get_blight() {
+  echo "$(brightnessctl get)"	
+}
+
+## Set Brightness
+set_blight() {
+  brightnessctl set $1
+}
+## Get Battery 
+get_battery() {
+  BAT=$(ls /sys/class/power_supply | grep BAT | head -n 1)
+  echo "$(cat /sys/class/power_supply/${BAT}/capacity)%"
+}
+
+## Get Battery Icon
+get_baticon() {
+  BAT=$(ls /sys/class/power_supply | grep BAT | head -n 1)
+  BATSTATUS="$(cat /sys/class/power_supply/${BAT}/status)"
+  BATVAL="$(cat /sys/class/power_supply/${BAT}/capacity)"
+
+  if [[ "$BATSTATUS" == "Discharging" ]];then
+    if [ "$BATVAL" -gt 90 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 80 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 70 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 60 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 50 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 40 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 30 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 20 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 10 ];then
+      echo ""
+    elif [ "$BATVAL" -gt 0 ];then
+      echo ""
+    fi
+   else
+    echo ""
+  fi
+}
+
+## Get Volume
+get_vol() {
+  pactl list sinks | grep '^[[:space:]]Volume:' | \
+    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+}
+
+## Set Volume
+set_vol() {
+  pactl set-sink-volume @DEFAULT_SINK@ $1%
+}
+
+## Toggle Volume
+toggle_vol() {
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+}
+
+## Get Volume Icon
+get_volicon() {
+  MUTE="$(pactl get-sink-mute @DEFAULT_SINK@)"
+  if [[ "$MUTE" == "Mute: no" ]]; then
+	  echo "墳"
+  else
+    echo "婢"
+  fi
+}
+
+## Get Mic Icon
+get_micicon() {
+  MUTE="$(pactl get-source-mute @DEFAULT_SOURCE@)"
+  if [[ "$MUTE" == "Mute: no" ]]; then
+	  echo ""
+  else
+    echo ""
+  fi
+}
+
+## Toggle Mic
+toggle_mic() {
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+}
+
+## Get Mic
+get_mic() {
+  pactl get-source-volume @DEFAULT_SOURCE@ | grep -e '%' | sed 's/ //g' | cut -d "/" -f 2 | sed 's/%//'
+}
+
+## Set Mic
+set_mic() {
+  pactl set-source-volume @DEFAULT_SOURCE@ $1%
+}
+
+## Get Net
+get_net() {
+   if [ -z "$(nmcli connection show --active)" ];then
+    echo "睊  Offline"
+  else
+    echo "直  $(nmcli -t -f NAME connection show --active)"
+  fi
+}
+
+## Toggle Net
+toggle_net() {
+  if [ -z "$(nmcli connection show --active)" ];then
+    nmcli radio wifi on
+  else
+    nmcli radio wifi off
+  fi
+}
+
+
+## System Tray
+sys_tray() {
+  network=$(get_net)
+  echo ${network::1} "" $(get_baticon) $(get_volicon)
+}
+
+
+## MAIN
+if [[ "$1" == "--get-blight" ]]; then
+	get_blight
+elif [[ "$1" == "--set-blight" ]]; then
+	set_blight "$2"
+elif [[ "$1" == "--bat" ]]; then
+	get_battery
+elif [[ "$1" == "--baticon" ]]; then
+	get_baticon
+elif [[ "$1" == "--set-vol" ]]; then
+	set_vol "$2"
+elif [[ "$1" == "--get-vol" ]]; then
+	get_vol
+elif [[ "$1" == "--toggle-vol" ]]; then
+	toggle_vol
+elif [[ "$1" == "--get-volicon" ]]; then
+	get_volicon
+elif [[ "$1" == "--get-micicon" ]]; then
+	get_micicon
+elif [[ "$1" == "--toggle-mic" ]]; then
+	toggle_mic
+elif [[ "$1" == "--get-mic" ]]; then
+	get_mic
+elif [[ "$1" == "--set-mic" ]]; then
+	set_mic "$2"
+elif [[ "$1" == "--get-net" ]]; then
+	get_net
+elif [[ "$1" == "--toggle-net" ]]; then
+	toggle_net
+elif [[ "$1" == "--sys-tray" ]]; then
+	sys_tray
+fi
+
