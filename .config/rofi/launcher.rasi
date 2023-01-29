@@ -17,7 +17,7 @@ configuration {
     alternate-background:        var(selected);
 	alternate-foreground:		 var(background);
 
-    font:                        "Ubuntu Mono Nerd Font 15";
+    font:                        "JetBrains Mono Nerd Font 15";
 }
 
 /*****----- Main Window -----*****/

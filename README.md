@@ -23,13 +23,15 @@ My dotfiles for hyprland, a great wayland compositor.
 
 ```xdg-user-dirs```                           : for the usual home folders
 
-```rofi```                                    : app-launcher and powermenu
+```rofi-wayland```                            : app-launcher and powermenu
+
+```viewnior```                                : img viewer
 
 ```eww-wayland```                             : bar, dashboard
 
 ```foot```                                    : terminal emulator
 
-```Ubuntu Mono Nerd Font```                   : nerd font, used everywhere
+```JetBrains Mono Nerd Font```                : nerd font, used everywhere
 
 ```zsh```                                     : shell
 
@@ -55,7 +57,7 @@ My dotfiles for hyprland, a great wayland compositor.
 
 ```brightnessctl```                           : backlight (add yourself to video group)
 
-```pulseaudio```                              : audio
+```helix```                                   : text editor
 
 
 
@@ -71,9 +73,9 @@ Press ```SUPER+b``` to change it now. It will be set automatically upon login. A
 ## Some shortcuts
 ```SUPER+ENTER``` : foot
 
-```SUPER+SPACE``` : wofi launcher
+```SUPER+SPACE``` : rofi launcher
 
-```SUPER+n```     : wofi networkmenu
+```SUPER+d```     : rofi powermenu
 
 ```SUPER+d```     : eww dashboard
 

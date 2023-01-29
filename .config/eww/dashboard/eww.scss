@@ -1,7 +1,7 @@
 /** Global *******************************************/
 *{
 	all: unset;
-	font-family: Ubuntu Mono Nerd Font;
+	font-family: 'JetBrains Mono Nerd Font';
   color: #7c94bf;
 }
 
@@ -27,20 +27,20 @@
 }
 
 .network {
-  font-size: 22px;
+  font-size: 20px;
   /*color: #f7e1d3;*/
 }
 
 
 /* Bluetooth ******************************************/
 .btn_bluet {
-  font-size: 22px
+  font-size: 20px
 }
 
 /* Battery **********************************************/
 .battery {
 	padding-top: 30px;
-  font-size:25px;
+  font-size:20px;
 }
 
 .baticon {
@@ -59,7 +59,7 @@
 }
 
 .iconbright {
-	font-size : 32px;
+	font-size : 24px;
 	font-weight : normal;
   /*color: #eed49f;*/
 }
@@ -81,7 +81,7 @@
 }
 
 .iconvolume {
-	font-size : 32px;
+	font-size : 28px;
 	font-weight : normal;
   margin-left: 4px;
 }
@@ -102,7 +102,7 @@
 }
 
 .iconmic {
-	font-size : 32px;
+	font-size : 28px;
 	font-weight : normal;
   margin-left: 4px;
 }
@@ -134,7 +134,7 @@
 
 .song {
 	color: #8FBCBB;
-	font-size : 23px;
+	font-size : 20px;
 	font-weight : bold;
 	margin : 30px 0px 0px 0px;
 }
@@ -168,7 +168,7 @@
 .cal {
   padding: 5px 5px 0px 5px;
   border: transparent;
-	font-size: 19px
+	font-size: 17px
 }
 
 calendar {

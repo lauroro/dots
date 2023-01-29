@@ -32,8 +32,8 @@
     #geometry = "300x60+15+46"
     width = 300
     height = 60
-    origin = top-left
-    offset = 5x5
+    origin = bottom-left
+    offset = 3x3
 
     notification_limit = 9
 
@@ -92,7 +92,7 @@
 
     ### Text ###
 
-    font = Ubuntu Mono Nerd Font 14
+    font = JetBrains Mono Nerd Font 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.

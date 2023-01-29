@@ -1,0 +1,32 @@
+theme = "mytheme"
+
+[editor]
+scroll-lines = 1
+color-modes = true
+bufferline = "multiple"
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+
+[editor.file-picker]
+hidden = false
+
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-type"]
+separator = "│"
+
+
+
+[keys.normal]
+C-s = ":w"
+C-q = ":q"
+A-left = ":bp"
+A-right = ":bn"
+A-q = ":bc"
