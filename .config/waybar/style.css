@@ -1,0 +1,122 @@
+@define-color base #282828;
+@define-color text #7c6f64;
+@define-color accent #d4be98;
+@define-color dark-accent #504945;
+@define-color hover-background #32302f;
+@define-color warning yellow;
+@define-color critical red;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: JetBrains Mono Nerd Font;
+  font-size: 14px;
+  min-height: 0;
+}
+
+*:hover {
+  background-color: transparent;
+}
+
+window#waybar {
+  background: @base;
+  color: @text;
+  border-radius: 0px;
+}
+
+tooltip {
+  background: @base;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @text;
+}
+
+tooltip * {
+  color: @text;
+}
+
+
+#workspaces {
+  padding: 0px;
+  margin-left: 0px;
+  background-color: transparent;
+}
+
+#workspaces button {
+  background-color: transparent;
+  color: @accent;
+  margin: 0;
+  padding: 0px;
+  min-width: 24px;
+  border-bottom: 1px solid transparent;
+  border-radius: 0px;
+}
+
+#workspaces button:hover {
+  color: @accent;
+  background-color: @hover-background;
+}
+
+#workspaces button.empty {
+  color: @dark-accent;
+}
+
+#workspaces button.active {
+  color: @accent;
+  background-color: @hover-background;
+  border-bottom: 1px solid @accent;
+}
+
+
+#idle_inhibitor,
+#clock,
+#battery,
+#wireplumber,
+#network,
+#tray,
+#backlight {
+  padding: 6px 8px;
+}
+
+#tray {
+  border-radius: 6px;
+  margin-right: 4px;
+}
+
+#clock {
+  border-radius: 6px;
+}
+
+#network {
+  border-radius: 6px 0px 0px 6px;
+}
+
+#wireplumber {
+  margin-right: 8px;
+}
+
+#battery {
+  border-radius: 0 6px 6px 0;
+  margin-right: 0px;
+}
+
+#battery.warning,
+#battery.critical {
+  border-radius: 0px;
+  border-bottom: 2px solid;
+  margin-bottom: 3px;
+}
+
+#battery.warning {
+  border-color: @warning;
+}
+
+#battery.critical {
+  border-color: @critical;
+}
+
+#custom-notifications {
+  padding-right: 10px;
+  font-size: 14px;
+}

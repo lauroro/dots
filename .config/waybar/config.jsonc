@@ -1,0 +1,107 @@
+{
+  "position": "top",
+  "layer": "top",
+
+  "modules-left": [
+		"hyprland/workspaces",
+	],
+  "modules-center": [],
+  "modules-right": [
+		"idle_inhibitor",
+    "network",
+    "battery",
+    "backlight",
+    "wireplumber",
+    "clock",
+    "tray",
+  ],
+
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"persistent-workspaces": {
+			"DP-1": [1, 2, 3, 4, 5],
+			"HDMI-A-2": [6, 7, 8, 9],
+    },
+	},
+
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "󰅶 on  ",
+			"deactivated": "󰛊 off "
+		}
+	},
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+
+  "battery": {
+    "states": {
+      //"good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": " {icon} {capacity}% ",
+    "format-charging": " 󰂄 {capacity}% ",
+    "format-alt": " {icon} {capacity}% ",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "",
+  },
+
+  "clock": {
+		"locale": "it_IT.UTF-8",
+    "format": "{:L%a %d %b [%R]}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#928374'><b>{}</b></span>",
+        "weekdays": "<span color='#7c6f64'><b>{}</b></span>",
+        "today": "<span color='#1b1b1b' background='#928374'><b>{}</b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+    },
+    "tooltip": true,
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": " Offline",
+    "tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}",
+  },
+
+  "wireplumber": {
+    "tooltip": false,
+    "format": "{icon} {volume}%",
+    "format-muted": "  Muted",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-bluetooth": " {volume}% {format_source}",
+    "format-bluetooth-muted": "󰂲 {format_source}",
+    "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", " "],
+    },
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}% ",
+    "format-icons": ["", "󰖨"],
+    "tooltip": false,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "   {}% ",
+    "max-length": 10,
+  },
+}
