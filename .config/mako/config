@@ -1,6 +1,6 @@
 sort=-time
 layer=overlay
-width=300
+width=220
 height=150
 padding=8
 border-size=2
@@ -10,9 +10,11 @@ max-icon-size=34
 default-timeout=0
 ignore-timeout=1
 font=JetBrainsMono Nerd Font 10
-background-color=#32302f
-border-color=#a89984
-text-color=#d4be98
+
+background-color=#282828
+text-color=#928374
+border-color=#928374
+
 on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 

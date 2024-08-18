@@ -43,3 +43,6 @@ vim.opt.timeoutlen = 300
 
 -- cursorline
 vim.opt.cursorline = true
+
+-- hide cmd line
+vim.opt.cmdheight = 0

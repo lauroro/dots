@@ -1,10 +1,8 @@
-@define-color base #282828;
-@define-color text #7c6f64;
-@define-color accent #d4be98;
-@define-color dark-accent #504945;
+@define-color base #252423;
+@define-color text #928374;
 @define-color hover-background #32302f;
-@define-color warning yellow;
-@define-color critical red;
+@define-color warning #d8a657;
+@define-color critical #ea6962;
 
 * {
   border: none;
@@ -36,7 +34,6 @@ tooltip * {
   color: @text;
 }
 
-
 #workspaces {
   padding: 0px;
   margin-left: 0px;
@@ -44,8 +41,8 @@ tooltip * {
 }
 
 #workspaces button {
+	color: @text;
   background-color: transparent;
-  color: @accent;
   margin: 0;
   padding: 0px;
   min-width: 24px;
@@ -54,18 +51,12 @@ tooltip * {
 }
 
 #workspaces button:hover {
-  color: @accent;
   background-color: @hover-background;
 }
 
-#workspaces button.empty {
-  color: @dark-accent;
-}
-
-#workspaces button.active {
-  color: @accent;
+#workspaces button.focused {
   background-color: @hover-background;
-  border-bottom: 1px solid @accent;
+  border-bottom: 1px solid @text;
 }
 
 
@@ -114,9 +105,4 @@ tooltip * {
 
 #battery.critical {
   border-color: @critical;
-}
-
-#custom-notifications {
-  padding-right: 10px;
-  font-size: 14px;
 }

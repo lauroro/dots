@@ -3,7 +3,7 @@
   "layer": "top",
 
   "modules-left": [
-		"hyprland/workspaces",
+		"sway/workspaces",
 	],
   "modules-center": [],
   "modules-right": [
@@ -16,12 +16,8 @@
     "tray",
   ],
 
-	"hyprland/workspaces": {
+	"sway/workspaces": {
 		"disable-scroll": true,
-		"persistent-workspaces": {
-			"DP-1": [1, 2, 3, 4, 5],
-			"HDMI-A-2": [6, 7, 8, 9],
-    },
 	},
 
 	"idle_inhibitor": {
@@ -53,7 +49,7 @@
   "clock": {
 		"locale": "it_IT.UTF-8",
     "format": "{:L%a %d %b [%R]}",
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode-mon-col": 3,
       "on-click-right": "mode",
@@ -97,11 +93,5 @@
     "format": "{icon} {percent}% ",
     "format-icons": ["", "󰖨"],
     "tooltip": false,
-  },
-
-  "memory": {
-    "interval": 30,
-    "format": "   {}% ",
-    "max-length": 10,
   },
 }

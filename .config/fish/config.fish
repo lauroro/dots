@@ -3,3 +3,4 @@ if status is-interactive
 end
 
 set fish_greeting ""
+fish_config theme choose fish\ default

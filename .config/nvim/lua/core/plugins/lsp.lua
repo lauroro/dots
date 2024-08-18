@@ -3,7 +3,7 @@ local servers = {
 	"lua_ls",
 	--"gopls",
 	"pylsp",
-	"tsserver",
+	--"tsserver",
 }
 
 return {
@@ -37,7 +37,7 @@ return {
 			-- servers setup
 			for _, server in ipairs(servers) do
 				lspconfig[server].setup({
-					capabilities = capabilities
+					capabilities = capabilities,
 				})
 			end
 

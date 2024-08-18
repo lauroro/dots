@@ -1,0 +1,72 @@
+#!/bin/sh
+
+### On launch ###
+riverctl spawn 'swaybg -i ~/.config/wallpaper'
+riverctl spawn mako
+riverctl spawn waybar
+riverctl spawn pipewire
+riverctl spawn wireplumber
+riverctl spawn "swayidle -w \
+  timeout 300   'gtklock -d' \
+  timeout 310 	'brightnessctl -s s 0%' \
+  resume       	'brightnessctl -r' \
+  before-sleep  'gtklock -d; sleep 1'"
+
+
+### Window Manager ###
+#riverctl background-color 0x32302f
+riverctl border-color-focused 0x928374
+riverctl border-color-unfocused 0x45403d 
+
+riverctl set-repeat 50 300
+
+riverctl focus-follows-cursor normal
+riverctl set-cursor-warp on-output-change  
+riverctl default-attach-mode bottom
+
+riverctl default-layout rivertile
+rivertile -view-padding 4 -outer-padding 4 &
+rivertile -main-ratio 0.6
+
+
+###  Inputs ###
+riverctl input pointer-1267-128-Elan_Touchpad tap enabled
+riverctl input pointer-1267-128-Elan_Touchpad natural-scroll enabled
+
+
+### Keymaps ###
+riverctl keyboard-layout us
+riverctl map normal Super Q close
+riverctl map normal Super+Shift E exit
+riverctl map normal Super Return spawn foot
+riverctl map normal Super Space spawn 'fuzzel --no-icons'
+riverctl map normal Super P spawn '/home/$USER/.config/fuzzel/powermenu.sh'
+riverctl map normal Super E spawn thunar
+riverctl map normal Super Z zoom
+riverctl map normal Super M toggle-fullscreen
+riverctl map normal Super F toggle-float
+riverctl map normal Super Down focus-view next
+riverctl map normal Super Up focus-view previous
+riverctl map normal Super+Shift Down swap next
+riverctl map normal Super+Shift Up swap previous
+riverctl map normal Alt Left send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Alt Right send-layout-cmd rivertile "main-ratio +0.05"
+
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+
+for i in $(seq 1 5)
+do
+    tags=$((1 << ($i - 1)))
+
+    riverctl map normal Super $i set-focused-tags $tags
+    riverctl map normal Super+Shift $i set-view-tags $tags
+done
+
+riverctl map normal Super Period focus-output next
+riverctl map normal Super Comma focus-output previous
+
+
+### Rules ###
+riverctl rule-add -app-id firefox ssd
+riverctl rule-add -app-id thunar ssd

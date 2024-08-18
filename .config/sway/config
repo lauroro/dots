@@ -1,0 +1,210 @@
+### Variables
+#
+set $mod Mod4
+set $left Left
+set $down Down
+set $up Up
+set $right Right
+set $term foot
+set $launcher fuzzel --no-icons
+set $powermenu $HOME/.config/sway/scripts/powermenu.sh
+set $filemanager thunar
+set $resize $HOME/.config/sway/scripts/resize.sh
+set $envs $HOME/.config/sway/scripts/envs.sh
+
+### Bg processes
+#xwayland disable
+exec mako
+exec pipewire
+exec pipewire-pulse
+exec wireplumber
+exec autotiling
+
+### Output configuration
+output * bg $HOME/.config/wallpaper fill
+output DP-1 res 1920x1080@144Hz
+
+# Assign workspaces 1-5 to main monitor
+workspace 1 output eDP-1
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+
+# Assign workspaces 6-9 to external monitor
+workspace 6 output HDMI-A-2
+workspace 7 output HDMI-A-2
+workspace 8 output HDMI-A-2
+workspace 9 output HDMI-A-2
+
+### Idle configuration
+exec $HOME/.config/sway/scripts/idle.sh
+
+### Input configuration
+input type:touchpad {
+  dwt enabled
+  tap enabled
+	natural_scroll enabled
+  middle_emulation enabled
+}
+
+input type:keyboard {
+	xkb_layout us
+  xkb_options compose:caps
+}
+
+### Key bindings
+#
+# Basics:
+#
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start your launcher
+bindsym $mod+Space exec $launcher
+
+# Powermenu
+bindsym $mod+p exec $powermenu
+
+# File Manager
+bindsym $mod+e exec $filemanager
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
+
+# Screenshot
+bindsym $mod+Print exec grim
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" 
+
+#
+# Moving around:
+#
+# Drag windows
+floating_modifier $mod normal
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left mark swap, focus left, swap container with mark swap, unmark swap, focus left
+bindsym $mod+Shift+$down mark swap, focus down, swap container with mark swap, unmark swap, focus down
+bindsym $mod+Shift+$up mark swap, focus up, swap container with mark swap, unmark swap, focus up
+bindsym $mod+Shift+$right mark swap, focus right, swap container with mark swap, unmark swap, focus right
+
+#
+# Resize
+#
+# Resize with Alt + arrow key
+bindsym Mod1+$left exec $resize left 40px
+bindsym Mod1+$down exec $resize down 40px
+bindsym Mod1+$up exec $resize up 40px
+bindsym Mod1+$right exec $resize right 40px
+
+
+# Workspaces:
+#
+# Switch to workspace on specific output
+bindsym $mod+1 workspace number 1; output eDP-1
+bindsym $mod+2 workspace number 2; output eDP-1
+bindsym $mod+3 workspace number 3; output eDP-1
+bindsym $mod+4 workspace number 4; output eDP-1
+bindsym $mod+5 workspace number 5; output eDP-1
+bindsym $mod+6 workspace number 6; output HDMI-A-1
+bindsym $mod+7 workspace number 7; output HDMI-A-1
+bindsym $mod+8 workspace number 8; output HDMI-A-1
+bindsym $mod+9 workspace number 9; output HDMI-A-1
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+
+#
+# Layout stuff:
+#
+#bindsym $mod+b splith
+#bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+m fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+f floating toggle
+
+# Swap focus between the tiling area and the floating area
+#bindsym $mod+space focus mode_toggle
+
+
+
+# Media keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+
+#
+# Status Bar:
+#
+bar {
+	swaybar_command waybar
+}
+
+# Gaps
+#smart_borders on
+#smart_gaps on
+gaps outer 3
+gaps inner 6
+
+# Title Bars
+for_window [title="^.*"] title_format ""
+default_border pixel 2
+default_floating_border pixel 2
+
+
+# Colors
+set $cl_high #928374
+set $cl_indi #928374
+set $cl_back #252423
+set $cl_fore #32302f
+set $cl_urge #ea6962
+
+#                       border   bg       text     indi     childborder
+client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
+client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+
+# Themes
+exec_always {
+  $HOME/.config/sway/scripts/theming.sh
+}
+
+
+include /etc/sway/config.d/*
