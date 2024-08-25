@@ -30,17 +30,12 @@ workspace 2 output eDP-1
 workspace 3 output eDP-1
 workspace 4 output eDP-1
 workspace 5 output eDP-1
-workspace 1 output DP-1
-workspace 2 output DP-1
-workspace 3 output DP-1
-workspace 4 output DP-1
-workspace 5 output DP-1
 
 # Assign workspaces 6-9 to external monitor
-workspace 6 output HDMI-A-2
-workspace 7 output HDMI-A-2
-workspace 8 output HDMI-A-2
-workspace 9 output HDMI-A-2
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output HDMI-A-1
+workspace 9 output HDMI-A-1
 
 ### Idle configuration
 exec $HOME/.config/sway/scripts/idle.sh
@@ -189,17 +184,7 @@ default_floating_border pixel 2
 
 
 # Colors
-set $cl_high #928374
-set $cl_indi #928374
-set $cl_back #252423
-set $cl_fore #32302f
-set $cl_urge #ea6962
-
-#                       border   bg       text     indi     childborder
-client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
-client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
-client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+include colors/colors
 
 # Themes
 exec_always {

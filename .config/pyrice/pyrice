@@ -1,0 +1,173 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import re
+import subprocess
+
+
+def handle_errors(errors: [str]):
+    if errors:
+        for error in errors:
+            print(error)
+        exit()
+
+
+# Define the required keys
+REQUIRED_COLOR_KEYS = {
+    "base00",
+    "base01",
+    "base02",
+    "base03",
+    "base04",
+    "base05",
+    "base06",
+    "base07",
+    "base08",
+    "base09",
+    "base0A",
+    "base0B",
+    "base0C",
+    "base0D",
+    "base0E",
+    "base0F",
+}
+
+
+def print_palette(colors):
+    print("\nColor Palette Preview:")
+    for key, value in colors.items():
+        print(
+            f"{key}: \033[48;2;{int(value[0:2], 16)};{
+                int(value[2:4], 16)};{int(value[4:6], 16)}m  \033[0m #{value}"
+        )
+
+
+if len(sys.argv) < 2 or sys.argv[1] in ["--help", "-h"]:
+    print("Usage: pyrice <palette_name> [-p | --preview]")
+    sys.exit(1)
+
+palette_name = sys.argv[1]
+preview_flag = "-p" in sys.argv or "--preview" in sys.argv
+
+# Define paths
+config_home = os.getenv("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
+pyrice_dir = os.path.join(config_home, "pyrice")
+palette_file = os.path.join(pyrice_dir, f"palettes/{palette_name}.yaml")
+templates_conf = os.path.join(pyrice_dir, "config.ini")
+
+# Check if templates_conf file exists
+if not os.path.isfile(templates_conf):
+    print(f"Templates file '{templates_conf}' not found.")
+    exit()
+
+# Check if palette file exists
+if not os.path.isfile(palette_file):
+    print(f"Palette file '{palette_file}' not found.")
+    exit()
+
+# Dictionary to hold the colors
+colors = {}
+
+# Errors array
+errors = []
+
+# Read the palette file
+with open(palette_file, "r") as file:
+    for line in file:
+        # Strip whitespace and ignore empty lines and comments
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+
+        # Split the line into key and value
+        try:
+            key, value = line.split(":", 1)
+        except ValueError:
+            errors.append(f"Invalid line: {line}")
+            continue
+
+        key = key.strip()
+        value = value.strip().strip('"')
+
+        # Validate key
+        if key not in REQUIRED_COLOR_KEYS:
+            errors.append(f"Invalid color key: {key}")
+
+        # Validate color value (hexadecimal)
+        if not re.match(r"^[0-9a-fA-F]{6}$", value):
+            errors.append(f"Invalid color value for {key}: {value}")
+            continue
+
+        # Store the color in the dictionary
+        colors[key] = value
+
+# Check for missing required keys
+missing_keys = REQUIRED_COLOR_KEYS - colors.keys()
+if missing_keys:
+    errors.append(f"Missing required keys: {', '.join(missing_keys)}")
+
+# Handle errors if any
+handle_errors(errors)
+
+# Print the palette preview if the preview flag is set
+if preview_flag:
+    print_palette(colors)
+
+config = {}
+current_section = None
+
+with open(templates_conf, "r") as file:
+    for line in file:
+        line = line.strip()
+        # Skip empty lines and comments
+        if not line or line.startswith(";") or line.startswith("#"):
+            continue
+
+        # Check for section headers
+        if line.startswith("[") and line.endswith("]"):
+            current_section = line[1:-1].strip()
+            config[current_section] = {}
+        elif "=" in line and current_section is not None:
+            # Split the line into key and value and store it
+            key, value = line.split("=", 1)
+            key = key.strip()
+            value = value.strip()
+            # Check if path is specified
+            if config[current_section] == {}:
+                if key != "path" or not value:
+                    errors.append(
+                        f"config: invalid/missing field 'path' in section [{
+                            current_section}]"
+                    )
+            config[current_section][key] = value
+
+# Handle errors if any
+handle_errors(errors)
+
+# Process templates
+for section, values in config.items():
+    try:
+        template_file = os.path.expanduser(values["path"])
+        with open(template_file, "r") as file:
+            # Replace placeholders with values of colors
+            template_content = file.read()
+            for key, value in colors.items():
+                template_content = template_content.replace(
+                    f"{{{{{key}}}}}", str(value)
+                )
+                # Write the processed content to the output file
+                output_file = os.path.expanduser(
+                    template_file.replace("template.", ""))
+                with open(output_file, "w") as file:
+                    file.write(template_content)
+    except FileNotFoundError:
+        errors.append(f"Could not find file: '{template_file}'")
+
+    # Execute cmd if present
+    cmd = values.get("cmd", "").strip()
+    if cmd:
+        res = subprocess.run(cmd, shell=True)
+
+# Handle errors if any
+handle_errors(errors)

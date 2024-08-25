@@ -1,0 +1,7 @@
+#                       border   bg       text     indi     childborder
+client.focused          {{base03}}   {{base03}}   {{base01}}   {{base03}}   {{base03}}
+client.focused_inactive {{base00}}   {{base00}}   {{base01}} 	 {{base00}}   {{base00}}
+client.unfocused        {{base00}}   {{base00}}   {{base01}}   {{base00}}   {{base00}}
+client.urgent           {{base08}}   {{base08}}   {{base01}}   {{base08}}   {{base08}}
+client.placeholder      {{base00}}   {{base00}}   {{base01}}   {{base00}}   {{base00}}
+client.background       {{base07}}

@@ -1,0 +1,7 @@
+#                       border   bg       text     indi     childborder
+client.focused          7c6f64   7c6f64   3c3836   7c6f64   7c6f64
+client.focused_inactive 282828   282828   3c3836 	 282828   282828
+client.unfocused        282828   282828   3c3836   282828   282828
+client.urgent           fb4934   fb4934   3c3836   fb4934   fb4934
+client.placeholder      282828   282828   3c3836   282828   282828
+client.background       f9f5d7
