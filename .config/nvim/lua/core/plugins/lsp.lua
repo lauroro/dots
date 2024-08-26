@@ -1,9 +1,10 @@
 -- LSPs list
 local servers = {
 	"lua_ls",
-	--"gopls",
 	"pylsp",
+	--"gopls",
 	--"tsserver",
+	--"cssls",
 }
 
 return {

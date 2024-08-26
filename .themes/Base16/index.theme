@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Base16
+Comment=base16 theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Base16
+MetacityTheme=Base16
+ButtonLayout=:minimize,maximize,close
+IconTheme=gnome

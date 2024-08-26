@@ -5,6 +5,7 @@
 @define-color critical #{{base09}};
 
 * {
+	all: unset;
   border: none;
   border-radius: 0;
   font-family: JetBrains Mono Nerd Font;
@@ -71,8 +72,14 @@ tooltip * {
 }
 
 #tray {
-  border-radius: 6px;
   margin-right: 4px;
+}
+#tray menu {
+	background-color: @base;
+	color: @text;
+	border: 1px solid @text;
+	border-radius: 4px;
+	padding: 4px;
 }
 
 #clock {
