@@ -3,9 +3,10 @@ local function base16colors()
 	require("mini.base16").setup({
 		palette = _palette,
 	})
-	vim.api.nvim_set_hl(0, "WinSeparator", { bg = "NONE", fg = _palette.base03 })
-	vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = _palette.base03 })
-	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = _palette.base01, fg = _palette.base05 })
+	vim.api.nvim_set_hl(0, "WinSeparator", { bg = "None", fg = _palette.base03 })
+	vim.api.nvim_set_hl(0, "LineNr", { bg = "None", fg = _palette.base03 })
+	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "None", fg = _palette.base05 })
+	vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "None" })
 	vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" })
 	vim.api.nvim_set_hl(0, "DiagnosticSignError", { bg = "None", fg = _palette.base08 })
 	vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { bg = "None", fg = _palette.base0A })

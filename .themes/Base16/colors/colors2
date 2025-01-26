@@ -1,12 +1,12 @@
-gtk-color-scheme = "bg_color:#282828
-color0:#282828
-text_color:#ebdbb2
-selected_bg_color:#504945
-selected_fg_color:#ebdbb2
-tooltip_bg_color:#282828
-tooltip_fg_color:#ebdbb2
-titlebar_bg_color:#282828
-titlebar_fg_color:#ebdbb2
-menu_bg_color:#282828
-menu_fg_color:#ebdbb2
-link_color:#504945"
+gtk-color-scheme = "bg_color:#181616
+color0:#181616
+text_color:#c5c9c5
+selected_bg_color:#2d4f67
+selected_fg_color:#c5c9c5
+tooltip_bg_color:#181616
+tooltip_fg_color:#c5c9c5
+titlebar_bg_color:#181616
+titlebar_fg_color:#c5c9c5
+menu_bg_color:#181616
+menu_fg_color:#c5c9c5
+link_color:#2d4f67"

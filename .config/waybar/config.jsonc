@@ -7,6 +7,7 @@
 	],
   "modules-center": [],
   "modules-right": [
+		"mpris",
 		"idle_inhibitor",
     "network",
     "battery",
@@ -16,7 +17,7 @@
     "tray",
   ],
 
-	"sway/workspaces": {
+	"hyprland/workspaces": {
 		"disable-scroll": true,
 	},
 
@@ -94,4 +95,19 @@
     "format-icons": ["", "󰖨"],
     "tooltip": false,
   },
+
+	"mpris": {
+		"format": "{player_icon} playing ",
+		"format-paused": "{status_icon} <i>paused</i>  ",
+		"player-icons": {
+			"default": "",
+			"spotify": "",
+			"firefox": "",
+		},
+		"status-icons": {
+			"paused": ""
+		},
+		"tooltip-format": "{player}: {title} by {artist}, {album}"
+		// "ignored-players": ["firefox"]
+	},
 }

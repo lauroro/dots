@@ -1,0 +1,17 @@
+base00    # background (main)
+base01    # background (secondary)
+base02    # background (tertiary)
+base03    # dark text (less prominent)
+base04    # light text (highlighted elements)
+base05    # main text color
+base06    # secondary text color
+base07    # light text on dark background
+
+base08    # string color (red)
+base09    # number color (orange)
+base0A    # keyword color (yellow)
+base0B    # comment color (green)
+base0C    # variable color (turquoise)
+base0D    # function color (blue)
+base0E    # class color (purple)
+base0F    # special color (brown)

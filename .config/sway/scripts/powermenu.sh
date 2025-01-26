@@ -8,6 +8,9 @@ sleep=" Suspend"
 yes="Yes"
 no="No"
 
+is_loginctl_available() {
+    command -v loginctl >/dev/null 2>&1
+}
 
 confirm() {
 	res=$(echo \
@@ -24,8 +27,7 @@ $yes" \
 		;;
 	esac
 }
- 
- 
+
 selected_option=$(echo "$lock
 $exit
 $sleep
@@ -33,22 +35,27 @@ $reboot
 $shutdown" | fuzzel -d --lines 5 --width 14 )
 
 case $selected_option in
-  "$lock")
-    swaylock
-    ;;
-  "$exit")
-    confirm "$exit" "swaymsg exit"
-    ;;
-  "$shutdown")
-    confirm "$shutdown" "systemctl poweroff"
-    ;;
-  "$reboot")
-		confirm "$reboot" "systemctl reboot"
-    ;;
-  "$sleep")
-    systemctl suspend
-    ;;
-  *)
-    echo "No match"
-    ;;
+    "$lock")
+        swaylock
+        ;;
+    "$exit")
+        confirm "$exit" "$(is_loginctl_available && echo 'swaymsg exit' || echo 'systemctl --user exit')"
+        ;;
+    "$shutdown")
+        confirm "$shutdown" "$(is_loginctl_available && echo 'loginctl poweroff' || echo 'systemctl poweroff')"
+        ;;
+    "$reboot")
+        confirm "$reboot" "$(is_loginctl_available && echo 'loginctl reboot' || echo 'systemctl reboot')"
+        ;;
+    "$sleep")
+        if is_loginctl_available; then
+            loginctl suspend
+        else
+            systemctl suspend
+        fi
+        ;;
+    *)
+        echo "No match"
+        ;;
 esac
+

@@ -1,7 +1,7 @@
 #                       border   bg       text     indi     childborder
-client.focused          7c6f64   7c6f64   3c3836   7c6f64   7c6f64
-client.focused_inactive 282828   282828   3c3836 	 282828   282828
-client.unfocused        282828   282828   3c3836   282828   282828
-client.urgent           fb4934   fb4934   3c3836   fb4934   fb4934
-client.placeholder      282828   282828   3c3836   282828   282828
-client.background       f9f5d7
+client.focused          938aa9   938aa9   938aa9   938aa9   938aa9
+client.focused_inactive 181616   181616   202020 	 181616   181616
+client.unfocused        181616   181616   202020   181616   181616
+client.urgent           c4746e   c4746e   202020   c4746e   c4746e
+client.placeholder      181616   181616   202020   181616   181616
+client.background       c5c9c5

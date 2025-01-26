@@ -1,0 +1,5 @@
+@define-color base #{{base00}};
+@define-color text #{{base05}};
+@define-color hover-background #{{base01}};
+@define-color warning #{{base0A}};
+@define-color critical #{{base09}};

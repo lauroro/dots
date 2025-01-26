@@ -1,15 +1,11 @@
-@define-color base #282828;
-@define-color text #7c6f64;
-@define-color hover-background #3c3836;
-@define-color warning #fabd2f;
-@define-color critical #fe8019;
+@import url("colors/colors.css");
 
 * {
 	all: unset;
   border: none;
   border-radius: 0;
-  font-family: JetBrains Mono Nerd Font;
-  font-size: 14px;
+  font-family: Mononoki Nerd Font;
+  font-size: 15px;
   min-height: 0;
 }
 
@@ -25,7 +21,7 @@ window#waybar {
 
 tooltip {
   background: @base;
-  border-radius: 2px;
+  border-radius: 0px;
   border-width: 1px;
   border-style: solid;
   border-color: @text;
@@ -34,6 +30,7 @@ tooltip {
 tooltip * {
   color: @text;
 }
+
 
 #workspaces {
   padding: 0px;
@@ -67,12 +64,17 @@ tooltip * {
 #wireplumber,
 #network,
 #tray,
-#backlight {
+#backlight,
+#mpris {
   padding: 6px 8px;
 }
 
+#clock {
+	padding-right: 0;
+}
+
 #tray {
-  margin-right: 4px;
+  margin-left: 0px;
 }
 #tray menu {
 	background-color: @base;
@@ -82,26 +84,12 @@ tooltip * {
 	padding: 4px;
 }
 
-#clock {
-  border-radius: 6px;
-}
-
-#network {
-  border-radius: 6px 0px 0px 6px;
-}
-
-#wireplumber {
-  margin-right: 8px;
-}
-
 #battery {
-  border-radius: 0 6px 6px 0;
   margin-right: 0px;
 }
 
 #battery.warning,
 #battery.critical {
-  border-radius: 0px;
   border-bottom: 2px solid;
   margin-bottom: 3px;
 }
