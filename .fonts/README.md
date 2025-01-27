@@ -6,27 +6,13 @@ For more information see:
 * https://github.com/ryanoasis/nerd-fonts/
 * https://github.com/ryanoasis/nerd-fonts/releases/latest/
 
-# mononoki
+# Iosevka
 
-**mononoki** is a font for programming and code review
+**Iosevka** is an *open-source*, *sans-serif* + *slab-serif*, *monospace* + *quasi‑proportional* typeface family, designed for *writing code*, using in *terminals*, and preparing *technical documents*.
 
-For more information have a look at the upstream website: https://github.com/madmalik/mononoki
+For more information have a look at the upstream website: https://github.com/be5invis/Iosevka
 
-Version: 1.6
-
-## `Mononoki` is a Reserved Font Name
-
-Some fonts have parts of their name "reserved" per the [Reserved Font Name mechanism][SIL-RFN]:
-> No Modified Version of the Font Software may use the Reserved Font
-> Name(s) unless explicit written permission is granted by the corresponding
-> Copyright Holder. This restriction only applies to the primary font name as
-> presented to the users.
-
-- The main goals seem to be to: `Avoid collisions`, `Protect authors`, `Minimize support`, and `Encourage derivatives`
-
-See the [Reserved Font Name section][SIL-RFN] for additional information
-
-Find Nerd Font's permission to keep the name here: https://github.com/ryanoasis/nerd-fonts/issues/575#issuecomment-1385308049
+Version: 29.0.4
 
 ## Which font?
 

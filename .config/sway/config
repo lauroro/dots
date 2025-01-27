@@ -175,7 +175,7 @@ bar {
 #smart_borders on
 #smart_gaps on
 gaps outer 0
-gaps inner 16
+gaps inner 8
 
 # Title Bars
 for_window [title="^.*"] title_format ""

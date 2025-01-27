@@ -8,10 +8,6 @@ sleep=" Suspend"
 yes="Yes"
 no="No"
 
-is_loginctl_available() {
-    command -v loginctl >/dev/null 2>&1
-}
-
 confirm() {
 	res=$(echo \
 "$no
@@ -39,20 +35,16 @@ case $selected_option in
         swaylock
         ;;
     "$exit")
-        confirm "$exit" "$(is_loginctl_available && echo 'swaymsg exit' || echo 'systemctl --user exit')"
+        confirm "$exit" "swaymsg exit"
         ;;
     "$shutdown")
-        confirm "$shutdown" "$(is_loginctl_available && echo 'loginctl poweroff' || echo 'systemctl poweroff')"
+        confirm "$shutdown" "loginctl poweroff"
         ;;
     "$reboot")
-        confirm "$reboot" "$(is_loginctl_available && echo 'loginctl reboot' || echo 'systemctl reboot')"
+        confirm "$reboot" "loginctl reboot"
         ;;
     "$sleep")
-        if is_loginctl_available; then
-            loginctl suspend
-        else
-            systemctl suspend
-        fi
+					loginctl suspend
         ;;
     *)
         echo "No match"
