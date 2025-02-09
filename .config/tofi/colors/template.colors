@@ -1,0 +1,4 @@
+background-color = #{{base00}}CC
+text-color = #{{base05}}
+selection-color = #{{base00}}
+selection-background = #{{base05}}

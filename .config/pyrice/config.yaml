@@ -1,0 +1,15 @@
+paths:
+  - ~/.config/foot/colors/template.colors.ini
+  - ~/.config/hypr/colors/template.colors.conf
+  - ~/.config/waybar/colors/template.colors.css
+  - ~/.config/mako/template.config
+  - ~/.config/swaylock/template.config
+  - ~/.config/tofi/colors/template.colors
+  - ~/.config/nvim/lua/core/template.palette.lua
+  - ~/.themes/Base16/colors/template.colors2
+  - ~/.themes/Base16/colors/template.colors3.css
+
+cmds:
+  - makoctl reload && notify-send Done!
+  - gsettings set org.gnome.desktop.interface gtk-theme ''; gsettings set org.gnome.desktop.interface gtk-theme Base16
+

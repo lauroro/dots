@@ -1,40 +1,61 @@
 #!/usr/bin/env python3
 
 import os
-import sys
 import re
 import subprocess
+import argparse
+import sys
 
 
-def handle_errors(errors: [str]):
+def list_palettes(palettes_path: str):
+    """Print the found palettes"""
+    if not os.path.isdir(palettes_path):
+        print(f"Directory '{palettes_path}' not found.")
+        return
+
+    palette_files = [f for f in os.listdir(
+        palettes_path) if f.endswith(".yaml")]
+    palette_names = [os.path.splitext(f)[0] for f in palette_files]
+
+    if not palette_names:
+        print("No palettes found.")
+    else:
+        print("Available palettes:")
+        for name in palette_names:
+            print(f"- {name}")
+
+
+def parse_palette_file(palette_file: str) -> dict:
+    """Parse and validate palette file, then return color dictionary"""
+    colors = {}
+    with open(palette_file, "r") as file:
+        for line in file:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            try:
+                key, value = line.split(":", 1)
+                key = key.strip()
+                value = value.strip().strip('"').lstrip("#")
+                colors[key] = value
+            except ValueError:
+                continue
+    errors = []
+    required_keys = {f"base{'{:02X}'.format(i)}" for i in range(16)}
+    for key in required_keys:
+        if key not in colors:
+            errors.append(f"Missing required key: {key}")
+        elif not re.match(r"^[0-9a-fA-F]{6}$", colors[key]):
+            errors.append(f"Invalid color value for {key}: {colors[key]}")
     if errors:
         for error in errors:
             print(error)
-        exit()
+        exit(1)
+    return colors
 
 
-# Define the required keys
-REQUIRED_COLOR_KEYS = {
-    "base00",
-    "base01",
-    "base02",
-    "base03",
-    "base04",
-    "base05",
-    "base06",
-    "base07",
-    "base08",
-    "base09",
-    "base0A",
-    "base0B",
-    "base0C",
-    "base0D",
-    "base0E",
-    "base0F",
-}
-
-
-def print_palette(colors):
+def print_palette(colors: dict):
+    """Print color palette preview in terminal."""
     print("\nColor Palette Preview:")
     for key, value in colors.items():
         print(
@@ -43,131 +64,130 @@ def print_palette(colors):
         )
 
 
-if len(sys.argv) < 2 or sys.argv[1] in ["--help", "-h"]:
-    print("Usage: pyrice <palette_name> [-p | --preview]")
-    sys.exit(1)
+def parse_config_file(config_file: str) -> tuple:
+    """Parse config file and return paths and commands."""
+    paths, cmds = [], []
+    current_section = None
 
-palette_name = sys.argv[1]
-preview_flag = "-p" in sys.argv or "--preview" in sys.argv
+    with open(config_file, "r") as file:
+        for line in file.readlines():
+            line = line.strip()
+            if line.startswith("paths:"):
+                current_section = "paths"
+                continue
+            elif line.startswith("cmds:"):
+                current_section = "cmds"
+                continue
+            if current_section == "paths" and line.startswith("-"):
+                paths.append(line[1:].strip())
+            elif current_section == "cmds" and line.startswith("-"):
+                cmds.append(line[1:].strip())
+    return paths, cmds
 
-# Define paths
-config_home = os.getenv("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
-pyrice_dir = os.path.join(config_home, "pyrice")
-palette_file = os.path.join(pyrice_dir, f"palettes/{palette_name}.yaml")
-templates_conf = os.path.join(pyrice_dir, "config.ini")
 
-# Check if templates_conf file exists
-if not os.path.isfile(templates_conf):
-    print(f"Templates file '{templates_conf}' not found.")
-    exit()
-
-# Check if palette file exists
-if not os.path.isfile(palette_file):
-    print(f"Palette file '{palette_file}' not found.")
-    exit()
-
-# Dictionary to hold the colors
-colors = {}
-
-# Errors array
-errors = []
-
-# Read the palette file
-with open(palette_file, "r") as file:
-    for line in file:
-        # Strip whitespace and ignore empty lines and comments
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-
-        # Split the line into key and value
+def process_templates(colors: dict, paths: list) -> list:
+    """Process template files, replacing color placeholders."""
+    errors = []
+    for path in paths:
         try:
-            key, value = line.split(":", 1)
-        except ValueError:
-            errors.append(f"Invalid line: {line}")
-            continue
-
-        key = key.strip()
-        value = value.strip().strip('"')
-
-        # Validate key
-        if key not in REQUIRED_COLOR_KEYS:
-            errors.append(f"Invalid color key: {key}")
-
-        # Validate color value (hexadecimal)
-        if not re.match(r"^[0-9a-fA-F]{6}$", value):
-            errors.append(f"Invalid color value for {key}: {value}")
-            continue
-
-        # Store the color in the dictionary
-        colors[key] = value
-
-# Check for missing required keys
-missing_keys = REQUIRED_COLOR_KEYS - colors.keys()
-if missing_keys:
-    errors.append(f"Missing required keys: {', '.join(missing_keys)}")
-
-# Handle errors if any
-handle_errors(errors)
-
-# Print the palette preview if the preview flag is set
-if preview_flag:
-    print_palette(colors)
-
-config = {}
-current_section = None
-
-with open(templates_conf, "r") as file:
-    for line in file:
-        line = line.strip()
-        # Skip empty lines and comments
-        if not line or line.startswith(";") or line.startswith("#"):
-            continue
-
-        # Check for section headers
-        if line.startswith("[") and line.endswith("]"):
-            current_section = line[1:-1].strip()
-            config[current_section] = {}
-        elif "=" in line and current_section is not None:
-            # Split the line into key and value and store it
-            key, value = line.split("=", 1)
-            key = key.strip()
-            value = value.strip()
-            # Check if path is specified
-            if config[current_section] == {}:
-                if key != "path" or not value:
-                    errors.append(
-                        f"config: invalid/missing field 'path' in section [{
-                            current_section}]"
+            template_file = os.path.expanduser(path)
+            with open(template_file, "r") as file:
+                template_content = file.read()
+                for key, value in colors.items():
+                    template_content = template_content.replace(
+                        f"{{{{{key}}}}}", str(value)
                     )
-            config[current_section][key] = value
 
-# Handle errors if any
-handle_errors(errors)
-
-# Process templates
-for section, values in config.items():
-    try:
-        template_file = os.path.expanduser(values["path"])
-        with open(template_file, "r") as file:
-            # Replace placeholders with values of colors
-            template_content = file.read()
-            for key, value in colors.items():
-                template_content = template_content.replace(
-                    f"{{{{{key}}}}}", str(value)
-                )
-                # Write the processed content to the output file
                 output_file = os.path.expanduser(
                     template_file.replace("template.", ""))
                 with open(output_file, "w") as file:
                     file.write(template_content)
-    except FileNotFoundError:
-        errors.append(f"Could not find file: '{template_file}'")
+        except FileNotFoundError:
+            errors.append(f"Could not find file: '{template_file}'")
+    return errors
 
-    # Execute cmd if present
-    cmd = values.get("cmd", "").strip()
-    if cmd:
+
+def execute_commands(cmds: list) -> list:
+    """Execute shell commands and return any errors."""
+    errors = []
+    for cmd in cmds:
         res = subprocess.run(cmd, shell=True)
+        if res.returncode != 0:
+            errors.append(str(res))
+    return errors
 
-# Handle errors if any
-handle_errors(errors)
+
+# ##### MAIN FUNCTION #####
+def main():
+    # Arg parsing
+    parser = argparse.ArgumentParser(
+        description="pyrice, a tool to handle base16 palettes"
+    )
+    parser.add_argument(
+        "palette_name", nargs="?", help="palette name, file name without extension"
+    )
+    parser.add_argument(
+        "-l", "--list", action="store_true", help="List defined palettes"
+    )
+    parser.add_argument(
+        "-p", "--preview", action="store_true", help="Preview the palette"
+    )
+    parser.add_argument("-r", "--rice", action="store_true",
+                        help="Perform the ricing")
+
+    args = parser.parse_args()
+
+    palette_name = args.palette_name
+    preview_flag = args.preview
+    rice_flag = args.rice
+    list_flag = args.list
+
+    # Handle not enough arguments
+    if not list_flag and len(sys.argv) < 3:
+        parser.print_help()
+        exit(1)
+
+    # Define paths
+    config_home = os.getenv("XDG_CONFIG_HOME", os.path.expanduser("~/.config"))
+    pyrice_dir = os.path.join(config_home, "pyrice")
+    palette_file = os.path.join(pyrice_dir, f"palettes/{palette_name}.yaml")
+    config_file = os.path.join(pyrice_dir, "config.yaml")
+
+    # Handle list_flag
+    if list_flag:
+        list_palettes(os.path.join(pyrice_dir, "palettes"))
+        exit(0)
+
+    # Verify file existence
+    if not os.path.isfile(config_file) or not os.path.isfile(palette_file):
+        print("Config or palette file not found.")
+        exit(1)
+
+    # Parse and validate colors
+    colors = parse_palette_file(palette_file)
+
+    # Preview palette if requested
+    if preview_flag:
+        print_palette(colors)
+
+    # Stop here if rice_flag is not set
+    if not rice_flag:
+        exit(0)
+
+    # Process config and templates
+    paths, cmds = parse_config_file(config_file)
+    template_errors = process_templates(colors, paths)
+    command_errors = execute_commands(cmds)
+
+    # Handle any errors
+    all_errors = template_errors + command_errors
+    if all_errors:
+        for error in all_errors:
+            print(error)
+        exit(1)
+
+    exit(0)
+
+
+if __name__ == "__main__":
+    main()

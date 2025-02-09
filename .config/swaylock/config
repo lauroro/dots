@@ -1,27 +1,27 @@
-color=181616
+color=282828
 
-key-hl-color=8a9a7b
+key-hl-color=b8bb26
 
 separator-color=00000000
 
-inside-color=181616
-inside-clear-color=181616
-inside-ver-color=8ba4b0
-inside-wrong-color=c4746e
+inside-color=282828
+inside-clear-color=282828
+inside-ver-color=83a598
+inside-wrong-color=fb4934
 
-ring-color=202020
-ring-clear-color=202020
-ring-ver-color=8ba4b0
-ring-wrong-color=c4746e
+ring-color=3c3836
+ring-clear-color=3c3836
+ring-ver-color=83a598
+ring-wrong-color=fb4934
 
 line-color=00000000
 line-clear-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
 
-text-clear-color=e46876
-text-caps-lock-color=e46876
-text-ver-color=181616
-text-wrong-color=181616
+text-clear-color=fe8019
+text-caps-lock-color=fe8019
+text-ver-color=282828
+text-wrong-color=282828
 
-bs-hl-color=c4746e
+bs-hl-color=fb4934

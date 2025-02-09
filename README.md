@@ -1,8 +1,7 @@
 # dots
 
 ## Programs
-sway, autotiling, fuzzel, waybar, foot, thunar, neovim (clangd, ripgrep, nodejs),
-mako, swayidle, swaybg, wl-clipboard, swaylock, zsh, grim, slurp
+hyprland, tofi, waybar, foot, thunar, neovim, mako, swayidle, swaybg, swaylock, fish
 
 river config is wip
 

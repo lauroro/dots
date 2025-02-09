@@ -52,7 +52,7 @@ tooltip * {
   background-color: @hover-background;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
   background-color: @hover-background;
   border-bottom: 1px solid @text;
 }

@@ -4,7 +4,7 @@ local servers = {
 	"clangd",
 	--"gopls",
 	"pylsp",
-	--"tsserver",
+	--"ts_ls",
 	--"cssls",
 }
 
@@ -26,14 +26,11 @@ return {
 		end,
 	},
 	{
-		-- For completion capabilities
-		"hrsh7th/cmp-nvim-lsp",
-	},
-	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "saghen/blink.cmp" },
 		lazy = false,
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
 
 			-- servers setup
@@ -47,9 +44,10 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gD", vim.diagnostic.open_float, {})
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "gR", vim.lsp.buf.rename, {})
+			vim.keymap.set("n", "grr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "grn", vim.lsp.buf.rename, {})
 			vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>p", vim.lsp.buf.format, { desc = "Prettify code" })
 			-- C-x-o for autocomplete suggestion
 		end,
 	},

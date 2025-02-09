@@ -7,7 +7,7 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			-- check :h nvim-tree-setup
-			disable_netrw = false,
+			disable_netrw = true,
 			hijack_netrw = true,
 			diagnostics = {
 				enable = true,

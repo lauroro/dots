@@ -5,7 +5,7 @@ return {
 			require("gitsigns").setup()
 
 			-- keymaps
-			vim.keymap.set("n", "<Leader>GP", ":Gitsigns preview_hunk<CR>", { desc = "Git Preview" })
+			vim.keymap.set("n", "<Leader>GB", ":Gitsigns blame<CR>", { desc = "Git Blame" })
 		end,
 	},
 }

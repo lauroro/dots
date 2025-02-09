@@ -3,7 +3,7 @@
   "layer": "top",
 
   "modules-left": [
-		"sway/workspaces",
+		"hyprland/workspaces",
 	],
   "modules-center": [],
   "modules-right": [
