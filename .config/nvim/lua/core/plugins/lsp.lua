@@ -4,7 +4,7 @@ local servers = {
 	"clangd",
 	--"gopls",
 	"pylsp",
-	--"ts_ls",
+	"ts_ls",
 	--"cssls",
 }
 
