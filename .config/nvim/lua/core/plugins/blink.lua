@@ -21,10 +21,5 @@ return {
 			-- Adjusts spacing to ensure icons are aligned
 			nerd_font_variant = 'mono'
 		},
-
-		-- don't show completion on cmd bar
-		completion = {
-			menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end }
-		},
 	},
 }
