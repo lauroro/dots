@@ -1,0 +1,150 @@
+{
+	"position": "top",
+	"layer": "top",
+	"modules-left": [
+		"niri/workspaces"
+	],
+	"modules-center": [],
+	"modules-right": [
+		"tray",
+		"mpris",
+		"idle_inhibitor",
+		"network",
+		"battery",
+		"backlight",
+		//"pulseaudio",
+		"wireplumber",
+		"clock"
+		// "custom/notification"
+	],
+	//
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-none": "",
+			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	//
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "󰅶 on  ",
+			"deactivated": "󰛊 off "
+		}
+	},
+	//
+	"tray": {
+		"icon-size": 16,
+		"spacing": 0
+	},
+	//
+	"battery": {
+		"states": {
+			//"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": " {icon} {capacity}% ",
+		"format-charging": " 󰂄 {capacity}% ",
+		"format-alt": " {icon} {capacity}% ",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"tooltip-format": ""
+	},
+	//
+	"clock": {
+		"locale": "it_IT.UTF-8",
+		"format": "{:L%a %d %b, %R}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode-mon-col": 3,
+			"on-click-right": "mode",
+			"format": {
+				"months": "<span color='#928374'><b>{}</b></span>",
+				"weekdays": "<span color='#7c6f64'><b>{}</b></span>",
+				"today": "<span color='#1b1b1b' background='#928374'><b>{}</b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode"
+		},
+		"tooltip": true
+	},
+	//
+	"network": {
+		"format-wifi": " {essid}",
+		"format-ethernet": "󰈀 {ifname}",
+		"format-disconnected": " Offline",
+		"tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}"
+	},
+	//	
+	//"pulseaudio": {
+	"wireplumber": {
+		"tooltip": false,
+		"format": " {icon} {volume}% ",
+		"format-muted": "󰸈  Muted",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"format-bluetooth": " {volume}% {format_source}",
+		"format-bluetooth-muted": "󰂲 {format_source}",
+		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"scroll-step": 1,
+		"format-icons": {
+			"headphone": "",
+			"headset": "",
+			"default": [
+				"",
+				"",
+				" "
+			]
+		}
+	},
+	//
+	"backlight": {
+		"format": "{icon} {percent}% ",
+		"format-icons": [
+			"",
+			"󰖨"
+		],
+		"tooltip": false
+	},
+	//
+	"mpris": {
+		"format": "{player_icon} playing ",
+		"format-paused": "{status_icon} <i>paused</i>  ",
+		"player-icons": {
+			"default": "",
+			"spotify": "",
+			"firefox": ""
+		},
+		"status-icons": {
+			"paused": ""
+		},
+		"tooltip-format": "{player}: {title} by {artist}, {album}"
+	}
+}

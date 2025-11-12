@@ -1,0 +1,9 @@
+@define-color bg_color #{{base00}};
+@define-color fg_color #{{base05}};
+@define-color base_color #{{base01}};
+@define-color text_color #{{base05}};
+@define-color text_color_disabled #{{base03}};
+@define-color selected_bg_color #{{base02}};
+@define-color selected_fg_color #{{base05}};
+@define-color tooltip_bg_color #{{base00}};
+@define-color tooltip_fg_color #{{base05}};

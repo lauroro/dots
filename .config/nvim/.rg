@@ -1,0 +1,3 @@
+--hidden
+--glob=!{.git,node_modules}
+--smart-case
