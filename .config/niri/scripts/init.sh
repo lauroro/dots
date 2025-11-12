@@ -4,8 +4,8 @@
 pkill swayidle
 swayidle -w \
   timeout 300 'swaylock -f' \
-  timeout 310 'hyprctl dispatch dpms off' \
-  resume 'hyprctl dispatch dpms on' \
+  timeout 310 'niri msg action power-off-monitors' \
+  resume 'niri msg action power-on-monitors' \
   before-sleep 'swaylock -f; sleep 1' &
 
 # ---------- GSETTINGS ----------
