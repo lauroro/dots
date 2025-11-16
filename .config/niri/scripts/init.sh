@@ -20,4 +20,5 @@ pkill -x waybar || true; waybar &
 pkill -x mako || true; mako &
 
 # ---------- BG ----------
-pkill swaybg; swaybg -c "#3c3836" &
+# <%pyrice:base01:393D50>
+pkill swaybg; swaybg -c "#393D50" &

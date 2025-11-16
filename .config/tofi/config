@@ -1,4 +1,11 @@
-include = ./colors/colors
+#<%pyrice:base00:303446>
+background-color = #303446CC
+#<%pyrice:base05:c6d0f5>
+text-color = #c6d0f5
+#<%pyrice:base00:303446>
+selection-color = #303446
+#<%pyrice:base05:c6d0f5>
+selection-background = #c6d0f5
 
 width = 100%
 height = 100%

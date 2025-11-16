@@ -3,9 +3,43 @@ require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.statusline").setup()
 
-local _palette = require("palette.palette")
+local _palette = {
+	-- <%pyrice:base00:303446>
+	base00 = "#303446",
+	-- <%pyrice:base01:393D50>
+	base01 = "#393D50",
+	-- <%pyrice:base02:414559>
+	base02 = "#414559",
+	-- <%pyrice:base03:51576d>
+	base03 = "#51576d",
+	-- <%pyrice:base04:626880>
+	base04 = "#626880",
+	-- <%pyrice:base05:c6d0f5>
+	base05 = "#c6d0f5",
+	-- <%pyrice:base06:f2d5cf>
+	base06 = "#f2d5cf",
+	-- <%pyrice:base07:babbf1>
+	base07 = "#babbf1",
+	-- <%pyrice:base08:e78284>
+	base08 = "#e78284",
+	-- <%pyrice:base09:ef9f76>
+	base09 = "#ef9f76",
+	-- <%pyrice:base0A:e5c890>
+	base0A = "#e5c890",
+	-- <%pyrice:base0B:a6d189>
+	base0B = "#a6d189",
+	-- <%pyrice:base0C:81c8be>
+	base0C = "#81c8be",
+	-- <%pyrice:base0D:8caaee>
+	base0D = "#8caaee",
+	-- <%pyrice:base0E:ca9ee6>
+	base0E = "#ca9ee6",
+	-- <%pyrice:base0F:eebebe>
+	base0F = "#eebebe",
+}
+
 require("mini.base16").setup({
-	palette = _palette,
+	palette = _palette
 })
 vim.api.nvim_set_hl(0, "WinSeparator", { bg = "None", fg = _palette.base03 })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "None", fg = _palette.base03 })

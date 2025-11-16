@@ -11,7 +11,7 @@ input {
         natural-scroll
     }
 
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="0%"
 }
 
@@ -61,8 +61,18 @@ layout {
 
     focus-ring {
         width 2
-        active-color "#d4be98"
-        inactive-color "#3c3836"
+				// <%pyrice:base05:c6d0f5>
+        active-color "#c6d0f5"
+				// <%pyrice:base01:393D50>
+        inactive-color "#393D50"
+    }
+
+    tab-indicator {
+        width 4
+        gap 4
+        length total-proportion=1.0
+        position "left"
+        place-within-column
     }
 
     shadow {
@@ -74,8 +84,6 @@ layout {
     }
 }
 
-// spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -c #3c3836"
 spawn-sh-at-startup "bash ~/.config/niri/scripts/init.sh"
 
 
@@ -208,6 +216,8 @@ binds {
 
     Mod+F       { toggle-window-floating; }
     Mod+Shift+F { switch-focus-between-floating-and-tiling; }
+
+		Mod+T { toggle-column-tabbed-display; }
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }

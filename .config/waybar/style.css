@@ -1,4 +1,14 @@
-@import url("colors/colors.css");
+/* <%pyrice:base00:303446> */
+@define-color base #303446;
+/* <%pyrice:base05:c6d0f5> */
+@define-color text #c6d0f5;
+/* <%pyrice:base01:393D50> */
+@define-color hover-background #393D50;
+/* <%pyrice:base0A:e5c890> */
+@define-color warning #e5c890;
+/* <%pyrice:base09:ef9f76> */
+@define-color critical #ef9f76;
+
 
 * {
 	all: unset;

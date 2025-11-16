@@ -1,17 +1,17 @@
 paths:
-  - ~/.config/foot/colors/template.colors.ini
-  - ~/.config/hypr/colors/template.colors.conf
-  - ~/.config/waybar/colors/template.colors.css
-  - ~/.config/mako/template.config
-  # - ~/.config/swaync/colors/template.colors.css
-  - ~/.config/swaylock/template.config
-  - ~/.config/tofi/colors/template.colors
-  - ~/.config/nvim/lua/palette/template.palette.lua
-  - ~/.themes/Base16/colors/template.colors2
-  - ~/.themes/Base16/colors/template.colors3.css
+  - ~/.config/waybar/style.css
+  - ~/.config/tofi/config
+  - ~/.config/nvim/core/plugins.lua
+  - ~/.themes/Base16/colors/colors2
+  - ~/.themes/Base16/colors/colors3.css
+  - ~/.config/niri/config.kdl
+  - ~/.config/niri/scripts/init.sh
+  - ~/.config/foot/foot.ini
+  - ~/.config/mako/config
+  - ~/.config/swaylock/config
 
 cmds:
+  - sh ~/.config/niri/scripts/init.sh
   - makoctl reload && notify-send Done!
-  # - swaync-client -rs
   - gsettings set org.gnome.desktop.interface gtk-theme ''; gsettings set org.gnome.desktop.interface gtk-theme Base16
 
