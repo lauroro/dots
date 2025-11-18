@@ -4,38 +4,38 @@ require("mini.pairs").setup()
 require("mini.statusline").setup()
 
 local _palette = {
-	-- <%pyrice:base00:303446>
-	base00 = "#303446",
-	-- <%pyrice:base01:393D50>
-	base01 = "#393D50",
-	-- <%pyrice:base02:414559>
-	base02 = "#414559",
-	-- <%pyrice:base03:51576d>
-	base03 = "#51576d",
-	-- <%pyrice:base04:626880>
-	base04 = "#626880",
-	-- <%pyrice:base05:c6d0f5>
-	base05 = "#c6d0f5",
-	-- <%pyrice:base06:f2d5cf>
-	base06 = "#f2d5cf",
-	-- <%pyrice:base07:babbf1>
-	base07 = "#babbf1",
-	-- <%pyrice:base08:e78284>
-	base08 = "#e78284",
-	-- <%pyrice:base09:ef9f76>
-	base09 = "#ef9f76",
-	-- <%pyrice:base0A:e5c890>
-	base0A = "#e5c890",
-	-- <%pyrice:base0B:a6d189>
-	base0B = "#a6d189",
-	-- <%pyrice:base0C:81c8be>
-	base0C = "#81c8be",
-	-- <%pyrice:base0D:8caaee>
-	base0D = "#8caaee",
-	-- <%pyrice:base0E:ca9ee6>
-	base0E = "#ca9ee6",
-	-- <%pyrice:base0F:eebebe>
-	base0F = "#eebebe",
+	-- <%pyrice:base00:282828>
+	base00 = "#282828",
+	-- <%pyrice:base01:3c3836>
+	base01 = "#3c3836",
+	-- <%pyrice:base02:504945>
+	base02 = "#504945",
+	-- <%pyrice:base03:7c6f64>
+	base03 = "#7c6f64",
+	-- <%pyrice:base04:bdae93>
+	base04 = "#bdae93",
+	-- <%pyrice:base05:d4be98>
+	base05 = "#d4be98",
+	-- <%pyrice:base06:fbf1c7>
+	base06 = "#fbf1c7",
+	-- <%pyrice:base07:f9f5d7>
+	base07 = "#f9f5d7",
+	-- <%pyrice:base08:fb4934>
+	base08 = "#fb4934",
+	-- <%pyrice:base09:fe8019>
+	base09 = "#fe8019",
+	-- <%pyrice:base0A:fabd2f>
+	base0A = "#fabd2f",
+	-- <%pyrice:base0B:b8bb26>
+	base0B = "#b8bb26",
+	-- <%pyrice:base0C:8ec07c>
+	base0C = "#8ec07c",
+	-- <%pyrice:base0D:83a598>
+	base0D = "#83a598",
+	-- <%pyrice:base0E:d3869b>
+	base0E = "#d3869b",
+	-- <%pyrice:base0F:d65f5f>
+	base0F = "#d65f5f",
 }
 
 require("mini.base16").setup({

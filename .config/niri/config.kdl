@@ -61,10 +61,10 @@ layout {
 
     focus-ring {
         width 2
-				// <%pyrice:base05:c6d0f5>
-        active-color "#c6d0f5"
-				// <%pyrice:base01:393D50>
-        inactive-color "#393D50"
+				// <%pyrice:base05:d4be98>
+        active-color "#d4be98"
+				// <%pyrice:base01:3c3836>
+        inactive-color "#3c3836"
     }
 
     tab-indicator {
@@ -123,7 +123,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return { spawn "foot"; }
-    Mod+Space  { spawn "tofi-drun"; }
+    Mod+Space  { spawn "fuzzel"; }
     Super+Alt+L  { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }

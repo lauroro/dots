@@ -1,42 +1,42 @@
-#<%pyrice:base00:303446>
-color=303446
+#<%pyrice:base00:282828>
+color=282828
 
-#<%pyrice:base0B:a6d189>
-key-hl-color=a6d189
+#<%pyrice:base0B:b8bb26>
+key-hl-color=b8bb26
 
 separator-color=00000000
 
-#<%pyrice:base00:303446>
-inside-color=303446
-#<%pyrice:base00:303446>
-inside-clear-color=303446
-#<%pyrice:base0D:8caaee>
-inside-ver-color=8caaee
-#<%pyrice:base0D:8caaee>
-inside-wrong-color=8caaee
+#<%pyrice:base00:282828>
+inside-color=282828
+#<%pyrice:base00:282828>
+inside-clear-color=282828
+#<%pyrice:base0D:83a598>
+inside-ver-color=83a598
+#<%pyrice:base0D:83a598>
+inside-wrong-color=83a598
 
-#<%pyrice:base01:393D50>
-ring-color=393D50
-#<%pyrice:base01:393D50>
-ring-clear-color=393D50
-#<%pyrice:base0D:8caaee>
-ring-ver-color=8caaee
-#<%pyrice:base08:e78284>
-ring-wrong-color=e78284
+#<%pyrice:base01:3c3836>
+ring-color=3c3836
+#<%pyrice:base01:3c3836>
+ring-clear-color=3c3836
+#<%pyrice:base0D:83a598>
+ring-ver-color=83a598
+#<%pyrice:base08:fb4934>
+ring-wrong-color=fb4934
 
 line-color=00000000
 line-clear-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
 
-#<%pyrice:base09:ef9f76>
-text-clear-color=ef9f76
-#<%pyrice:base09:ef9f76>
-text-caps-lock-color=ef9f76
-#<%pyrice:base00:303446>
-text-ver-color=303446
-#<%pyrice:base00:303446>
-text-wrong-color=303446
+#<%pyrice:base09:fe8019>
+text-clear-color=fe8019
+#<%pyrice:base09:fe8019>
+text-caps-lock-color=fe8019
+#<%pyrice:base00:282828>
+text-ver-color=282828
+#<%pyrice:base00:282828>
+text-wrong-color=282828
 
-#<%pyrice:base08:e78284>
-bs-hl-color=e78284
+#<%pyrice:base08:fb4934>
+bs-hl-color=fb4934

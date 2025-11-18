@@ -1,7 +1,4 @@
 paths:
-  - ~/.config/waybar/style.css
-  - ~/.config/tofi/config
-  - ~/.config/nvim/core/plugins.lua
   - ~/.themes/Base16/colors/colors2
   - ~/.themes/Base16/colors/colors3.css
   - ~/.config/niri/config.kdl
@@ -9,6 +6,9 @@ paths:
   - ~/.config/foot/foot.ini
   - ~/.config/mako/config
   - ~/.config/swaylock/config
+  - ~/.config/fuzzel/fuzzel.ini
+  - ~/.config/waybar/style.css
+  - ~/.config/nvim/core/plugins.lua
 
 cmds:
   - sh ~/.config/niri/scripts/init.sh

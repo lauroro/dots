@@ -11,12 +11,12 @@ default-timeout=0
 ignore-timeout=1
 font=Iosevka Nerd Font 10
 
-#<%pyrice:base00:303446>
-background-color=#303446
-#<%pyrice:base05:c6d0f5>
-text-color=#c6d0f5
-#<%pyrice:base05:c6d0f5>
-border-color=#c6d0f5
+#<%pyrice:base00:282828>
+background-color=#282828
+#<%pyrice:base05:d4be98>
+text-color=#d4be98
+#<%pyrice:base05:d4be98>
+border-color=#d4be98
 
 on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
@@ -26,8 +26,8 @@ on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 [urgency=normal]
 
 [urgency=critical]
-#<%pyrice:base08:e78284>
-border-color=#e78284
+#<%pyrice:base08:fb4934>
+border-color=#fb4934
 
 [category=mpd]
 default-timeout=2000

@@ -16,9 +16,9 @@ gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface monospace-font-name 'Iosevka Nerd Font 11'
 
 # ---------- SHELL ----------
-pkill -x waybar || true; waybar &
+pkill -x waybar || true; waybar > /dev/null 2>&1 &
 pkill -x mako || true; mako &
 
 # ---------- BG ----------
-# <%pyrice:base01:393D50>
-pkill swaybg; swaybg -c "#393D50" &
+# <%pyrice:base01:3c3836>
+pkill swaybg; swaybg -c "#3c3836" &
