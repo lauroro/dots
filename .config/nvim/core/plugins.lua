@@ -1,7 +1,14 @@
--- MINI
+local add = vim.pack.add
+
+----------------------
+-------- MINI --------
+----------------------
+add({ "https://github.com/echasnovski/mini.nvim" })
+
 require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.statusline").setup()
+
 
 local _palette = {
 	-- <%pyrice:base00:282828>
@@ -99,6 +106,7 @@ miniclue.setup({
 	}
 })
 
+
 local hipatterns = require("mini.hipatterns")
 hipatterns.setup({
 	highlighters = {
@@ -109,6 +117,7 @@ hipatterns.setup({
 		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},
 })
+
 
 require("mini.pick").setup()
 local pick = MiniPick
@@ -153,6 +162,7 @@ vim.keymap.set("n", "<Leader>km", ":Pick keymaps<CR>", { desc = "keymaps" })
 vim.keymap.set("n", "<Leader>gr", ':Pick lsp scope="references"<CR>', { desc = "get references" })
 vim.keymap.set("n", "<Leader>bb", ":Pick buffers<CR>", { desc = "get references" })
 
+
 require("mini.completion").setup({
 	delay = { completion = 100, info = 100, signature = 1000 }
 })
@@ -177,31 +187,27 @@ vim.keymap.set("n", "<Leader>e", ":lua MiniFiles.open()<CR>", { desc = "Explorer
 
 
 
--- OTHER PLUGINS
-local add = MiniDeps.add
-
-add({
-	source = "lewis6991/gitsigns.nvim"
-})
+-----------------------
+---- OTHER PLUGINS ----
+-----------------------
+add({ "https://github.com/lewis6991/gitsigns.nvim" })
 require("gitsigns").setup()
 vim.keymap.set("n", "<Leader>GB", ":Gitsigns blame<CR>", { desc = "Git Blame" })
 
+
 local servers = {
 	"lua_ls",
-	--"clangd",
 	"gopls",
 	"pylsp",
-	-- "pyright",
-	--"ts_ls",
-	--"jsonls",
+	"ts_ls",
+	"jsonls",
 	"bashls",
+	"rust_analyzer"
 }
+add({ "https://github.com/mason-org/mason.nvim" })
 add({
-	source = "mason-org/mason.nvim"
-})
-add({
-	source = "mason-org/mason-lspconfig.nvim",
-	depends = { "neovim/nvim-lspconfig" }
+	"https://github.com/mason-org/mason-lspconfig.nvim",
+	"https://github.com/neovim/nvim-lspconfig"
 })
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -209,9 +215,8 @@ require("mason-lspconfig").setup({
 	vim.lsp.enable(servers)
 })
 
-add({
-	source = "akinsho/toggleterm.nvim"
-})
+
+add({ "https://github.com/akinsho/toggleterm.nvim" })
 require("toggleterm").setup({
 	on_open = function()
 		vim.cmd("startinsert")
@@ -221,10 +226,15 @@ require("toggleterm").setup({
 vim.keymap.set("n", "<Leader>t", ":ToggleTerm<CR>", {})
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], {})
 
-add({
-	source = 'nvim-treesitter/nvim-treesitter',
-	hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+
+vim.api.nvim_create_autocmd('PackChanged', {
+	callback = function(ev)
+		if ev.data.spec.name == 'nvim-treesitter' then
+			vim.cmd('TSUpdate')
+		end
+	end
 })
+add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
 require('nvim-treesitter.configs').setup({
 	ensure_installed = { 'lua', 'vimdoc' },
 	highlight = { enable = true },
