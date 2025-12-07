@@ -1,12 +1,13 @@
 sort=-time
+group-by=app-name
 layer=overlay
 width=220
 height=150
 padding=8
-border-size=2
-border-radius=4
-#icons=0
-max-icon-size=34
+border-size=1
+border-radius=2
+icons=1
+max-icon-size=96
 default-timeout=0
 ignore-timeout=1
 font=Iosevka Nerd Font 10
@@ -18,12 +19,8 @@ text-color=#d4be98
 #<%pyrice:base05:d4be98>
 border-color=#d4be98
 
-on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
+on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga > /dev/null
 
-
-[urgency=low]
-
-[urgency=normal]
 
 [urgency=critical]
 #<%pyrice:base08:fb4934>
@@ -32,4 +29,3 @@ border-color=#fb4934
 [category=mpd]
 default-timeout=2000
 group-by=category
-

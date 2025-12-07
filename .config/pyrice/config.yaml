@@ -3,7 +3,7 @@ paths:
   - ~/.themes/Base16/colors/colors3.css
   - ~/.config/niri/config.kdl
   - ~/.config/niri/scripts/init.sh
-  - ~/.config/foot/foot.ini
+  - ~/.config/alacritty/alacritty.toml
   - ~/.config/mako/config
   - ~/.config/swaylock/config
   - ~/.config/fuzzel/fuzzel.ini
@@ -11,7 +11,8 @@ paths:
   - ~/.config/nvim/core/plugins.lua
 
 cmds:
-  - sh ~/.config/niri/scripts/init.sh
-  - makoctl reload && notify-send Done!
+  - sh ~/.config/niri/scripts/init.sh > /dev/null 2>&1
   - gsettings set org.gnome.desktop.interface gtk-theme ''; gsettings set org.gnome.desktop.interface gtk-theme Base16
+  - sleep 1
+  - notify-send Done!
 

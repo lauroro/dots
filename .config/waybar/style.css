@@ -37,10 +37,10 @@ window#waybar {
 
 tooltip {
 	background: @base;
-	border-radius: 0px;
+	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: @text;
+	border-color: @hover-background;
 }
 
 tooltip * {
@@ -54,7 +54,7 @@ tooltip * {
 #workspaces button {
 	color: @text;
 	background-color: transparent;
-	padding: 4px 2px;
+	padding: 4px 4px;
 	border-bottom: 1px solid transparent;
 	border-radius: 0px;
 }
@@ -68,21 +68,31 @@ tooltip * {
 	border-bottom: 1px solid @text;
 }
 
-#tray {
-	padding-right: 8px;
+
+#tray,  
+#mpris,  
+#idle_inhibitor,  
+#network,  
+#battery,  
+#backlight,  
+#wireplumber,  
+#clock {  
+    margin-right: 12px;  
+}  
+  
+#clock {  
+    margin-right: 4px;  
 }
+
 
 #tray menu {
 	background-color: @base;
 	color: @text;
 	border: 1px solid @text;
 	border-radius: 4px;
-	padding: 4px;
+	padding: 2px;
 }
 
-#battery {
-	margin-right: 0px;
-}
 
 #battery.warning,
 #battery.critical {
@@ -97,3 +107,4 @@ tooltip * {
 #battery.critical {
 	border-color: @critical;
 }
+

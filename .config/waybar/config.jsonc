@@ -12,38 +12,15 @@
 		"network",
 		"battery",
 		"backlight",
-		//"pulseaudio",
 		"wireplumber",
 		"clock"
-		// "custom/notification"
 	],
-	//
-	"custom/notification": {
-		"tooltip": false,
-		"format": "{icon}",
-		"format-icons": {
-			"notification": "<span foreground='red'><sup></sup></span>",
-			"none": "",
-			"dnd-notification": "<span foreground='red'><sup></sup></span>",
-			"dnd-none": "",
-			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
-			"inhibited-none": "",
-			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-			"dnd-inhibited-none": ""
-		},
-		"return-type": "json",
-		"exec-if": "which swaync-client",
-		"exec": "swaync-client -swb",
-		"on-click": "swaync-client -t -sw",
-		"on-click-right": "swaync-client -d -sw",
-		"escape": true
-	},
 	//
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
-			"activated": "󰅶 on  ",
-			"deactivated": "󰛊 off "
+			"activated": "󰅶 on ",
+			"deactivated": "󰛊 off"
 		}
 	},
 	//
@@ -58,9 +35,9 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": " {icon} {capacity}% ",
-		"format-charging": " 󰂄 {capacity}% ",
-		"format-alt": " {icon} {capacity}% ",
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-alt": "{icon} {capacity}%",
 		"format-icons": [
 			"󰂎",
 			"󰁺",
@@ -103,48 +80,52 @@
 		"tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}"
 	},
 	//	
-	//"pulseaudio": {
 	"wireplumber": {
 		"tooltip": false,
-		"format": " {icon} {volume}% ",
-		"format-muted": "󰸈  Muted",
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟 Muted",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
-		"format-bluetooth": " {volume}% {format_source}",
-		"format-bluetooth-muted": "󰂲 {format_source}",
-		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"scroll-step": 1,
 		"format-icons": {
 			"headphone": "",
 			"headset": "",
 			"default": [
-				"",
-				"",
-				" "
+				"󰕿",
+				"󰖀",
+				"󰕾"
 			]
 		}
 	},
 	//
 	"backlight": {
-		"format": "{icon} {percent}% ",
+		"format": "{icon} {percent}%",
 		"format-icons": [
-			"",
-			"󰖨"
+			"󰃞",
+			"󰃟",
+			"󰃠"
 		],
 		"tooltip": false
 	},
 	//
 	"mpris": {
-		"format": "{player_icon} playing ",
-		"format-paused": "{status_icon} <i>paused</i>  ",
+		"title-len": 15,
+		"ellipsis": "…",
+		"format": "{status_icon} {player_icon}",
 		"player-icons": {
-			"default": "",
-			"spotify": "",
-			"firefox": ""
+			"default": "Player",
+			"spotify": "Spotify",
+			"firefox": "Firefox"
 		},
 		"status-icons": {
-			"paused": ""
+			"playing": "",
+			"paused": "",
+			"stopped": ""
 		},
-		"tooltip-format": "{player}: {title} by {artist}, {album}"
+		"tooltip-format": "{player_icon} : {title} - by: {artist} - album: {album}",
+		"on-click": "playerctl play-pause",
+		"on-click-middle": "playerctl previous",
+		"on-click-right": "playerctl next"
 	}
 }

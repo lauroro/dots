@@ -24,10 +24,12 @@ gestures {
 output "eDP-1" {
     mode "1920x1080"
     position x=1920 y=0
+    // position x=2560 y=0
 }
 
 output "HDMI-A-1" {
-		mode "1920x1080"
+		// mode "1920x1080"
+		mode "2560x1440@74.968"
 		position x=0 y=0
 }
 
@@ -60,7 +62,7 @@ layout {
     default-column-width {}
 
     focus-ring {
-        width 2
+        width 1
 				// <%pyrice:base05:d4be98>
         active-color "#d4be98"
 				// <%pyrice:base01:3c3836>
@@ -87,11 +89,6 @@ layout {
 spawn-sh-at-startup "bash ~/.config/niri/scripts/init.sh"
 
 
-// cursor {  
-//     xcursor-theme "Simp1e-Dark"  
-//     xcursor-size 24  
-// }
-
 hotkey-overlay {
     skip-at-startup
 }
@@ -101,14 +98,10 @@ prefer-no-csd
 screenshot-path "~/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 // screenshot-path null
 
+
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
-}
-
-window-rule {  
-    match app-id="^foot$"  
-    default-column-width { proportion 0.5; }  
 }
 
 window-rule {
@@ -116,13 +109,14 @@ window-rule {
     clip-to-geometry true
 }
 
+
 binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return { spawn "foot"; }
+    Mod+Return { spawn "alacritty"; }
     Mod+Space  { spawn "fuzzel"; }
     Super+Alt+L  { spawn "swaylock"; }
 
