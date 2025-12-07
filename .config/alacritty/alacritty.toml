@@ -1,0 +1,66 @@
+[window]
+opacity = 1
+padding.x = 8
+padding.y = 8
+
+
+[font]
+size = 11.0
+normal.family = "Iosevka Nerd Font"
+bold.family = "Iosevka Nerd Font"
+italic.family = "Iosevka Nerd Font"
+bold_italic.family = "Iosevka Nerd Font"
+
+[cursor]  
+style = { shape = "Beam", blinking = "On" }  
+thickness = 0.25
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.primary]
+# <%pyrice:base00:282828>
+background = '0x282828'
+# <%pyrice:base05:d4be98>
+foreground = '0xd4be98'
+
+[colors.cursor]
+text = "CellBackground"  
+cursor = "CellForeground"
+
+
+[colors.normal]
+# <%pyrice:base00:282828>
+black = '0x282828'
+# <%pyrice:base08:fb4934>
+red = '0xfb4934'
+# <%pyrice:base0B:b8bb26>
+green = '0xb8bb26'
+# <%pyrice:base0A:fabd2f>
+yellow = '0xfabd2f'
+# <%pyrice:base0D:83a598>
+blue = '0x83a598'
+# <%pyrice:base0E:d3869b>
+magenta = '0xd3869b'
+# <%pyrice:base0C:8ec07c>
+cyan = '0x8ec07c'
+# <%pyrice:base05:d4be98>
+white = '0xd4be98'
+
+[colors.bright]
+# <%pyrice:base03:7c6f64>
+black = '0x7c6f64'
+# <%pyrice:base08:fb4934>
+red = '0xfe8019'
+# <%pyrice:base0B:b8bb26>
+green = '0x3c3836'
+# <%pyrice:base0A:fabd2f>
+yellow = '0x504945'
+# <%pyrice:base0D:83a598>
+blue = '0xbdae93'
+# <%pyrice:base0E:d3869b>
+magenta = '0xfbf1c7'
+# <%pyrice:base0C:8ec07c>
+cyan = '0xd65f5f'
+# <%pyrice:base07:f9f5d7>
+white = '0xf9f5d7'
