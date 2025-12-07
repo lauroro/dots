@@ -17,16 +17,16 @@ local _palette = {
 	base01 = "#3c3836",
 	-- <%pyrice:base02:504945>
 	base02 = "#504945",
-	-- <%pyrice:base03:7c6f64>
-	base03 = "#7c6f64",
+	-- <%pyrice:base03:665c54>
+	base03 = "#665c54",
 	-- <%pyrice:base04:bdae93>
 	base04 = "#bdae93",
-	-- <%pyrice:base05:d4be98>
-	base05 = "#d4be98",
-	-- <%pyrice:base06:fbf1c7>
-	base06 = "#fbf1c7",
-	-- <%pyrice:base07:f9f5d7>
-	base07 = "#f9f5d7",
+	-- <%pyrice:base05:d5c4a1>
+	base05 = "#d5c4a1",
+	-- <%pyrice:base06:ebdbb2>
+	base06 = "#ebdbb2",
+	-- <%pyrice:base07:fbf1c7>
+	base07 = "#fbf1c7",
 	-- <%pyrice:base08:fb4934>
 	base08 = "#fb4934",
 	-- <%pyrice:base09:fe8019>
@@ -41,8 +41,8 @@ local _palette = {
 	base0D = "#83a598",
 	-- <%pyrice:base0E:d3869b>
 	base0E = "#d3869b",
-	-- <%pyrice:base0F:d65f5f>
-	base0F = "#d65f5f",
+	-- <%pyrice:base0F:d65d0e>
+	base0F = "#d65d0e",
 }
 
 require("mini.base16").setup({

@@ -21,8 +21,8 @@ draw_bold_text_with_bright_colors = false
 [colors.primary]
 # <%pyrice:base00:282828>
 background = '0x282828'
-# <%pyrice:base05:d4be98>
-foreground = '0xd4be98'
+# <%pyrice:base05:d5c4a1>
+foreground = '0xd5c4a1'
 
 [colors.cursor]
 text = "CellBackground"  
@@ -44,12 +44,12 @@ blue = '0x83a598'
 magenta = '0xd3869b'
 # <%pyrice:base0C:8ec07c>
 cyan = '0x8ec07c'
-# <%pyrice:base05:d4be98>
-white = '0xd4be98'
+# <%pyrice:base05:d5c4a1>
+white = '0xd5c4a1'
 
 [colors.bright]
-# <%pyrice:base03:7c6f64>
-black = '0x7c6f64'
+# <%pyrice:base03:665c54>
+black = '0x665c54'
 # <%pyrice:base08:fb4934>
 red = '0xfe8019'
 # <%pyrice:base0B:b8bb26>
@@ -62,5 +62,5 @@ blue = '0xbdae93'
 magenta = '0xfbf1c7'
 # <%pyrice:base0C:8ec07c>
 cyan = '0xd65f5f'
-# <%pyrice:base07:f9f5d7>
-white = '0xf9f5d7'
+# <%pyrice:base07:fbf1c7>
+white = '0xfbf1c7'

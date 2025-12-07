@@ -63,8 +63,8 @@ layout {
 
     focus-ring {
         width 1
-				// <%pyrice:base05:d4be98>
-        active-color "#d4be98"
+				// <%pyrice:base05:d5c4a1>
+        active-color "#d5c4a1"
 				// <%pyrice:base01:3c3836>
         inactive-color "#3c3836"
     }
