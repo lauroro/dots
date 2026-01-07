@@ -1,7 +1,7 @@
 [window]
 opacity = 1
-padding.x = 8
-padding.y = 8
+padding.x = 6
+padding.y = 6
 
 
 [font]
@@ -51,16 +51,16 @@ white = '0xd5c4a1'
 # <%pyrice:base03:665c54>
 black = '0x665c54'
 # <%pyrice:base08:fb4934>
-red = '0xfe8019'
+red = '0xfb4934'
 # <%pyrice:base0B:b8bb26>
-green = '0x3c3836'
+green = '0xb8bb26'
 # <%pyrice:base0A:fabd2f>
-yellow = '0x504945'
+yellow = '0xfabd2f'
 # <%pyrice:base0D:83a598>
-blue = '0xbdae93'
+blue = '0x83a598'
 # <%pyrice:base0E:d3869b>
-magenta = '0xfbf1c7'
+magenta = '0xd3869b'
 # <%pyrice:base0C:8ec07c>
-cyan = '0xd65f5f'
+cyan = '0x8ec07c'
 # <%pyrice:base07:fbf1c7>
 white = '0xfbf1c7'

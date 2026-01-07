@@ -60,6 +60,7 @@ vim.api.nvim_set_hl(0, "DiagnosticSignHint", { bg = "None", fg = _palette.base0D
 vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "None", fg = _palette.base0C })
 vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "None", fg = _palette.base09 })
 vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "None", fg = _palette.base0E })
+vim.api.nvim_set_hl(0, "Keyword", { fg = _palette.base0E, bold = false })
 
 
 local miniclue = require('mini.clue')
@@ -88,9 +89,12 @@ miniclue.setup({
 		-- `z` key
 		{ mode = 'n', keys = 'z' },
 		{ mode = 'x', keys = 'z' },
+		-- `[` and `]` keys
+		{ mode = 'n', keys = '[' },
+		{ mode = 'n', keys = ']' },
 	},
 	clues = {
-		-- Enhance this by adding descriptions for <Leader> mapping groups
+		miniclue.gen_clues.square_brackets(),
 		miniclue.gen_clues.builtin_completion(),
 		miniclue.gen_clues.g(),
 		miniclue.gen_clues.marks(),
@@ -148,19 +152,20 @@ pick.registry.lg = function()
 		pick.builtin.grep_live({ tool = 'rg' })
 	end)
 end
-vim.keymap.set("n", "<Leader>ff", ":Pick ff<CR>", { desc = "find files" })
-vim.keymap.set("n", "<Leader>fg", ":Pick lg<CR>", { desc = "find grep" })
+vim.keymap.set("n", "<Leader>pf", ":Pick ff<CR>", { desc = "files" })
+vim.keymap.set("n", "<Leader>pg", ":Pick lg<CR>", { desc = "grep" })
+vim.keymap.set("n", "<Leader>pH", ":Pick help<CR>", { desc = "Help" })
 
 
 require("mini.extra").setup()
-vim.keymap.set("n", "<Leader>fd", ":Pick diagnostic<CR>", { desc = "find diagnostic" })
-vim.keymap.set("n", "<Leader>gh", ":Pick git_hunks<CR>", { desc = "git hunks" })
-vim.keymap.set("n", "<Leader>gb", ":Pick git_branches<CR>", { desc = "git branches" })
-vim.keymap.set("n", "<Leader>gc", ":Pick git_commits<CR>", { desc = "git commits" })
-vim.keymap.set("n", "<Leader>hi", ":Pick hipatterns<CR>", { desc = "hipatterns" })
-vim.keymap.set("n", "<Leader>km", ":Pick keymaps<CR>", { desc = "keymaps" })
-vim.keymap.set("n", "<Leader>gr", ':Pick lsp scope="references"<CR>', { desc = "get references" })
-vim.keymap.set("n", "<Leader>bb", ":Pick buffers<CR>", { desc = "get references" })
+vim.keymap.set("n", "<Leader>pd", ":Pick diagnostic<CR>", { desc = "diagnostic" })
+vim.keymap.set("n", "<Leader>pGh", ":Pick git_hunks<CR>", { desc = "git hunks" })
+vim.keymap.set("n", "<Leader>pGb", ":Pick git_branches<CR>", { desc = "git branches" })
+vim.keymap.set("n", "<Leader>pGc", ":Pick git_commits<CR>", { desc = "git commits" })
+vim.keymap.set("n", "<Leader>ph", ":Pick hipatterns<CR>", { desc = "hipatterns" })
+vim.keymap.set("n", "<Leader>pk", ":Pick keymaps<CR>", { desc = "keymaps" })
+vim.keymap.set("n", "<Leader>pr", ':Pick lsp scope="references"<CR>', { desc = "references" })
+vim.keymap.set("n", "<Leader>pb", ":Pick buffers<CR>", { desc = "buffers" })
 
 
 require("mini.completion").setup({
@@ -173,17 +178,16 @@ end
 imap_expr('<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
 imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 _G.cr_action = function()
-	-- If there is selected item in popup, accept it with <C-y>
+	-- Accept selecetion with <C-y> or fallback to "return"
 	if vim.fn.complete_info()['selected'] ~= -1 then return '\25' end
-	-- Fall back to plain `<CR>`. You might want to customize according
-	-- to other plugins. For example if 'mini.pairs' is set up, replace
-	-- next line with `return MiniPairs.cr()`
 	return '\r'
 end
 vim.keymap.set('i', '<CR>', 'v:lua.cr_action()', { expr = true })
 
+
 require("mini.files").setup()
-vim.keymap.set("n", "<Leader>e", ":lua MiniFiles.open()<CR>", { desc = "Explorer" })
+vim.keymap.set("n", "<Leader>e", ":lua MiniFiles.open()<CR>", { desc = "explorer" })
+
 
 
 

@@ -1,40 +1,18 @@
 local keymap = vim.keymap.set
 
--- Leader key (Space bar)
 vim.g.mapleader = " "
 
--- :w shortcut
-keymap("n", "<Leader>w", ":w<CR>", { desc = "Write" })
+keymap("n", "<leader>w", ":w<CR>", { desc = "write" })
+keymap("n", "<leader>q", ":q<CR>", { desc = "quit" })
+keymap("n", "<leader>r", ":mksession! /tmp/session.vim | restart source /tmp/session.vim<CR>", { desc = "restart" })
+keymap("n", "<leader>f", vim.lsp.buf.format, { desc = "format" })
 
--- :q shortcut
-keymap("n", "<Leader>q", ":q<CR>", { desc = "Quit/Close" })
-
--- :bc shortcut
-keymap("n", "<Leader>c", ":bd<CR>", { desc = "close buffer" })
-
--- Scroll with mouse
 keymap("n", "<ScrollWheelUp>", "<C-Y>", {})
 keymap("n", "<ScrollWheelDown>", "<C-E>", {})
 
--- Split
-keymap("n", "<Leader>sr", ":vertical split<CR>", { desc = "Split > right" })
-keymap("n", "<Leader>sd", ":horizontal split<CR>", { desc = "Split > down" })
+keymap("n", "<leader>sr", ":vertical split<CR>", { desc = "split right" })
+keymap("n", "<leader>sd", ":horizontal split<CR>", { desc = "split down" })
 
--- Navigate splits
-keymap("n", "<C-h>", ":winc h<CR>", {})
-keymap("n", "<C-j>", ":winc j<CR>", {})
-keymap("n", "<C-k>", ":winc k<CR>", {})
-keymap("n", "<C-l>", ":winc l<CR>", {})
-
--- Select all
 keymap("n", "<C-a>", "ggVG", { desc = "Select all" })
 
--- LSP
-keymap("n", "K", vim.lsp.buf.hover, {})
-keymap("n", "gd", vim.lsp.buf.definition, {})
-keymap("n", "gD", vim.diagnostic.open_float, {})
-keymap("n", "grr", vim.lsp.buf.references, {})
-keymap("n", "grn", vim.lsp.buf.rename, {})
-keymap("n", "ca", vim.lsp.buf.code_action, {})
-keymap("n", "<leader>p", vim.lsp.buf.format, { desc = "Prettify code" })
--- C-x-o for autocomplete suggestion
+keymap("n", "gD", vim.diagnostic.open_float, { desc = "Diagnostic" })

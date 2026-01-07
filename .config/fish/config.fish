@@ -5,6 +5,10 @@ end
 set fish_greeting ""
 fish_config theme choose fish\ default
 
+set --global fish_key_bindings fish_default_key_bindings
+
 set PATH $PATH ~/.local/bin
 
-#eval ~/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

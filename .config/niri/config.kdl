@@ -59,7 +59,7 @@ layout {
         proportion 0.5
     }
 
-    default-column-width {}
+    default-column-width { }
 
     focus-ring {
         width 1
