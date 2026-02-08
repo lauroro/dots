@@ -9,7 +9,6 @@ require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.statusline").setup()
 
-
 local _palette = {
 	-- <%pyrice:base00:282828>
 	base00 = "#282828",
@@ -46,7 +45,7 @@ local _palette = {
 }
 
 require("mini.base16").setup({
-	palette = _palette
+	palette = _palette,
 })
 vim.api.nvim_set_hl(0, "WinSeparator", { bg = "None", fg = _palette.base03 })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "None", fg = _palette.base03 })
@@ -62,36 +61,35 @@ vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "None", fg = _palette.base09 })
 vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "None", fg = _palette.base0E })
 vim.api.nvim_set_hl(0, "Keyword", { fg = _palette.base0E, bold = false })
 
-
-local miniclue = require('mini.clue')
+local miniclue = require("mini.clue")
 miniclue.setup({
 	triggers = {
 		-- Leader triggers
-		{ mode = 'n', keys = '<Leader>' },
-		{ mode = 'x', keys = '<Leader>' },
+		{ mode = "n", keys = "<Leader>" },
+		{ mode = "x", keys = "<Leader>" },
 		-- Built-in completion
-		{ mode = 'i', keys = '<C-x>' },
+		{ mode = "i", keys = "<C-x>" },
 		-- `g` key
-		{ mode = 'n', keys = 'g' },
-		{ mode = 'x', keys = 'g' },
+		{ mode = "n", keys = "g" },
+		{ mode = "x", keys = "g" },
 		-- Marks
-		{ mode = 'n', keys = "'" },
-		{ mode = 'n', keys = '`' },
-		{ mode = 'x', keys = "'" },
-		{ mode = 'x', keys = '`' },
+		{ mode = "n", keys = "'" },
+		{ mode = "n", keys = "`" },
+		{ mode = "x", keys = "'" },
+		{ mode = "x", keys = "`" },
 		-- Registers
-		{ mode = 'n', keys = '"' },
-		{ mode = 'x', keys = '"' },
-		{ mode = 'i', keys = '<C-r>' },
-		{ mode = 'c', keys = '<C-r>' },
+		{ mode = "n", keys = '"' },
+		{ mode = "x", keys = '"' },
+		{ mode = "i", keys = "<C-r>" },
+		{ mode = "c", keys = "<C-r>" },
 		-- Window commands
-		{ mode = 'n', keys = '<C-w>' },
+		{ mode = "n", keys = "<C-w>" },
 		-- `z` key
-		{ mode = 'n', keys = 'z' },
-		{ mode = 'x', keys = 'z' },
+		{ mode = "n", keys = "z" },
+		{ mode = "x", keys = "z" },
 		-- `[` and `]` keys
-		{ mode = 'n', keys = '[' },
-		{ mode = 'n', keys = ']' },
+		{ mode = "n", keys = "[" },
+		{ mode = "n", keys = "]" },
 	},
 	clues = {
 		miniclue.gen_clues.square_brackets(),
@@ -105,23 +103,21 @@ miniclue.setup({
 	window = {
 		delay = 500,
 		config = {
-			width = "auto"
-		}
-	}
+			width = "auto",
+		},
+	},
 })
-
 
 local hipatterns = require("mini.hipatterns")
 hipatterns.setup({
 	highlighters = {
-		fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-		hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
-		todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
-		note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+		fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+		hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+		todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+		note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
 		hex_color = hipatterns.gen_highlighter.hex_color(),
 	},
 })
-
 
 require("mini.pick").setup()
 local pick = MiniPick
@@ -133,29 +129,28 @@ pick.setup({
 				pick.set_picker_query({ vim.fn.getreg("+") })
 			end,
 		},
-	}
+	},
 })
 local load_temp_rg = function(f)
-	local rg_env = 'RIPGREP_CONFIG_PATH'
-	local cached_rg_config = vim.uv.os_getenv(rg_env) or ''
-	vim.uv.os_setenv(rg_env, vim.fn.stdpath('config') .. '/.rg')
+	local rg_env = "RIPGREP_CONFIG_PATH"
+	local cached_rg_config = vim.uv.os_getenv(rg_env) or ""
+	vim.uv.os_setenv(rg_env, vim.fn.stdpath("config") .. "/.rg")
 	f()
 	vim.uv.os_setenv(rg_env, cached_rg_config)
 end
 pick.registry.ff = function()
 	load_temp_rg(function()
-		pick.builtin.files({ tool = 'rg' })
+		pick.builtin.files({ tool = "rg" })
 	end)
 end
 pick.registry.lg = function()
 	load_temp_rg(function()
-		pick.builtin.grep_live({ tool = 'rg' })
+		pick.builtin.grep_live({ tool = "rg" })
 	end)
 end
 vim.keymap.set("n", "<Leader>pf", ":Pick ff<CR>", { desc = "files" })
 vim.keymap.set("n", "<Leader>pg", ":Pick lg<CR>", { desc = "grep" })
 vim.keymap.set("n", "<Leader>pH", ":Pick help<CR>", { desc = "Help" })
-
 
 require("mini.extra").setup()
 vim.keymap.set("n", "<Leader>pd", ":Pick diagnostic<CR>", { desc = "diagnostic" })
@@ -167,29 +162,26 @@ vim.keymap.set("n", "<Leader>pk", ":Pick keymaps<CR>", { desc = "keymaps" })
 vim.keymap.set("n", "<Leader>pr", ':Pick lsp scope="references"<CR>', { desc = "references" })
 vim.keymap.set("n", "<Leader>pb", ":Pick buffers<CR>", { desc = "buffers" })
 
-
 require("mini.completion").setup({
-	delay = { completion = 100, info = 100, signature = 1000 }
+	delay = { completion = 100, info = 100, signature = 1000 },
 })
 -- use `<Tab>` and `<S-Tab>` for navigation through completion list
 local imap_expr = function(lhs, rhs)
-	vim.keymap.set('i', lhs, rhs, { expr = true })
+	vim.keymap.set("i", lhs, rhs, { expr = true })
 end
-imap_expr('<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
+imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
+imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 _G.cr_action = function()
 	-- Accept selecetion with <C-y> or fallback to "return"
-	if vim.fn.complete_info()['selected'] ~= -1 then return '\25' end
-	return '\r'
+	if vim.fn.complete_info()["selected"] ~= -1 then
+		return "\25"
+	end
+	return "\r"
 end
-vim.keymap.set('i', '<CR>', 'v:lua.cr_action()', { expr = true })
-
+vim.keymap.set("i", "<CR>", "v:lua.cr_action()", { expr = true })
 
 require("mini.files").setup()
 vim.keymap.set("n", "<Leader>e", ":lua MiniFiles.open()<CR>", { desc = "explorer" })
-
-
-
 
 -----------------------
 ---- OTHER PLUGINS ----
@@ -198,7 +190,6 @@ add({ "https://github.com/lewis6991/gitsigns.nvim" })
 require("gitsigns").setup()
 vim.keymap.set("n", "<Leader>GB", ":Gitsigns blame<CR>", { desc = "Git Blame" })
 
-
 local servers = {
 	"lua_ls",
 	"gopls",
@@ -206,19 +197,18 @@ local servers = {
 	"ts_ls",
 	"jsonls",
 	"bashls",
-	"rust_analyzer"
+	"rust_analyzer",
 }
 add({ "https://github.com/mason-org/mason.nvim" })
 add({
 	"https://github.com/mason-org/mason-lspconfig.nvim",
-	"https://github.com/neovim/nvim-lspconfig"
+	"https://github.com/neovim/nvim-lspconfig",
 })
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
-	vim.lsp.enable(servers)
+	vim.lsp.enable(servers),
 })
-
 
 add({ "https://github.com/akinsho/toggleterm.nvim" })
 require("toggleterm").setup({
@@ -230,17 +220,37 @@ require("toggleterm").setup({
 vim.keymap.set("n", "<Leader>t", ":ToggleTerm<CR>", {})
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], {})
 
-
-vim.api.nvim_create_autocmd('PackChanged', {
+vim.api.nvim_create_autocmd("PackChanged", {
 	callback = function(ev)
-		if ev.data.spec.name == 'nvim-treesitter' then
-			vim.cmd('TSUpdate')
+		if ev.data.spec.name == "nvim-treesitter" then
+			vim.cmd("TSUpdate")
 		end
-	end
+	end,
 })
-add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
-require('nvim-treesitter.configs').setup({
-	ensure_installed = { 'lua', 'vimdoc' },
+add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "lua", "vimdoc" },
 	highlight = { enable = true },
 	auto_install = true,
+})
+
+add({ "https://github.com/stevearc/conform.nvim" })
+require("conform").setup({
+	formatters_by_ft = {
+		typescript = { "prettier" },
+		typescriptreact = { "prettier" },
+		javascript = { "prettier" },
+		javascriptreact = { "prettier" },
+		graphql = { "prettier" },
+		json = { "prettier" },
+		yaml = { "prettier" },
+		lua = { "stylua" },
+		rust = { "rustfmt" },
+	},
+	default_format_opts = {
+		lsp_format = "fallback",
+	},
+	format_on_save = {
+		timeout_ms = 500,
+	},
 })
