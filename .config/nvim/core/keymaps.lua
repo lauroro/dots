@@ -6,8 +6,8 @@ keymap("n", "<leader>w", ":w<CR>", { desc = "write" })
 keymap("n", "<leader>q", ":q<CR>", { desc = "quit" })
 keymap("n", "<leader>r", ":mksession! /tmp/session.vim | restart source /tmp/session.vim<CR>", { desc = "restart" })
 keymap("n", "<leader>f", function()
-	require("conform").format({ async = true })
-	-- vim.lsp.buf.format as fallback in conform
+    require("conform").format({ async = true })
+    -- vim.lsp.buf.format as fallback in conform
 end, { desc = "format" })
 
 keymap("n", "<ScrollWheelUp>", "<C-Y>", {})
