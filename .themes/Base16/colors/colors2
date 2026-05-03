@@ -1,24 +1,14 @@
-#<%pyrice:base00:282828>
-gtk-color-scheme = "bg_color:#282828
-#<%pyrice:base00:282828>
-color0:#282828
-#<%pyrice:base05:d5c4a1>
-text_color:#d5c4a1
-#<%pyrice:base02:504945>
-selected_bg_color:#504945
-#<%pyrice:base05:d5c4a1>
-selected_fg_color:#d5c4a1
-#<%pyrice:base00:282828>
-tooltip_bg_color:#282828
-#<%pyrice:base05:d5c4a1>
-tooltip_fg_color:#d5c4a1
-#<%pyrice:base00:282828>
-titlebar_bg_color:#282828
-#<%pyrice:base05:d5c4a1>
-titlebar_fg_color:#d5c4a1
-#<%pyrice:base00:282828>
-menu_bg_color:#282828
-#<%pyrice:base05:d5c4a1>
-menu_fg_color:#d5c4a1
-#<%pyrice:base02:504945>
-link_color:#504945"
+# @gohan:start
+gtk-color-scheme = "bg_color:#181a1f
+color0:#181a1f
+text_color:#a9b7c2
+selected_bg_color:#303843
+selected_fg_color:#a9b7c2
+tooltip_bg_color:#181a1f
+tooltip_fg_color:#a9b7c2
+titlebar_bg_color:#181a1f
+titlebar_fg_color:#a9b7c2
+menu_bg_color:#181a1f
+menu_fg_color:#a9b7c2
+link_color:#303843"
+# gohan:end

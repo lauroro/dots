@@ -1,18 +1,16 @@
-paths:
-  - ~/.themes/Base16/colors/colors2
-  - ~/.themes/Base16/colors/colors3.css
+targets:
+  - ~/.config/alacritty/alacritty.toml
+  - ~/.config/fuzzel/fuzzel.ini
+  - ~/.config/mako/config
   - ~/.config/niri/config.kdl
   - ~/.config/niri/scripts/init.sh
-  - ~/.config/alacritty/alacritty.toml
-  - ~/.config/mako/config
-  - ~/.config/swaylock/config
-  - ~/.config/fuzzel/fuzzel.ini
-  - ~/.config/waybar/style.css
   - ~/.config/nvim/core/plugins.lua
+  - ~/.config/swaylock/config
+  - ~/.config/waybar/style.css
+  - ~/.themes/Base16/colors/colors2
+  - ~/.themes/Base16/colors/colors3.css
 
-cmds:
+commands:
   - sh ~/.config/niri/scripts/init.sh > /dev/null 2>&1
   - gsettings set org.gnome.desktop.interface gtk-theme ''; gsettings set org.gnome.desktop.interface gtk-theme Base16
-  - sleep 1
   - notify-send Done!
-

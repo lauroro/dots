@@ -1,42 +1,29 @@
-#<%pyrice:base00:282828>
-color=282828
+# @gohan:start
+color=181a1f
 
-#<%pyrice:base0B:b8bb26>
-key-hl-color=b8bb26
+key-hl-color=6fa77a
 
-separator-color=00000000
+separator-color=181a1f00
 
-#<%pyrice:base00:282828>
-inside-color=282828
-#<%pyrice:base00:282828>
-inside-clear-color=282828
-#<%pyrice:base0D:83a598>
-inside-ver-color=83a598
-#<%pyrice:base0D:83a598>
-inside-wrong-color=83a598
+inside-color=181a1f
+inside-clear-color=181a1f
+inside-ver-color=6f8fae
+inside-wrong-color=6f8fae
 
-#<%pyrice:base01:3c3836>
-ring-color=3c3836
-#<%pyrice:base01:3c3836>
-ring-clear-color=3c3836
-#<%pyrice:base0D:83a598>
-ring-ver-color=83a598
-#<%pyrice:base08:fb4934>
-ring-wrong-color=fb4934
+ring-color=262b33
+ring-clear-color=262b33
+ring-ver-color=6f8fae
+ring-wrong-color=b06a73
 
-line-color=00000000
-line-clear-color=00000000
-line-ver-color=00000000
-line-wrong-color=00000000
+line-color=181a1f00
+line-clear-color=181a1f00
+line-ver-color=181a1f00
+line-wrong-color=181a1f00
 
-#<%pyrice:base09:fe8019>
-text-clear-color=fe8019
-#<%pyrice:base09:fe8019>
-text-caps-lock-color=fe8019
-#<%pyrice:base00:282828>
-text-ver-color=282828
-#<%pyrice:base00:282828>
-text-wrong-color=282828
+text-clear-color=b08a6a
+text-caps-lock-color=b08a6a
+text-ver-color=181a1f
+text-wrong-color=181a1f
 
-#<%pyrice:base08:fb4934>
-bs-hl-color=fb4934
+bs-hl-color=b06a73
+# @gohan:end

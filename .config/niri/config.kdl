@@ -28,8 +28,8 @@ output "eDP-1" {
 }
 
 output "HDMI-A-1" {
-		// mode "1920x1080"
-		mode "2560x1440@74.968"
+		mode "1920x1080@120"
+		// mode "2560x1440@74.968"
 		position x=0 y=0
 }
 
@@ -63,10 +63,10 @@ layout {
 
     focus-ring {
         width 1
-				// <%pyrice:base05:d5c4a1>
-        active-color "#d5c4a1"
-				// <%pyrice:base01:3c3836>
-        inactive-color "#3c3836"
+        // @gohan:start
+        active-color "#a9b7c2"
+        inactive-color "#262b33"
+        // @gohan:end
     }
 
     tab-indicator {
@@ -120,7 +120,7 @@ binds {
     Mod+Space  { spawn "fuzzel"; }
     Super+Alt+L  { spawn "swaylock"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }

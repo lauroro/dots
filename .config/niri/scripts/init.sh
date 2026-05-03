@@ -20,5 +20,6 @@ pkill -x waybar || true; waybar > /dev/null 2>&1 &
 pkill -x mako || true; mako &
 
 # ---------- BG ----------
-# <%pyrice:base01:3c3836>
-pkill swaybg; swaybg -c "#3c3836" &
+# @gohan:start
+pkill swaybg; swaybg -c "#262b33" &
+# @gohan:end

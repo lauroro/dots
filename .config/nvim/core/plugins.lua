@@ -3,45 +3,31 @@ local add = vim.pack.add
 ----------------------
 -------- MINI --------
 ----------------------
-add({ "https://github.com/echasnovski/mini.nvim" })
+add({ "https://github.com/nvim-mini/mini.nvim" })
 
 require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.statusline").setup()
 
 local _palette = {
-    -- <%pyrice:base00:282828>
-    base00 = "#282828",
-    -- <%pyrice:base01:3c3836>
-    base01 = "#3c3836",
-    -- <%pyrice:base02:504945>
-    base02 = "#504945",
-    -- <%pyrice:base03:665c54>
-    base03 = "#665c54",
-    -- <%pyrice:base04:bdae93>
-    base04 = "#bdae93",
-    -- <%pyrice:base05:d5c4a1>
-    base05 = "#d5c4a1",
-    -- <%pyrice:base06:ebdbb2>
-    base06 = "#ebdbb2",
-    -- <%pyrice:base07:fbf1c7>
-    base07 = "#fbf1c7",
-    -- <%pyrice:base08:fb4934>
-    base08 = "#fb4934",
-    -- <%pyrice:base09:fe8019>
-    base09 = "#fe8019",
-    -- <%pyrice:base0A:fabd2f>
-    base0A = "#fabd2f",
-    -- <%pyrice:base0B:b8bb26>
-    base0B = "#b8bb26",
-    -- <%pyrice:base0C:8ec07c>
-    base0C = "#8ec07c",
-    -- <%pyrice:base0D:83a598>
-    base0D = "#83a598",
-    -- <%pyrice:base0E:d3869b>
-    base0E = "#d3869b",
-    -- <%pyrice:base0F:d65d0e>
-    base0F = "#d65d0e",
+    -- @gohan:start
+    base00 = "#181a1f",
+    base01 = "#262b33",
+    base02 = "#303843",
+    base03 = "#4f565e",
+    base04 = "#7b8c9a",
+    base05 = "#a9b7c2",
+    base06 = "#c3d0d8",
+    base07 = "#e0ebf2",
+    base08 = "#b06a73",
+    base09 = "#b08a6a",
+    base0A = "#b0a86a",
+    base0B = "#6fa77a",
+    base0C = "#6fa8a0",
+    base0D = "#6f8fae",
+    base0E = "#8f7fb0",
+    base0F = "#8c7a86",
+    -- @gohan:end
 }
 
 require("mini.base16").setup({
@@ -119,8 +105,8 @@ hipatterns.setup({
     },
 })
 
-require("mini.pick").setup()
-local pick = MiniPick
+vim.uv.os_setenv("RIPGREP_CONFIG_PATH", vim.fn.stdpath("config") .. "/.rg")
+local pick = require("mini.pick")
 pick.setup({
     mappings = {
         sys_paste = {
@@ -131,22 +117,11 @@ pick.setup({
         },
     },
 })
-local load_temp_rg = function(f)
-    local rg_env = "RIPGREP_CONFIG_PATH"
-    local cached_rg_config = vim.uv.os_getenv(rg_env) or ""
-    vim.uv.os_setenv(rg_env, vim.fn.stdpath("config") .. "/.rg")
-    f()
-    vim.uv.os_setenv(rg_env, cached_rg_config)
-end
 pick.registry.ff = function()
-    load_temp_rg(function()
-        pick.builtin.files({ tool = "rg" })
-    end)
+    return pick.builtin.files({ tool = "rg" })
 end
 pick.registry.lg = function()
-    load_temp_rg(function()
-        pick.builtin.grep_live({ tool = "rg" })
-    end)
+    return pick.builtin.grep_live({ tool = "rg" })
 end
 vim.keymap.set("n", "<Leader>pf", ":Pick ff<CR>", { desc = "files" })
 vim.keymap.set("n", "<Leader>pg", ":Pick lg<CR>", { desc = "grep" })
@@ -197,10 +172,9 @@ local servers = {
     "ts_ls",
     "jsonls",
     "bashls",
-    "rust_analyzer",
 }
-add({ "https://github.com/mason-org/mason.nvim" })
 add({
+    "https://github.com/mason-org/mason.nvim",
     "https://github.com/mason-org/mason-lspconfig.nvim",
     "https://github.com/neovim/nvim-lspconfig",
 })
@@ -231,7 +205,7 @@ require("conform").setup({
         json = { "prettier" },
         yaml = { "prettier" },
         lua = { "stylua" },
-        rust = { "rustfmt" },
+        go = { "gofmt" },
     },
     default_format_opts = {
         lsp_format = "fallback",
@@ -248,6 +222,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
         end
     end,
 })
+-- !!!remeber to install tree-sitter-cli: sudo npm install -g tree-sitter-cli
 add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 local ts = require("nvim-treesitter")
 vim.api.nvim_create_autocmd("FileType", {

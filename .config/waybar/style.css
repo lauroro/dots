@@ -1,13 +1,10 @@
-/* <%pyrice:base00:282828> */
-@define-color base #282828;
-/* <%pyrice:base05:d5c4a1> */
-@define-color text #d5c4a1;
-/* <%pyrice:base01:3c3836> */
-@define-color hover-background #3c3836;
-/* <%pyrice:base0A:fabd2f> */
-@define-color warning #fabd2f;
-/* <%pyrice:base09:fe8019> */
-@define-color critical #fe8019;
+/* @gohan:start */
+@define-color base #181a1f;
+@define-color text #a9b7c2;
+@define-color hover-background #262b33;
+@define-color warning #b0a86a;
+@define-color critical #b08a6a;
+/* @gohan:end */
 
 
 * {
