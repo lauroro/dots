@@ -1,11 +1,11 @@
 targets:
   - ~/.config/alacritty/alacritty.toml
-  - ~/.config/fuzzel/fuzzel.ini
   - ~/.config/mako/config
   - ~/.config/niri/config.kdl
   - ~/.config/niri/scripts/init.sh
   - ~/.config/nvim/core/plugins.lua
   - ~/.config/swaylock/config
+  - ~/.config/rofi/config.rasi
   - ~/.config/waybar/style.css
   - ~/.themes/Base16/colors/colors2
   - ~/.themes/Base16/colors/colors3.css
