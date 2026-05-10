@@ -85,3 +85,12 @@
   font-family: "Iosevka Nerd Font";
   font-size: 14px;
 }
+
+.thunar .standard-view {
+    border-right: 1px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 4px;
+    margin: 2px;
+}
