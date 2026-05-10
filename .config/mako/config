@@ -1,9 +1,9 @@
 sort=-time
 group-by=app-name
 layer=overlay
-width=220
-height=150
-padding=8
+width=200
+height=160
+padding=12
 border-size=1
 border-radius=2
 icons=1
@@ -17,7 +17,7 @@ on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga > /dev/null
 # @gohan:start
 background-color=#181a1f
 text-color=#a9b7c2
-border-color=#a9b7c2
+border-color=#303843
 
 [urgency=critical]
 border-color=#b06a73

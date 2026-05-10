@@ -117,7 +117,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return { spawn "alacritty"; }
-    Mod+Space  { spawn "fuzzel"; }
+    Mod+Space  { spawn-sh "rofi -show drun"; }
     Super+Alt+L  { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
