@@ -1,16 +1,13 @@
 targets:
   - ~/.config/alacritty/alacritty.toml
-  - ~/.config/mako/config
   - ~/.config/niri/config.kdl
-  - ~/.config/niri/scripts/init.sh
+  - ~/.config/noctalia/palettes/base16.json
   - ~/.config/nvim/core/plugins.lua
-  - ~/.config/swaylock/config
-  - ~/.config/rofi/config.rasi
-  - ~/.config/waybar/style.css
   - ~/.themes/Base16/colors/colors2
   - ~/.themes/Base16/colors/colors3.css
 
 commands:
+  - noctalia msg config-reload
   - sh ~/.config/niri/scripts/init.sh > /dev/null 2>&1
   - gsettings set org.gnome.desktop.interface gtk-theme ''; gsettings set org.gnome.desktop.interface gtk-theme Base16
   - notify-send Done!

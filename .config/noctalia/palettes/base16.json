@@ -1,0 +1,23 @@
+{
+    "_gohan_start": "@gohan:start",
+    "dark": {
+        "mPrimary": "#a9b7c2",
+        "onPrimary": "#181a1f",
+        "mSecondary": "#4f565e",
+        "onSecondary": "#181a1f",
+        "mTertiary": "#262b33",
+        "onTertiary": "#a9b7c2",
+        "mError": "#b06a73",
+        "onError": "#181a1f",
+        "mSurface": "#181a1f",
+        "onSurface": "#a9b7c2",
+        "mSurfaceVariant": "#262b33",
+        "onSurfaceVariant": "#a9b7c2",
+        "mOutline": "#4f565e",
+        "mShadow": "#181a1f",
+        "mHover": "#303843",
+        "onHover": "#303843",
+        "terminal": {}
+    },
+    "_gohan_end": "@gohan:end"
+}
