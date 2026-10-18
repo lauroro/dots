@@ -102,6 +102,3 @@ format = "{:L%a %d %b, %R}"
 [widget.media]
 hide_when_no_media = true
 title_scroll = "on_hover"
-
-[widget.workspaces]
-display = "none"
