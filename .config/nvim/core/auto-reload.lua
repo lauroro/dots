@@ -2,6 +2,8 @@ local w = vim.uv.new_fs_event()
 local watched_path = vim.fn.expand("~/.config/nvim/core/plugins.lua")
 local debounce_timer = nil
 
+local session_file = string.format("/tmp/session_%d.vim", vim.uv.os_getpid())
+
 local function on_change(err, fname, status)
     if err then
         return
@@ -17,7 +19,7 @@ local function on_change(err, fname, status)
         500,
         0,
         vim.schedule_wrap(function()
-            vim.cmd("mksession! /tmp/session.vim | restart source /tmp/session.vim")
+            vim.cmd("mksession! " .. session_file .. " | restart source " .. session_file)
 
             w:stop()
             watch_file(watched_path)
