@@ -15,8 +15,8 @@
         "onSurfaceVariant": "#a9b7c2",
         "mOutline": "#4f565e",
         "mShadow": "#181a1f",
-        "mHover": "#303843",
-        "onHover": "#303843",
+        "mHover": "#4f565e",
+        "onHover": "#a9b7c2",
         "terminal": {}
     },
     "_gohan_end": "@gohan:end"
