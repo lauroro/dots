@@ -37,6 +37,7 @@ natural_scroll = true
 
 [input.focus]
 follows_mouse = true
+follows_mouse_max_scroll = 0.0
 
 
 [keybinds]
