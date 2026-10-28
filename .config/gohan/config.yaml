@@ -10,3 +10,6 @@ commands:
   - noctalia msg config-reload
   - bash ~/.config/umbriel/scripts/init.sh > /dev/null 2>&1
   - notify-send Done!
+
+features:
+  gtk_auto_colorscheme: true
